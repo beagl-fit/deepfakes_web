@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container d-flex align-center justify-content-center" style="min-height: 70vh;">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 text-center">
+                <div>
+                    <h4>Would you like to learn about </h4>
+                    <h5>DEEPFAKES?</h5>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div>
+                    <a class="btn btn-primary" href="{{ url_for('general') }}">Start Course</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="fixed-sm-bottom mb-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <a class="btn btn-secondary" href="{{ url_for('index') }}">Download Presentation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

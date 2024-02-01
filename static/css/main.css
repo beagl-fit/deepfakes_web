@@ -1,0 +1,106 @@
+:root {
+  --main-bg-color: #282828;
+  --text-color-pri: #C5FCF8;
+  --text-color-sec: #31D8CD;
+  --btn-color-pri: #1C5E5A;
+  --btn-color-sec: #0D302E;
+  --btn-color-how: rgba(121, 246, 238, 0.8);
+}
+
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: Impact, system-ui;
+  color: var(--text-color-sec);
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+h1 {
+  color: var(--text-color-pri);
+  font-size: 2.4rem;
+}
+
+h2 {
+  color: var(--text-color-sec);
+  font-size: 2.4rem;
+}
+
+h3 {
+  color: var(--text-color-sec);
+  font-size: 1.5rem;
+  display: inline;
+}
+
+
+h4 {
+  color: var(--text-color-pri);
+  font-size: 4.8rem;
+}
+
+h5 {
+  color: var(--text-color-sec);
+  font-size: 4.8rem;
+}
+
+p {
+  margin-bottom: 0.2rem;
+}
+
+.text {
+  color: var(--text-color-pri);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  display: inline;
+}
+
+.btn-my-primary {
+  --bs-btn-font-weight: 400;
+  --bs-btn-color: var(--text-color-pri);
+  --bs-btn-bg: var(--btn-color-pri);
+  --bs-btn-hover-color: var(--btn-color-pri);
+  --bs-btn-hover-bg: var(--btn-color-how);
+  --bs-btn-focus-shadow-rgb: #0;
+  --bs-btn-border-color: #0;
+  font-size: 2rem;
+  padding: 0.425rem 1.875rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.9375rem;
+  width: 13.125rem;
+  height:4rem;
+}
+
+.btn-my-secondary {
+  --bs-btn-font-weight: 400;
+  --bs-btn-color: var(--text-color-pri);
+  --bs-btn-bg: var(--btn-color-sec);
+  --bs-btn-hover-color: var(--btn-color-sec);
+  --bs-btn-hover-bg: var(--btn-color-how);
+  --bs-btn-focus-shadow-rgb: #0;
+  --bs-btn-border-color: #0;
+  font-size: 2rem;
+  padding: 0.625rem 1.875rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.9375rem;
+  width: 13.125rem;
+  height:4rem;
+}
+
+.btn-audio {
+  --bs-btn-font-weight: 400;
+  --bs-btn-color: var(--text-color-pri);
+  --bs-btn-bg: var(--btn-color-pri);
+  --bs-btn-hover-color: var(--btn-color-pri);
+  --bs-btn-hover-bg: var(--btn-color-how);
+  --bs-btn-focus-shadow-rgb: #0;
+  --bs-btn-border-color: #0;
+  font-size: 1.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.9375rem;
+}
