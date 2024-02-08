@@ -38,9 +38,10 @@ def videos():
 def audio():
     return render_template('df_audio.html', title='DF_Audio')
 
+
 @app.route('/dfe')
 def end():
-    return render_template('end.html', title='DF_Audio')
+    return render_template('end.html', title='DF_End')
 
 # @app.route('/info', methods=['GET', 'POST'])
 # def get_info():
