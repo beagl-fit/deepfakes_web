@@ -43,13 +43,24 @@ def audio():
 def end():
     return render_template('end.html', title='DF_End')
 
-# @app.route('/info', methods=['GET', 'POST'])
-# def get_info():
-#     form = LoginForm()
-#     if form.validate_on_submit():
-#         flash(f'Login {form.username}', 'success')
-#         return redirect(url_for('index'))
-#     return render_template('info.html', title='Info', form=form)
+
+# , methods=['GET', 'POST']
+@app.route('/info')
+def info():
+    # form = LoginForm()
+    # if form.validate_on_submit():
+    #     flash(f'Login {form.username}', 'success')
+    #     return redirect(url_for('index'))
+    return render_template('info.html', title='Info')
+
+
+@app.route('/test')
+def test():
+    # form = LoginForm()
+    # if form.validate_on_submit():
+    #     flash(f'Login {form.username}', 'success')
+    #     return redirect(url_for('index'))
+    return render_template('test.html', title='Survey')
 
 
 if __name__ == '__main__':

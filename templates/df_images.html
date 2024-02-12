@@ -2,28 +2,118 @@
 {% block content %}
 
 <!--    TITLE  -->
-    <div class="container d-flex justify-content-center mb-4">
-        <h2>IMAGE DEEPFAKES</h2>
-    </div>
+<div class="container d-flex justify-content-center mb-4">
+    <h2>IMAGE DEEPFAKES</h2>
+</div>
 
 
 <!--CREATTING A PERSON-->
-    <div class="container mt-4">
-        <div class="row pb-4 pb-lg-2">
-            <h1>Creating a person</h1>
-        </div>
+<div class="container mt-4">
+    <div class="row pb-4 pb-lg-2">
+        <h1>Creating a person</h1>
+    </div>
 
 <!--    HOW -->
+    <h3>How does it work?</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="text">The </p>AI<p class="text"> is tasked with creating an image of a person,
+                and it may be provided with some</p> specifications<p class="text">.</p>
+            </div>
+            <div class="col-12">
+                <p class="text">These may be as simple as </p>"A firefighter" <p class="text">or a list of
+                specifications </p>"Blonde, Woman, Black eyglasses, sad..."<p class="text">.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--    WHY -->
+<div class="container mt-4">
+    <div class="mt-4">
+        <h3>Why do this?</h3>
+    </div>
+    <div class="container">
+        <div class="row mb-2 mb-md-0">
+            <div class="col-12">
+                <p class="text">To train a </p>facial recognition software<p class="text"> such as the one that
+                most phones use, without the need for a lot of real people.</p>
+            </div>
+            <div class="col-12">
+                <p class="text">To remain anonymous by creating </p>"an avatar"<p class="text"> instead of
+                providing a real photo of yourself.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--    WHAT    -->
+<div class="container mt-4">
+    <div class="mt-4">
+        <h3>What to look out for?</h3>
+    </div>
+    <div class="container">
+        <div class="row mb-2 mb-md-0">
+            <div class="col-12">
+                Do not assume <p class="text">that everyone you communicate with online is a real person just
+                because they have a picture on social media account.</p>
+            </div>
+            <div class="col-12">
+                Do not trust <p class="text">everyone just because you assume you know what they look like.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--EDITING A PERSON-->
+<div class="container mt-4">
+    <div class="row pb-4 pb-lg-2">
+        <h1>Editing a person</h1>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-12 col-md-3 py-2">
+            <button class="btn btn-primary" onclick="showDiv('FS')">IMAGE_A</button>
+        </div>
+        <div class="col-12 col-md-3 py-2">
+            <button class="btn btn-primary" onclick="showDiv('FMor')">IMAGE_B</button>
+        </div>
+        <div class="col-12 col-md-3 py-2">
+            <button class="btn btn-primary" onclick="showDiv('FMan')">IMAGE_C</button>
+        </div>
+        <div class="col-12 py-2">
+            These are deepfakes of some well known people, can you recognize them?<br>
+            <p class="text">(click each image to learn more)</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------------->
+<!--    FACE SWAP   -->
+<div id="FS" style="display: none;">
+
+<!--    HOW -->
+    <div class="container py-5">
+        <p class="text">This SOMEONE and they had their </p><h3>FACE SWAPPED</h3> <p class="text">with SOMEBODY</p>
+    </div>
+
+    <div class="container">
         <h3>How does it work?</h3>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p class="text">The </p>AI<p class="text"> is tasked with creating an image of a person,
-                    and it may be provided with some</p> specifications<p class="text">.</p>
+                    <p class="text">The AI is given 2 images.</p>
                 </div>
                 <div class="col-12">
-                    <p class="text">These may be as simple as </p>"A firefighter" <p class="text">or a list of
-                    specifications </p>"Blonde, Woman, Black eyglasses, sad..."<p class="text">.</p>
+                    <p class="text">It takes a face of the person in the first image.</p>
+                </div>
+                <div class="col-12">
+                    <p class="text">And puts it as the face of the person in the second image.</p>
                 </div>
             </div>
         </div>
@@ -31,18 +121,12 @@
 
 <!--    WHY -->
     <div class="container mt-4">
-        <div class="mt-4">
-            <h3>Why do this?</h3>
-        </div>
+        <h3>Why do this?</h3>
         <div class="container">
             <div class="row mb-2 mb-md-0">
                 <div class="col-12">
-                    <p class="text">To train a </p>facial recognition software<p class="text"> such as the one that
-                    most phones use, without the need for a lot of real people.</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">To remain anonymous by creating </p>"an avatar"<p class="text"> instead of
-                    providing a real photo of yourself.</p>
+                    For fun! <p class="text"> - Just try a faceswap applications and swap faces with your friend or
+                    a celebrity.</p>
                 </div>
             </div>
         </div>
@@ -56,445 +140,361 @@
         <div class="container">
             <div class="row mb-2 mb-md-0">
                 <div class="col-12">
-                    Do not assume <p class="text">that everyone you communicate with online is a real person just
-                    because they have a picture on social media account.</p>
+                    <p class="text">People can swap your face or face of somebody you know to any kind of image
+                        e.g. a pornographic one.</p>
                 </div>
                 <div class="col-12">
-                    Do not trust <p class="text">everyone just because you assume you know what they look like.</p>
+                    <ul>
+                        <li>
+                            <p class="text">This image may then be used for an</p> extortion<p class="text">,</p>
+                            blackmail<p class="text">, as a</p> fraudulent evidence <p class="text">or just to
+                            share </p>disinformation<p class="text">.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <p class="text">Face swapping might spoof some </p>facial recognition software<p class="text">,
+                    though to a lesser degree than some other types of deepfakes.</p>
                 </div>
             </div>
         </div>
     </div>
 
 
-<!--EDITING A PERSON-->
+<!--    ATTACK SCENARIOS    -->
     <div class="container mt-4">
-        <div class="row pb-4 pb-lg-2">
-            <h1>Editing a person</h1>
+        <div class="mt-4">
+            <h3>How can it work in practice?</h3>
         </div>
-        <div class="row justify-content-center text-center">
-            <div class="col-12 col-md-3 py-2">
-                <button class="btn btn-primary" onclick="showDiv('FS')">IMAGE_A</button>
-            </div>
-            <div class="col-12 col-md-3 py-2">
-                <button class="btn btn-primary" onclick="showDiv('FMor')">IMAGE_B</button>
-            </div>
-            <div class="col-12 col-md-3 py-2">
-                <button class="btn btn-primary" onclick="showDiv('FMan')">IMAGE_C</button>
-            </div>
-            <div class="col-12 py-2">
-                These are deepfakes of some well known people, can you recognize them?<br>
-                <p class="text">(click each image to learn more)</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-<!----------------------------------------------------------------------------------------------------->
-<!--    FACE SWAP   -->
-    <div id="FS" style="display: none;">
-
-<!--    HOW -->
-        <div class="container py-5">
-            <p class="text">This SOMEONE and they had their </p><h3>FACE SWAPPED</h3> <p class="text">with SOMEBODY</p>
-        </div>
-
         <div class="container">
-            <h3>How does it work?</h3>
+            Scenario 1:
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="text">The AI is given 2 images.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">It takes a face of the person in the first image.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">And puts it as the face of the person in the second image.</p>
-                    </div>
-                </div>
+                <ol>
+                    <li>
+                        <p class="text">The attacker finds the victim's social media account, which gives them
+                            access to the victim's photos, additional accounts, personal information, etc.</p>
+                    </li>
+                    <li>
+                        <p class="text">The attacker searches for pornographic images of someone whose body
+                            resembles that of the victim, or synthesizes new ones.</p>
+                    </li>
+                    <li>
+                        <p class="text">The attacker creates deepfakes of the victim and then proceeds to blackmail
+                            them with these manipulated images, threatening to leak the content unless certain
+                            demands are met.</p>
+                    </li>
+                </ol>
             </div>
-        </div>
 
-<!--    WHY -->
-        <div class="container mt-4">
-            <h3>Why do this?</h3>
+            Scenario 2:
             <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        For fun! <p class="text"> - Just try a faceswap applications and swap faces with your friend or
-                        a celebrity.</p>
-                    </div>
-                </div>
+                <ol>
+                    <li>
+                        <p class="text">One classmate is bullying another, and the victim decides to retaliate by
+                            taking steps to get the bully kicked out of school.</p>
+                    </li>
+                    <li>
+                        <p class="text">As classmates, obtaining a photo of the aggressor is easy for the target of
+                            bullying.</p>
+                    </li>
+                    <li>
+                        <p class="text">Subsequently, they create a face-swapped deepfake using a picture of the
+                            bully and an image of a person engaged in alcohol and smoking activities.</p>
+                    </li>
+                    <li>
+                        <p class="text">The victim then creates a new email to anonymously send the deepfake to
+                            their school, resulting in disciplinary measures for the tormentor.</p>
+                    </li>
+                </ol>
             </div>
-        </div>
 
-    <!--    WHAT    -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>What to look out for?</h3>
-            </div>
+            Scenario 3:
             <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">People can swap your face or face of somebody you know to any kind of image
-                            e.g. a pornographic one.</p>
-                    </div>
-                    <div class="col-12">
-                        <ul>
-                            <li>
-                                <p class="text">This image may then be used for an</p> extortion<p class="text">,</p>
-                                blackmail<p class="text">, as a</p> fraudulent evidence <p class="text">or just to
-                                share </p>disinformation<p class="text">.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">Face swapping might spoof some </p>facial recognition software<p class="text">,
-                        though to a lesser degree than some other types of deepfakes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    <!--    ATTACK SCENARIOS    -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>How can it work in practice?</h3>
-            </div>
-            <div class="container">
-                Scenario 1:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">The attacker finds the victim's social media account, which gives them
-                                access to the victim's photos, additional accounts, personal information, etc.</p>
-                        </li>
-                        <li>
-                            <p class="text">The attacker searches for pornographic images of someone whose body
-                                resembles that of the victim, or synthesizes new ones.</p>
-                        </li>
-                        <li>
-                            <p class="text">The attacker creates deepfakes of the victim and then proceeds to blackmail
-                                them with these manipulated images, threatening to leak the content unless certain
-                                demands are met.</p>
-                        </li>
-                    </ol>
-                </div>
-
-                Scenario 2:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">One classmate is bullying another, and the victim decides to retaliate by
-                                taking steps to get the bully kicked out of school.</p>
-                        </li>
-                        <li>
-                            <p class="text">As classmates, obtaining a photo of the aggressor is easy for the target of
-                                bullying.</p>
-                        </li>
-                        <li>
-                            <p class="text">Subsequently, they create a face-swapped deepfake using a picture of the
-                                bully and an image of a person engaged in alcohol and smoking activities.</p>
-                        </li>
-                        <li>
-                            <p class="text">The victim then creates a new email to anonymously send the deepfake to
-                                their school, resulting in disciplinary measures for the tormentor.</p>
-                        </li>
-                    </ol>
-                </div>
-
-                Scenario 3:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">An entitled parent is dissatisfied with the teacher's treatment of their
-                                child.</p>
-                        </li>
-                        <li>
-                            <p class="text">The parent downloads images of the teacher from the school's website
-                                and nude images of a person resembling them.</p>
-                        </li>
-                        <li>
-                            <p class="text">They use this material to create a deepfake, superimposing the teacher's
-                                face onto the explicit images.</p>
-                        </li>
-                        <li>
-                            <p class="text">Afterward, the parent shares the manipulated content to accuse the teacher
-                                of inappropriate behavior, either with other parents or via a complaint with the school,
-                                demanding the teacher's dismissal.</p>
-                        </li>
-                    </ol>
-                </div>
+                <ol>
+                    <li>
+                        <p class="text">An entitled parent is dissatisfied with the teacher's treatment of their
+                            child.</p>
+                    </li>
+                    <li>
+                        <p class="text">The parent downloads images of the teacher from the school's website
+                            and nude images of a person resembling them.</p>
+                    </li>
+                    <li>
+                        <p class="text">They use this material to create a deepfake, superimposing the teacher's
+                            face onto the explicit images.</p>
+                    </li>
+                    <li>
+                        <p class="text">Afterward, the parent shares the manipulated content to accuse the teacher
+                            of inappropriate behavior, either with other parents or via a complaint with the school,
+                            demanding the teacher's dismissal.</p>
+                    </li>
+                </ol>
             </div>
         </div>
     </div>
+</div>
 
 
 
 
 <!----------------------------------------------------------------------------------------------------->
 <!--    FACE MANIPULATION  -->
-    <div id="FMan" style="display: none;">
+<div id="FMan" style="display: none;">
 
 <!--    HOW -->
-        <div class="container py-5">
-            <p class="text">This SOMEONE and they had their </p><h3>FACE MANIPULATED</h3>
-        </div>
+    <div class="container py-5">
+        <p class="text">This SOMEONE and they had their </p><h3>FACE MANIPULATED</h3>
+    </div>
+    <div class="container">
+        <h3>How does it work?</h3>
         <div class="container">
-            <h3>How does it work?</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="text">A source image and list of manipulated features is provided to the AI.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">The features may be added, changed or removed.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">Things like hair colour or expression can be changed and eyeglasses or tattoos
-                            can be added.</p>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="text">A source image and list of manipulated features is provided to the AI.</p>
                 </div>
-            </div>
-        </div>
-
-    <!--    WHY -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>Why do this?</h3>
-            </div>
-            <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">To make better or more funny photos without the need for photoshop.</p>
-                    </div>
+                <div class="col-12">
+                    <p class="text">The features may be added, changed or removed.</p>
                 </div>
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">Save money on a make-up artist.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <!--    WHAT    -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>What to look out for?</h3>
-            </div>
-            <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">Strangers can manipulate your photos and for example make you look drunk or
-                            add an unwanted feature such as a tattoo.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">It is easy to</p> spread disinformation<p class="text"> online with manipulated
-                        images of people.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    <!--    ATTACK SCENARIOS    -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>How can it work in practice?</h3>
-            </div>
-            <div class="container">
-                Scenario 1:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">An internationally wanted criminal needs to enter a country via plane,
-                                without being detected by the authorities.</p>
-                        </li>
-                        <li>
-                            <p class="text">They ask a pal to lend them their ID and a photo, in order to make a new
-                                passport.</p>
-                        </li>
-                        <li>
-                            <p class="text">The criminal takes photo of themselves and of their pal and morphs these
-                                photos together to create a deepfake photo, which will be put onto the new passport.</p>
-                        </li>
-                        <li>
-                            <p class="text">Armed with photo and legitimate ID of a non-wanted person, the criminal can
-                                legitimately make a new passport.</p>
-                        </li>
-                        <li>
-                            <p class="text">Once the passport arrives, the criminal can board any plane and use the
-                                automated border control system to enter a country inconspicuously.</p>
-                        </li>
-                    </ol>
-                </div>
-
-                Scenario 2:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">A corporate spy aims to infiltrate a rival corporation to gather sensitive
-                                information.</p>
-                        </li>
-                        <li>
-                            <p class="text">The spy searches the company's website for employee photos and selects a
-                                target whose role aligns with their objective.</p>
-                        </li>
-                        <li>
-                            <p class="text">Using advanced face-morphing technology, the spy creates a convincing
-                                deepfake photo by blending their own facial features with the chosen employee's.</p>
-                        </li>
-                        <li>
-                            <p class="text">Armed with the face-morphed image, the spy leverages social networks to
-                                gather additional information about the target's role, habits, and interactions within
-                                the company.</p>
-                        </li>
-                        <li>
-                            <p class="text">Infiltrating the corporation, the spy navigates undetected, exploiting the
-                                face-morphed photo for security clearance and accessing confidential information.</p>
-                        </li>
-                    </ol>
+                <div class="col-12">
+                    <p class="text">Things like hair colour or expression can be changed and eyeglasses or tattoos
+                        can be added.</p>
                 </div>
             </div>
         </div>
     </div>
+
+<!--    WHY -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>Why do this?</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">To make better or more funny photos without the need for photoshop.</p>
+                </div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">Save money on a make-up artist.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    WHAT    -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>What to look out for?</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">Strangers can manipulate your photos and for example make you look drunk or
+                        add an unwanted feature such as a tattoo.</p>
+                </div>
+                <div class="col-12">
+                    <p class="text">It is easy to</p> spread disinformation<p class="text"> online with manipulated
+                    images of people.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--    ATTACK SCENARIOS    -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>How can it work in practice?</h3>
+        </div>
+        <div class="container">
+            Scenario 1:
+            <div class="container">
+                <ol>
+                    <li>
+                        <p class="text">An internationally wanted criminal needs to enter a country via plane,
+                            without being detected by the authorities.</p>
+                    </li>
+                    <li>
+                        <p class="text">They ask a pal to lend them their ID and a photo, in order to make a new
+                            passport.</p>
+                    </li>
+                    <li>
+                        <p class="text">The criminal takes photo of themselves and of their pal and morphs these
+                            photos together to create a deepfake photo, which will be put onto the new passport.</p>
+                    </li>
+                    <li>
+                        <p class="text">Armed with photo and legitimate ID of a non-wanted person, the criminal can
+                            legitimately make a new passport.</p>
+                    </li>
+                    <li>
+                        <p class="text">Once the passport arrives, the criminal can board any plane and use the
+                            automated border control system to enter a country inconspicuously.</p>
+                    </li>
+                </ol>
+            </div>
+
+            Scenario 2:
+            <div class="container">
+                <ol>
+                    <li>
+                        <p class="text">A corporate spy aims to infiltrate a rival corporation to gather sensitive
+                            information.</p>
+                    </li>
+                    <li>
+                        <p class="text">The spy searches the company's website for employee photos and selects a
+                            target whose role aligns with their objective.</p>
+                    </li>
+                    <li>
+                        <p class="text">Using advanced face-morphing technology, the spy creates a convincing
+                            deepfake photo by blending their own facial features with the chosen employee's.</p>
+                    </li>
+                    <li>
+                        <p class="text">Armed with the face-morphed image, the spy leverages social networks to
+                            gather additional information about the target's role, habits, and interactions within
+                            the company.</p>
+                    </li>
+                    <li>
+                        <p class="text">Infiltrating the corporation, the spy navigates undetected, exploiting the
+                            face-morphed photo for security clearance and accessing confidential information.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!----------------------------------------------------------------------------------------------------->
 <!--    FACE MORPHING   -->
-    <div id="FMor" style="display: none;">
+<div id="FMor" style="display: none;">
 
 <!--    HOW -->
-        <div class="container py-5">
-            <p class="text">This SOMEONE and they had their </p><h3>FACE MORPHED</h3> <p class="text">with SOMEBODY</p>
-        </div>
+    <div class="container py-5">
+        <p class="text">This SOMEONE and they had their </p><h3>FACE MORPHED</h3> <p class="text">with SOMEBODY</p>
+    </div>
+    <div class="container">
+        <h3>How does it work?</h3>
         <div class="container">
-            <h3>How does it work?</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="text">The AI is given 2 images, and it puts them together (morphs them).</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">This creates a new image that looks like both the first and the second person.
-                        </p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">It is, because the person in the new image shares enough facial features of both
-                            people.</p>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="text">The AI is given 2 images, and it puts them together (morphs them).</p>
                 </div>
-            </div>
-        </div>
-
-    <!--    WHY -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>Why do this?</h3>
-            </div>
-            <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">Applications that show you how will your kids look that use picture of you and
-                            your spouse use face morphing.</p>
-                    </div>
+                <div class="col-12">
+                    <p class="text">This creates a new image that looks like both the first and the second person.
+                    </p>
                 </div>
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">Aplications that show you how will you look when you get older also use this
-                            technique.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <!--    WHAT    -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>What to look out for?</h3>
-            </div>
-            <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12">
-                        <p class="text">Because the image of a person shares facial features of both people, it may be
-                            used to spoof</p> facial recognition software<p class="text">.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">This is especially problem for Automatic Border Control where a passport with
-                            a face-morphed image may be used by</p> 2 people with<p class="text"> only</p> 1
-                        credential<p class="text">.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    <!--    ATTACK SCENARIOS    -->
-        <div class="container mt-4">
-            <div class="mt-4">
-                <h3>How can it work in practice?</h3>
-            </div>
-            <div class="container">
-                Scenario 1:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">An internationally wanted criminal needs to enter a country via plane,
-                                without being detected by the authorities.</p>
-                        </li>
-                        <li>
-                            <p class="text">They ask a pal to lend them their ID and a photo, in order to make a new
-                                passport.</p>
-                        </li>
-                        <li>
-                            <p class="text">The criminal takes photo of themselves and of their pal and morphs these
-                                photos together to create a deepfake photo, which will be put onto the new passport.</p>
-                        </li>
-                        <li>
-                            <p class="text">Armed with photo and legitimate ID of a non-wanted person, the criminal can
-                                legitimately make a new passport.</p>
-                        </li>
-                        <li>
-                            <p class="text">Once the passport arrives, the criminal can board any plane and use the
-                                automated border control system to enter a country inconspicuously.</p>
-                        </li>
-                    </ol>
-                </div>
-
-                Scenario 2:
-                <div class="container">
-                    <ol>
-                        <li>
-                            <p class="text">A corporate spy aims to infiltrate a rival corporation to gather sensitive
-                                information.</p>
-                        </li>
-                        <li>
-                            <p class="text">The spy searches the company's website for employee photos and selects a
-                                target whose role aligns with their objective.</p>
-                        </li>
-                        <li>
-                            <p class="text">Using advanced face-morphing technology, the spy creates a convincing
-                                deepfake photo by blending their own facial features with the chosen employee's.</p>
-                        </li>
-                        <li>
-                            <p class="text">Armed with the face-morphed image, the spy leverages social networks to
-                                gather additional information about the target's role, habits, and interactions within
-                                the company.</p>
-                        </li>
-                        <li>
-                            <p class="text">Infiltrating the corporation, the spy navigates undetected, exploiting the
-                                face-morphed photo for security clearance and accessing confidential information.</p>
-                        </li>
-                    </ol>
+                <div class="col-12">
+                    <p class="text">It is, because the person in the new image shares enough facial features of both
+                        people.</p>
                 </div>
             </div>
         </div>
     </div>
+
+<!--    WHY -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>Why do this?</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">Applications that show you how will your kids look that use picture of you and
+                        your spouse use face morphing.</p>
+                </div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">Aplications that show you how will you look when you get older also use this
+                        technique.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    WHAT    -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>What to look out for?</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">Because the image of a person shares facial features of both people, it may be
+                        used to spoof</p> facial recognition software<p class="text">.</p>
+                </div>
+                <div class="col-12">
+                    <p class="text">This is especially problem for Automatic Border Control where a passport with
+                        a face-morphed image may be used by</p> 2 people with<p class="text"> only</p> 1
+                    credential<p class="text">.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--    ATTACK SCENARIOS    -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>How can it work in practice?</h3>
+        </div>
+        <div class="container">
+            Scenario 1:
+            <div class="container">
+                <ol>
+                    <li>
+                        <p class="text">An internationally wanted criminal needs to enter a country via plane,
+                            without being detected by the authorities.</p>
+                    </li>
+                    <li>
+                        <p class="text">They ask a pal to lend them their ID and a photo, in order to make a new
+                            passport.</p>
+                    </li>
+                    <li>
+                        <p class="text">The criminal takes photo of themselves and of their pal and morphs these
+                            photos together to create a deepfake photo, which will be put onto the new passport.</p>
+                    </li>
+                    <li>
+                        <p class="text">Armed with photo and legitimate ID of a non-wanted person, the criminal can
+                            legitimately make a new passport.</p>
+                    </li>
+                    <li>
+                        <p class="text">Once the passport arrives, the criminal can board any plane and use the
+                            automated border control system to enter a country inconspicuously.</p>
+                    </li>
+                </ol>
+            </div>
+
+            Scenario 2:
+            <div class="container">
+                <ol>
+                    <li>
+                        <p class="text">A corporate spy aims to infiltrate a rival corporation to gather sensitive
+                            information.</p>
+                    </li>
+                    <li>
+                        <p class="text">The spy searches the company's website for employee photos and selects a
+                            target whose role aligns with their objective.</p>
+                    </li>
+                    <li>
+                        <p class="text">Using advanced face-morphing technology, the spy creates a convincing
+                            deepfake photo by blending their own facial features with the chosen employee's.</p>
+                    </li>
+                    <li>
+                        <p class="text">Armed with the face-morphed image, the spy leverages social networks to
+                            gather additional information about the target's role, habits, and interactions within
+                            the company.</p>
+                    </li>
+                    <li>
+                        <p class="text">Infiltrating the corporation, the spy navigates undetected, exploiting the
+                            face-morphed photo for security clearance and accessing confidential information.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -502,28 +502,28 @@
 
 
 <!--    CONT/END BUTTONS-->
-    <div class="container mt-3 d-flex justify-content-center">
-        <div class="fixed-sm-bottom mb-3">
-            <div class="row">
-                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
-                    <a class="btn btn-my-secondary" href="{{ url_for('general') }}">Back</a>
-                </div>
-                <div class="col-12 col-md-6 my-2 text-center">
-                    <a class="btn btn-my-primary" href="{{ url_for('videos') }}">Continue</a>
-                </div>
+<div class="container mt-3 d-flex justify-content-center">
+    <div class="fixed-sm-bottom mb-3">
+        <div class="row">
+            <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
+                <a class="btn btn-my-secondary" href="{{ url_for('general') }}">Back</a>
+            </div>
+            <div class="col-12 col-md-6 my-2 text-center">
+                <a class="btn btn-my-primary" href="{{ url_for('videos') }}">Continue</a>
             </div>
         </div>
     </div>
+</div>
 
 
 <script>
-    function showDiv(divID) {
-        document.getElementById("FS").style.display = "none";
-        document.getElementById("FMor").style.display = "none";
-        document.getElementById("FMan").style.display = "none";
+function showDiv(divID) {
+    document.getElementById("FS").style.display = "none";
+    document.getElementById("FMor").style.display = "none";
+    document.getElementById("FMan").style.display = "none";
 
-        document.getElementById(divID).style.display = "block";
-    }
+    document.getElementById(divID).style.display = "block";
+}
 </script>
 
 {% endblock content %}

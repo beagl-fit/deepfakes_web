@@ -1,5 +1,6 @@
 :root {
   --main-bg-color: #282828;
+  --card-bg-color: #404040;
   --text-color-pri: #C5FCF8;
   --text-color-sec: #31D8CD;
   --btn-color-pri: #1C5E5A;
@@ -144,4 +145,14 @@ p {
   .btn-download {
     border-radius: 3rem;
   }
+}
+
+.form-check-input:checked {
+  background-color: var(--btn-color-pri);
+  border-color: var(--btn-color-how);
+  box-shadow: none;
+}
+
+.card {
+  background: var(--card-bg-color);
 }
