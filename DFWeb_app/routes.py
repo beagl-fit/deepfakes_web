@@ -1,6 +1,6 @@
-from flask import render_template, url_for, redirect
+from flask import render_template, request, session, url_for, redirect
 from DFWeb_app import app
-from DFWeb_app.forms import LoginForm     # TODO: this
+from DFWeb_app.forms import SessionForm
 from DFWeb_app.models import User, Answer
 
 
@@ -34,20 +34,18 @@ def end():
     return render_template('end.html', title='DF_End')
 
 
-# , methods=['GET', 'POST']
-@app.route('/info')
+@app.route('/info', methods=['GET', 'POST'])
 def info():
-    # form = LoginForm()
-    # if form.validate_on_submit():
-    #     flash(f'Login {form.username}', 'success')
-    #     return redirect(url_for('index'))
     return render_template('info.html', title='Info')
 
 
-@app.route('/test')
+@app.route('/test', methods=['GET', 'POST'])
 def test():
-    # form = LoginForm()
-    # if form.validate_on_submit():
-    #     flash(f'Login {form.username}', 'success')
-    #     return redirect(url_for('index'))
+    if request.method == 'POST':
+        session['sex'] = request.form.get('sex')
+        session['age'] = request.form.get('age')
+        session['df'] = request.form.get('df')
+
+        if session.get('df') == '1':
+            return render_template('df_general.html', title='DF_General')
     return render_template('test.html', title='Survey')

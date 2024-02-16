@@ -5,6 +5,7 @@ from DFWeb_app.models import User, Answer
 def db_init():
     with app.app_context():
         db.create_all()
+
         # user = User()
         # # Add the user to the database session
         # db.session.add(user)

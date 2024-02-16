@@ -3,15 +3,17 @@
 <div class="container d-flex align-center justify-content-center" style="min-height: 70vh;">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 text-center">
-            <div>
-                <h4>Would you like to learn about </h4>
-                <h5>DEEPFAKES?</h5>
-            </div>
+            <h4>Would you like to learn about </h4>
+            <h5>DEEPFAKES?</h5>
         </div>
         <div class="col-md-6 text-center">
-            <div>
+            {% if session %}
+                <button class="btn btn-start" data-bs-toggle="modal" data-bs-target="#continueModal">
+                    Start Course
+                </button>
+            {% else %}
                 <a class="btn btn-start" href="{{ url_for('info') }}">Start Course</a>
-            </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -25,4 +27,65 @@
         </div>
     </div>
 </div>
+
+<!--
+possible next pages:
+person not in session -> info
+person in session   -> encountered df yes   -> info
+                                            -> test
+                                            -> DF general
+                    -> encountered df no    -> info
+                                            -> DF general
+-->
+<!-- Modal -->
+<div class="modal fade" id="continueModal" tabindex="-1" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-3">Skip ahead?</h1>
+            </div>
+            <div class="modal-body">
+                It seems like you have already started this course before.<br>
+                Would you like to skip ahead?
+            </div>
+            <div id="mod" class="modal-footer" data-df="{{ session.get('df') }}">
+                <button id="no_skip" class="btn btn-my-secondary" style="font-size: 1.5rem; width:auto; height: 3rem;
+                padding: 0 1.5rem 0 1.5rem" >No</button>
+
+                {% if session.get('df') == '0' %}
+                    <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
+                    <button id="skip_survey" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Survey</button>
+                {% else %}
+                    <button id="skip_ahead" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let df = document.getElementById('mod').getAttribute('data-df');
+        document.getElementById("no_skip").addEventListener("click", function() {
+            window.location.href = "{{ url_for('info') }}";
+        });
+
+        if (df === '0') {
+            document.getElementById("skip_info").addEventListener("click", function () {
+                window.location.href = "{{ url_for('test') }}";
+            });
+            document.getElementById("skip_survey").addEventListener("click", function () {
+                window.location.href = "{{ url_for('general') }}";
+            });
+        }
+        else if (df === '1') {
+            document.getElementById("skip_ahead").addEventListener("click", function () {
+                window.location.href = "{{ url_for('general') }}";
+            });
+        }
+    });
+
+
+</script>
+
 {% endblock content %}

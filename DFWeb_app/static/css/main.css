@@ -82,7 +82,7 @@ p {
   --bs-btn-focus-shadow-rgb: #0;
   --bs-btn-border-color: #0;
   font-size: 2rem;
-  padding: 0.625rem 1.875rem;
+  /*padding: 0.625rem 1.875rem;*/
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
@@ -155,4 +155,12 @@ p {
 
 .card {
   background: var(--card-bg-color);
+  border-radius: 2rem;
+}
+.card-header {
+  border-bottom: 2px solid black;
+}
+
+.modal-content {
+  background-color: var(--card-bg-color);
 }

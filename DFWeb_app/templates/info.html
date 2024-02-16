@@ -23,188 +23,190 @@
     </ul>
 </div>
 
-<!--    SEX RADIOS  -->
-<div class="container justify-content-center text-center mb-4 pt-5">
-    <h2>Sex</h2>
+<!--    FORM    -->
+<form id="sessionForm" action="{{ url_for('test') }}" method="post">
+    <!--    SEX RADIOS  -->
+    <div class="container justify-content-center text-center mb-4 pt-5">
+        <h2>Sex</h2>
 
-    <div class="row justify-content-end text-start pe-5">
-        <div class="col-6">
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sex_radio" id="male"
-                               onchange="checkRadios()">
-                        <label class="form-check-label text" for="male">
-                            Male
-                        </label>
+        <div class="row justify-content-end text-start pe-5">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sex_radio" id="male"
+                                   onchange="setSessionValue('sex_radio')">
+                            <label class="form-check-label text" for="male">
+                                Male
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sex_radio" id="female"
-                               onchange="checkRadios()">
-                        <label class="form-check-label text" for="female">
-                            Female
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sex_radio" id="female"
+                                   onchange="setSessionValue('sex_radio')">
+                            <label class="form-check-label text" for="female">
+                                Female
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--    AGE RADIOS  -->
-<div class="container justify-content-center text-center mb-4">
-    <h2>Age</h2>
+    <!--    AGE RADIOS  -->
+    <div class="container justify-content-center text-center mb-4">
+        <h2>Age</h2>
 
-    <div class="row justify-content-end text-start pe-5">
-        <div class="col-6">
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age_radio" id="age0"
-                               onchange="checkRadios()">
-                        <label class="form-check-label text" for="age0">
-                            <18
-                        </label>
+        <div class="row justify-content-end text-start pe-5">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age_radio" id="age0"
+                                   onchange="setSessionValue('age_radio')">
+                            <label class="form-check-label text" for="age0">
+                                <18
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age_radio" id="age1"
-                               onchange="checkRadios()">
-                        <label class="form-check-label text" for="age1">
-                            18-25
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age_radio" id="age1"
+                                   onchange="setSessionValue('age_radio')">
+                            <label class="form-check-label text" for="age1">
+                                18-25
+                            </label>
+                        </div>
                     </div>
                 </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age_radio" id="age2"
-                                onchange="checkRadios()">
-                        <label class="form-check-label text" for="age2">
-                            26-55
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age_radio" id="age2"
+                                    onchange="setSessionValue('age_radio')">
+                            <label class="form-check-label text" for="age2">
+                                26-55
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age_radio" id="age3"
-                               onchange="checkRadios()">
-                        <label class="form-check-label text" for="age3">
-                            >55
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age_radio" id="age3"
+                                   onchange="setSessionValue('age_radio')">
+                            <label class="form-check-label text" for="age3">
+                                >55
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--    DF ENCOUNTERED RADIOS   -->
-<div class="container justify-content-center text-center mb-4">
-    <h2>Did you encounter the term deepfakes ever before?</h2>
+    <!--    DF ENCOUNTERED RADIOS   -->
+    <div class="container justify-content-center text-center mb-4">
+        <h2>Did you encounter the term deepfakes ever before?</h2>
 
-    <div class="row justify-content-end text-start pe-5">
-        <div class="col-6">
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="df_radio" id="yes" onchange="checkRadios()">
-                        <label class="form-check-label text" for="yes">
-                            Yes, I have
-                        </label>
+        <div class="row justify-content-end text-start pe-5">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="df_radio" id="yes"
+                                   onchange="setSessionValue('df_radio')">
+                            <label class="form-check-label text" for="yes">
+                                Yes, I have
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="df_radio" id="no" onchange="checkRadios()">
-                        <label class="form-check-label text" for="no">
-                            No, I have not (skips initial survey)
-                        </label>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="df_radio" id="no"
+                                   onchange="setSessionValue('df_radio')">
+                            <label class="form-check-label text" for="no">
+                                No, I have not (skips initial survey)
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--    CONT/END BUTTONS    -->
-<div class="container mt-3 d-flex justify-content-center">
-    <div class="fixed-sm-bottom mb-3">
-        <div class="row">
-            <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
-                <a class="btn btn-my-secondary" href="{{ url_for('index') }}">Back</a>
-            </div>
-            <div class="col-12 col-md-6 my-2 text-center">
-                <a class="btn btn-my-primary disabled" href="{{ url_for('test') }}" id="continue">Continue</a>
+<!--    HIDDEN INPUTS FOR SESSION   -->
+    <input type="hidden" name="sex" id="sex_radio_value" value="">
+    <input type="hidden" name="age" id="age_radio_value" value="">
+    <input type="hidden" name="df" id="df_radio_value" value="">
+
+    <!--    CONT/END BUTTONS    -->
+    <div class="container mt-3 d-flex justify-content-center">
+        <div class="fixed-sm-bottom mb-3">
+            <div class="row">
+                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
+                    <a class="btn btn-my-secondary" href="{{ url_for('index') }}">Back</a>
+                </div>
+                <div class="col-12 col-md-6 my-2 text-center">
+                    <button type="submit" class="btn btn-my-primary disabled" id="continue">Continue</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 
 <script>
-    function checkRadios() {
-        // Get references to buttons
-        const sex_radio = document.getElementsByName('sex_radio');
-        const age_radio = document.getElementsByName('age_radio');
-        const df_radio = document.getElementsByName('df_radio');
-        const button_continue = document.getElementById('continue');
+    function setSessionValue(radio) {
+        // sets value to X_radio_value, where X are sex/age/df radios
+        // these values are used to create a session
 
+        // Get references to inputs
+        const radios = document.getElementsByName(radio);
+        const radio_value = document.getElementById(radio + '_value');
 
-        // Check if there is a checked radio button in all groups
-        let sex_checked = false;
-        for (const radio of sex_radio) {
-            if (radio.checked) {
-                sex_checked = true;
+        // set value of X_radio_value depending on which radio was checked
+        let value = 0;
+        for (const rad of radios) {
+            if (rad.checked) {
+                radio_value.value = value;
                 break;
             }
+            value++;
         }
+        console.log(radio + ' : ' + radio_value.value)
+        let a = document.getElementById('sex_radio_value').value;
+        let b = document.getElementById('age_radio_value').value;
+        let c = document.getElementById('df_radio_value').value;
+        console.log(a + b + c);
 
-        let age_checked = false;
-        for (const radio of age_radio) {
-            if (radio.checked) {
-                age_checked = true;
-                break;
-            }
-        }
-
-        let df_checked = false;
-        for (const radio of df_radio) {
-            if (radio.checked) {
-                df_checked = true;
-                break;
-            }
-        }
-
-        // Check if all groups of radio buttons are checked
-        if (sex_checked && age_checked && df_checked)
-            button_continue.classList.remove('disabled');
+        const changeEvent = new Event('change', { bubbles: true });
+        radio_value.dispatchEvent(changeEvent);
     }
+
+    const sex_radio_value = document.getElementById('sex_radio_value');
+    const age_radio_value = document.getElementById('age_radio_value');
+    const df_radio_value = document.getElementById('df_radio_value');
+    const continueButton = document.getElementById('continue');
+
+    // checks if all three inputs have a value and if so, enables continue
+    function checkInputs() {
+        if (sex_radio_value.value && age_radio_value.value && df_radio_value.value) {
+            continueButton.classList.remove('disabled');
+            console.log('passed')
+
+        }
+    }
+    sex_radio_value.addEventListener('change', checkInputs);
+    age_radio_value.addEventListener('change', checkInputs);
+    df_radio_value.addEventListener('change', checkInputs);
 </script>
 
 {% endblock content %}
-<!--    <div>-->
-<!--        <form method="POST" action="">-->
-<!--            {{ form.hidden_tag() }}-->
-<!--            <fieldset>-->
-<!--                <legend>LEGEND</legend>-->
-<!--                <div>-->
-<!--                    {{form.username.label}}-->
-<!--                    {{form.username}}-->
-<!--                </div>-->
-<!--            </fieldset>-->
-<!--            <div>-->
-<!--                {{ form.submit }}-->
-<!--            </div>-->
-<!--        </form>-->
-<!--    </div>-->
