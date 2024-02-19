@@ -31,11 +31,11 @@
 <!--
 possible next pages:
 person not in session -> info
-person in session   -> encountered df yes   -> info
-                                            -> test
-                                            -> DF general
-                    -> encountered df no    -> info
-                                            -> DF general
+person in session   -> info
+                    -> encountered df yes   -> completed test yes -> DF general
+                                            -> completed test no -> test
+
+                    -> encountered df no    -> DF general
 -->
 <!-- Modal -->
 <div class="modal fade" id="continueModal" tabindex="-1" >
@@ -53,8 +53,14 @@ person in session   -> encountered df yes   -> info
                 padding: 0 1.5rem 0 1.5rem" >No</button>
 
                 {% if session.get('df') == '0' %}
-                    <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
-                    <button id="skip_survey" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Survey</button>
+                    {% if not session.get('q1a') %}
+                    <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
+                        width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
+                    {% else %}
+                        <div id="test" data-test="{{ session.get('q1a') }}"></div>
+                        <button id="skip_survey" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
+                            width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Survey</button>
+                    {% endif %}
                 {% else %}
                     <button id="skip_ahead" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
                 {% endif %}
@@ -65,18 +71,21 @@ person in session   -> encountered df yes   -> info
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // add function to loaded modal buttons used to skip ahead
         let df = document.getElementById('mod').getAttribute('data-df');
         document.getElementById("no_skip").addEventListener("click", function() {
             window.location.href = "{{ url_for('info') }}";
         });
 
         if (df === '0') {
-            document.getElementById("skip_info").addEventListener("click", function () {
-                window.location.href = "{{ url_for('test') }}";
-            });
-            document.getElementById("skip_survey").addEventListener("click", function () {
-                window.location.href = "{{ url_for('general') }}";
-            });
+            if (document.getElementById("skip_info"))
+                document.getElementById("skip_info").addEventListener("click", function () {
+                    window.location.href = "{{ url_for('test') }}";
+                });
+            else
+                document.getElementById("skip_survey").addEventListener("click", function () {
+                    window.location.href = "{{ url_for('general') }}";
+                });
         }
         else if (df === '1') {
             document.getElementById("skip_ahead").addEventListener("click", function () {

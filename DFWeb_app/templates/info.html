@@ -181,11 +181,6 @@
             }
             value++;
         }
-        console.log(radio + ' : ' + radio_value.value)
-        let a = document.getElementById('sex_radio_value').value;
-        let b = document.getElementById('age_radio_value').value;
-        let c = document.getElementById('df_radio_value').value;
-        console.log(a + b + c);
 
         const changeEvent = new Event('change', { bubbles: true });
         radio_value.dispatchEvent(changeEvent);
@@ -200,8 +195,6 @@
     function checkInputs() {
         if (sex_radio_value.value && age_radio_value.value && df_radio_value.value) {
             continueButton.classList.remove('disabled');
-            console.log('passed')
-
         }
     }
     sex_radio_value.addEventListener('change', checkInputs);
