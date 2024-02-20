@@ -13,9 +13,7 @@ def index():
     if lang:
         language = lang
 
-    print(lang)
     session['lang'] = language
-    print(language)
 
     if request.method == 'POST':
         answers1 = []
@@ -78,7 +76,6 @@ def info():
     # clear session, mainly to not load any previous test answers upon re-entering
     session.clear()
     session['lang'] = language
-    return render_template('info.html', title='Info')
 
     if language == 'en':
         return render_template('info-en.html', title='Info')
