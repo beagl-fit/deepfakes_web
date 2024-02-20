@@ -13,3 +13,29 @@ def check_answers(answers1, answers2):
         answers1[i] = answers1[i] == ANSWERS[i]
         answers2[i] = answers2[i] == ANSWERS[i]
     return answers1, answers2
+
+
+def make_user_data(sex, age, encountered):
+    """
+    Prepares user data to correct format for database
+    :param sex: string - 0 for male, 1 for female
+    :param age: string - 0-3 for age categories [<18, 18-25, 26-55, >55]
+    :param encountered: string - 0 for encountered, 1 for did not encounter deepfakes
+    :return: list (bool, int, bool) 0->False and 1->True
+    """
+    data = []
+
+    if sex == '0':
+        data.append(False)
+    else:
+        data.append(True)
+
+    # print(age)
+    data.append(int(age))
+
+    if encountered == '0':
+        data.append(False)
+    else:
+        data.append(True)
+
+    return data

@@ -1,6 +1,6 @@
 from flask import render_template, request, session, url_for, redirect
 from DFWeb_app import app
-from DFWeb_app.functions import check_answers, NUM_OF_ANSWERS
+from DFWeb_app.functions import check_answers, make_user_data, NUM_OF_ANSWERS
 from DFWeb_app.models import User, Answer
 
 
@@ -24,8 +24,11 @@ def index():
             answers2.append(request.form.get(question))
 
         ans1, ans2 = check_answers(answers1, answers2)
+        user_data = make_user_data(session.get('sex'), session.get('age'), session.get('df'),)
+        # user = User(sex=user_data[0], age=user_data[1], encountered=user_data[2])
         # TODO: remove print and add answers and user to db
         print(ans1, ans2)
+        print(user_data)
 
         # clear session after finishing the course
         session.clear()
