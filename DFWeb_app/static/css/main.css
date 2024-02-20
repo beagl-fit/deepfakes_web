@@ -164,3 +164,19 @@ p {
 .modal-content {
   background-color: var(--card-bg-color);
 }
+
+.btn-lang {
+  --bs-btn-font-weight: 400;
+  --bs-btn-color: var(--text-color-pri);
+  --bs-btn-bg: var(--btn-color-sec);
+  --bs-btn-hover-color: var(--btn-color-pri);
+  --bs-btn-hover-bg: var(--btn-color-how);
+  --bs-btn-focus-shadow-rgb: #0;
+  --bs-btn-border-color: #0;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 1.5rem;
+  padding: 1rem 2rem 1rem 2rem;
+}

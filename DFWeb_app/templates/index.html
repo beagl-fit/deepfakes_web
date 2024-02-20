@@ -1,18 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
+
+{% block lang_btn %}{% endblock lang_btn %}
+
 <div class="container d-flex align-center justify-content-center" style="min-height: 70vh;">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 text-center">
-            <h4>Would you like to learn about </h4>
+            <h4>{% block text %}{% endblock text %}</h4>
             <h5>DEEPFAKES?</h5>
         </div>
         <div class="col-md-6 text-center">
-            {% if session %}
+            {% if session.get('df') %}
                 <button class="btn btn-start" data-bs-toggle="modal" data-bs-target="#continueModal">
-                    Start Course
+                    {% block btn_text %}{% endblock btn_text %}
                 </button>
             {% else %}
-                <a class="btn btn-start" href="{{ url_for('info') }}">Start Course</a>
+                <a class="btn btn-start" href="{{ url_for('info') }}">{% block btn_text2 %}{% endblock btn_text2 %}</a>
             {% endif %}
         </div>
     </div>
@@ -22,7 +25,8 @@
     <div class="fixed-sm-bottom mb-3">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-                <a class="btn btn-download" href="{{ url_for('index') }}">Download Presentation</a>
+                <a class="btn btn-download" href="{{ url_for('index') }}">{% block download_btn_text %}
+                    {% endblock download_btn_text %}</a>
             </div>
         </div>
     </div>
@@ -42,27 +46,33 @@ person in session   -> info
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-3">Skip ahead?</h1>
+                <h1 class="modal-title fs-3">{% block modal_title %}{% endblock modal_title %}</h1>
             </div>
             <div class="modal-body">
-                It seems like you have already started this course before.<br>
-                Would you like to skip ahead?
+                {% block modal_body %}{% endblock modal_body %}
             </div>
             <div id="mod" class="modal-footer" data-df="{{ session.get('df') }}">
                 <button id="no_skip" class="btn btn-my-secondary" style="font-size: 1.5rem; width:auto; height: 3rem;
-                padding: 0 1.5rem 0 1.5rem" >No</button>
+                padding: 0 1.5rem 0 1.5rem" >{% block modal_btn1 %}{% endblock modal_btn1 %}</button>
 
                 {% if session.get('df') == '0' %}
                     {% if not session.get('q1a') %}
                     <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
-                        width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
+                        width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
+                        {% block modal_btn2 %}{% endblock modal_btn2 %}
+                    </button>
                     {% else %}
                         <div id="test" data-test="{{ session.get('q1a') }}"></div>
                         <button id="skip_survey" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
-                            width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Survey</button>
+                            width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
+                            {% block modal_btn3 %}{% endblock modal_btn3 %}
+                        </button>
                     {% endif %}
                 {% else %}
-                    <button id="skip_ahead" type="button" class="btn btn-my-primary" style="font-size: 1.5rem; width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">Skip Info</button>
+                    <button id="skip_ahead" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
+                    width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
+                        {% block modal_btn4 %}{% endblock modal_btn4 %}
+                    </button>
                 {% endif %}
             </div>
         </div>

@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+
+{% block text %}
+    Chtěli by jste se dozvědět o
+{% endblock text %}
+
+{% block btn_text %}
+    Začít Kurz
+{% endblock btn_text %}
+
+{% block btn_text2 %}
+    Začít Kurz
+{% endblock btn_text2 %}
+
+{% block download_btn_text %}
+    Stáhnout Prezentaci
+{% endblock download_btn_text %}
+
+{% block modal_title %}
+    Přeskočit část?
+{% endblock modal_title %}
+
+{% block modal_body %}
+    Zdá se, že už jste tento kurz někdy začaly.<br>
+    Chtěli by jste část přeskočit?
+{% endblock modal_body %}
+
+{% block modal_btn1 %}
+    Ne
+{% endblock modal_btn1 %}
+
+{% block modal_btn2 %}
+    Přeskočít Informace
+{% endblock modal_btn2 %}
+
+{% block modal_btn3 %}
+    Přeskočit dotazník
+{% endblock modal_btn3 %}
+
+{% block modal_btn4 %}
+    Přeskočít Informace
+{% endblock modal_btn4 %}
+
+{% block lang_btn %}
+    <form action="{{url_for('index')}}" method="get">
+        <input type="hidden" name="lang" value="en">
+        <div class="d-grid gap-2 d-md-block text-end pb-4 pb-md-0">
+            <button type="submit" class="btn btn-lang">EN</button>
+        </div>
+    </form>
+{% endblock lang_btn %}

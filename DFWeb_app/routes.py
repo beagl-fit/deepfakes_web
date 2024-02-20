@@ -6,6 +6,17 @@ from DFWeb_app.models import User, Answer
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    language = 'en'
+    lang = request.args.get('lang')
+    if session.get('lang'):
+        language = session.get('lang')
+    if lang:
+        language = lang
+
+    print(lang)
+    session['lang'] = language
+    print(language)
+
     if request.method == 'POST':
         answers1 = []
         answers2 = []
@@ -20,7 +31,11 @@ def index():
 
         # clear session after finishing the course
         session.clear()
-    return render_template('index.html', title='Deepfakes')
+
+    if language == 'en':
+        return render_template('index-en.html', title='Deepfakes')
+    else:
+        return render_template('index-cz.html', title='Deepfakes')
 
 
 @app.route('/dfg', methods=['GET', 'POST'])
@@ -58,9 +73,17 @@ def end():
 
 @app.route('/info', methods=['GET', 'POST'])
 def info():
+    # save session language to not lose it upon clearing session
+    language = session.get('lang')
     # clear session, mainly to not load any previous test answers upon re-entering
     session.clear()
+    session['lang'] = language
     return render_template('info.html', title='Info')
+
+    if language == 'en':
+        return render_template('info-en.html', title='Info')
+    else:
+        return render_template('info-cz.html', title='Info')
 
 
 @app.route('/test', methods=['GET', 'POST'])
@@ -72,6 +95,5 @@ def test():
 
         # if a person chooses to skip the initial survey, go to general deepfakes
         if session.get('df') == '1':
-            return general()
-            # return render_template('df_general.html', title='DF_General')
+            return redirect(url_for('general'))
     return render_template('test.html', title='Survey')

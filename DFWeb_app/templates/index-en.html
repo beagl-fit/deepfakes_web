@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+
+{% block text %}
+    Would you like to learn about
+{% endblock text %}
+
+{% block btn_text %}
+    Start Course
+{% endblock btn_text %}
+
+{% block btn_text2 %}
+    Start Course
+{% endblock btn_text2 %}
+
+{% block download_btn_text %}
+    Download Presentation
+{% endblock download_btn_text %}
+
+{% block modal_title %}
+    Skip ahead?
+{% endblock modal_title %}
+
+{% block modal_body %}
+    It seems like you have already started this course before.<br>
+    Would you like to skip ahead?
+{% endblock modal_body %}
+
+{% block modal_btn1 %}
+    No
+{% endblock modal_btn1 %}
+
+{% block modal_btn2 %}
+    Skip Info
+{% endblock modal_btn2 %}
+
+{% block modal_btn3 %}
+    Skip Survey
+{% endblock modal_btn3 %}
+
+{% block modal_btn4 %}
+    Skip Info
+{% endblock modal_btn4 %}
+
+{% block lang_btn %}
+    <form action="{{url_for('index')}}" method="get">
+        <input type="hidden" name="lang" value="cz">
+        <div class="d-grid gap-2 d-md-block text-end pb-4 pb-md-0">
+            <button type="submit" class="btn btn-lang">CZ</button>
+        </div>
+    </form>
+{% endblock lang_btn %}
