@@ -55,7 +55,7 @@ person in session   -> info
                 <button id="no_skip" class="btn btn-my-secondary" style="font-size: 1.5rem; width:auto; height: 3rem;
                 padding: 0 1.5rem 0 1.5rem" >{% block modal_btn1 %}{% endblock modal_btn1 %}</button>
 
-                {% if session.get('df') == '0' %}
+                {% if session.get('df') == '1' %}
                     {% if not session.get('q1a') %}
                     <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
                         width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
@@ -87,7 +87,7 @@ person in session   -> info
             window.location.href = "{{ url_for('info') }}";
         });
 
-        if (df === '0') {
+        if (df === '1') {
             if (document.getElementById("skip_info"))
                 document.getElementById("skip_info").addEventListener("click", function () {
                     window.location.href = "{{ url_for('test') }}";
@@ -97,7 +97,7 @@ person in session   -> info
                     window.location.href = "{{ url_for('general') }}";
                 });
         }
-        else if (df === '1') {
+        else if (df === '0') {
             document.getElementById("skip_ahead").addEventListener("click", function () {
                 window.location.href = "{{ url_for('general') }}";
             });

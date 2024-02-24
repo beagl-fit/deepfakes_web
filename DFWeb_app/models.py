@@ -2,11 +2,16 @@ from DFWeb_app import db
 
 
 class User(db.Model):
+    """
+    :var sex: False: Male; True: Female
+    :var age: 0-3: [<18, 18-25, 26-55, >55]
+    :var encountered:(deepfakes) False: not encountered, True: encountered
+    """
     id = db.Column(db.Integer, primary_key=True)
     sex = db.Column(db.Boolean, default=False, nullable=False)
     age = db.Column(db.Integer, default=0, nullable=False)
     encountered = db.Column(db.Boolean, default=False, nullable=False)
-    # answers = db.relationship('Answer', backref='user', lazy='dynamic')
+    answers = db.relationship('Answer', backref='user')
 
 
 class Answer(db.Model):

@@ -8,42 +8,32 @@
 <div class="container">
     <div class="row pb-2 pb-lg-0">
         <div class="col-12">
-            <h3>DEEP:</h3> <p class="text">refers to </p>deep learning<p class="text"> (type of artificial
-            intelligence or </p>AI<p class="text"> for short) which is used to generate </p>fakes
+            <h3>DEEP: {% block deep %}{% endblock deep %}</h3>
         </div>
     </div>
     <div class="row pb-2 pb-lg-0">
         <div class="col-12">
-            <h3>FAKES:</h3> <p class="text">events that never happened, who are most often presented in the
-            form of a</p> text <p class="text">or an </p>image<p class="text">,</p> audio <p class="text">or
-            </p> video recordings
+            <h3>FAKES: {% block fake %}{% endblock fake %}</h3>
         </div>
     </div>
 </div>
 <div class="container mt-4 mb-4">
-    <p>In general deepfakes are AI-manipulated images, videos or audio of people</p>
+    <p>{% block df %}{% endblock df %}</p>
 </div>
 
 <!--    WHAT CAN DEEPFAKES BE USED FOR-->
 <div class="container mt-4">
-    <h3>What can deepfakes be used for?</h3>
+    <h3>{% block what %}{% endblock what %}</h3>
     <div class="container">
         <div class="row">
             <div class="col-md-3 mb-2 mb-md-0 me-0 me-md-2 text-md-end">
-                <p class="text">
-                    Entertainment<br>
-                    Education<br>
-                    Healthcare
-                </p>
+                <p class="text">{% block what2 %}{% endblock what2 %}</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <p>Vs</p>
             </div>
             <div class="col-md-2 mb-2 mb-md-0 ms-0 ms-md-2">
-                <p class="text">
-                    Disinformation<br>
-                    Manipulation<br>
-                    Fraud
+                <p class="text">{% block what3 %}{% endblock what3 %}
                 </p>
             </div>
         </div>
@@ -53,20 +43,28 @@
 <!--    HOW DOES AI CREATE THINGS-->
 <div class="container mt-4">
     <div class="row">
-        <p>
-            Deepfakes can create or alter person's voice or face and be almost unrecognisable from the real
-            thing
-        </p>
+        <p>{% block how %}{% endblock how %}</p>
     </div>
     <div class="mt-4">
-        <h3>How does AI create things?</h3>
+        <h3>{% block how2 %}{% endblock how2 %}</h3>
     </div>
     <div class="container">
         <div class="row mb-2 mb-md-0">
+            <div class="col-12">{% block how3 %}{% endblock how3 %}</div>
+        </div>
+        <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">Let's take </p>AI<p class="text"> that is tasked with generating an </p>image
-                <p class="text">of a person</p>
+                <br>
             </div>
+        </div>
+        <div class="row mb-2 mb-md-0">
+            <div class="col-12">{% block how4 %}{% endblock how4 %}</div>
+        </div>
+        <div class="row mb-2 mb-md-0">
+            <div class="col-12">{% block how5 %}{% endblock how5 %}</div>
+        </div>
+        <div class="row mb-2 mb-md-0">
+            <div class="col-12">{% block how6 %}{% endblock how6 %}</div>
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
@@ -75,49 +73,22 @@
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">The AI is initially provided with </p>numerous images <p class="text">of people
-                and is tasked with analyzing them during a </p>training<p class="text"> process</p>
+                <p class="text">{% block how7 %}{% endblock how7 %}</p>
             </div>
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">Afterwards, it is assigned a task to generate a </p>new image <p class="text">based
-                on the</p> outcomes<p class="text"> of this training</p>
+                <p class="text">{% block how8 %}{% endblock how8 %}</p>
             </div>
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">When executed right the</p> AI creates<p class="text"> an image of a person that
-                has</p> correct features <p class="text">such as head shape, nose, mouth etc.</p>
+                <p class="text">{% block how9 %}{% endblock how9 %}</p>
             </div>
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <br>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">Since the AI knows neither what a person is nor what nose or eyes should look like,
-                    it relies on the images we provided</p>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">If we provide only images of man with blonde hair, well we will get an image of a
-                    man with blonde hair back</p>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">This may or may not be the desired behaviour, that depends on what we want to achieve
-                </p>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">This process is the same for audio and video as well, it just needs an appropriate
-                    input</p>
+                <p class="text">{% block how10 %}{% endblock how10 %}</p>
             </div>
         </div>
     </div>
@@ -126,14 +97,12 @@
 <!--    WHY SO ARE DEEPFAKES SO REAL?-->
 <div class="container mt-4">
     <div class="mt-4">
-        <h3>Why do deepfakes look and sound so real?</h3>
+        <h3>{% block why %}{% endblock why %}</h3>
     </div>
     <div class="container">
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">They use </p><h3>G</h3><p class="text">enerative
-                </p><h3>A</h3><p class="text">dvesarial </p><h3>N</h3><p class="text">etwork
-                (</p>GAN<p class="text">) to achieve this</p>
+                {% block why2 %}{% endblock why2 %}
             </div>
         </div>
         <div class="row mb-2 mb-md-0">
@@ -143,28 +112,24 @@
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">GAN is composed of </p>2 AI<p class="text">s</p>
+                {% block why3 %}{% endblock why3 %}
             </div>
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
                 <ul>
                     <li>
-                        <p class="text">1st AI called</p> generator <p class="text">tries to generate
-                        the best possible deepfake</p>
+                        {% block why4 %}{% endblock why4 %}
                     </li>
                     <li>
-                        <p class="text">2nd AI called</p> discriminator<p class="text"> can receive either a
-                        </p>deepfake<p class="text"> made by the generator or a</p> real image<p class="text">, and
-                        it has to correctly determine if it is a deepfake or not</p>
+                        {% block why5 %}{% endblock why5 %}
                     </li>
                 </ul>
             </div>
         </div>
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">Once the generator can produce deepfakes that can fool the discriminator reliably, they
-                    can be used to fool humans as well as machines</p>
+                <p class="text">{% block why6 %}{% endblock why6 %}</p>
             </div>
         </div>
     </div>
@@ -175,7 +140,7 @@
     <div class="fixed-sm-bottom mb-3">
         <div class="row">
             <div class="col-12 my-2 text-center">
-                <a class="btn btn-my-primary" href="{{ url_for('images') }}">Continue</a>
+                <a class="btn btn-my-primary" href="{{ url_for('images') }}">{% block but1 %}{% endblock but1 %}</a>
             </div>
         </div>
     </div>

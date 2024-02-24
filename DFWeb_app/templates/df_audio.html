@@ -3,7 +3,7 @@
 
 <!--    TITLE  -->
 <div class="container d-flex justify-content-center mb-4">
-    <h2>AUDIO DEEPFAKES</h2>
+    <h2>{% block tit %}{% endblock tit %}</h2>
 </div>
 
 
@@ -11,29 +11,28 @@
 <div class="container mt-4">
     <div class="row py-4">
         <div class="col-12">
-            <p class="text">AI can do many things with audio recordings, but deepfakes are concerned with
-            <h3>creating</h3><p class="text"> a voice and <h3>converting</h3><p class="text"> one voice into another</p>
+            {% block audio %}{% endblock audio %}
         </div>
     </div>
 
 
 <!--    HOW -->
-    <h3>How does it work?</h3>
+    <h3>{% block how %}{% endblock how %}?</h3>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="text">Instead of pictures, the AI is given</p> audio recordings<p class="text"> of a specific person for training</p>
+                {% block how2 %}{% endblock how2 %}
             </div>
             <div class="col-12">
-                <p class="text">Once the training is completed, the AI is able to produce speech that:</p>
+                <p class="text">{% block how3 %}{% endblock how3 %}:</p>
             </div>
             <div class="col-12">
                 <ul>
                     <li>
-                        <p class="text">can be </p>easily understood
+                        {% block how4 %}{% endblock how4 %}
                     </li>
                     <li>
-                        <p class="text">sounds </p>indistinguishable <p class="text">from the source</p>
+                        {% block how5 %}{% endblock how5 %}
                     </li>
                 </ul>
             </div>
@@ -46,10 +45,10 @@
     <div class="row">
         <div class="col-6 pb-5 pb-lg-0">
 <!--                TTS -->
-            <h1>Text-to-speech synthesis</h1>
+            <h1>{% block tts %}{% endblock tts %}</h1>
             <div class="row">
                 <div class="col-12">
-                    Text-to-speech or TTS is a way to generate speech from a written text
+                    {% block tts2 %}{% endblock tts2 %}
                 </div>
             </div>
         </div>
@@ -57,10 +56,10 @@
 
 <!--                SC -->
         <div class="col-6 pb-3 pb-lg-0">
-            <h1>Speech-to-speech conversion</h1>
+            <h1>{% block sts %}{% endblock sts %}</h1>
             <div class="row">
                 <div class="col-12">
-                    Speech-to-speech or STS is a way to make one person sound as another
+                    {% block sts2 %}{% endblock sts2 %}
                 </div>
             </div>
         </div>
@@ -73,27 +72,24 @@
 <!--            TTS-->
         <div class="col-12 col-lg-6 pb-lg-0">
             <div class="mt-4">
-                <h3>Why use TTS?</h3>
+                <h3>{% block ttswhy %}{% endblock ttswhy %}?</h3>
             </div>
             <div class="container">
                 <div class="row mb-2 mb-md-0">
                     <div class="col-12 pb-1">
-                        <p class="text">TTS adds accessibility to any text for people with visual impairments or
-                            other disabilities.</p>
+                        <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
                     </div>
                     <div class="col-12 pb-1">
-                        <p class="text">Easy and fast way to create long recordings, such as audiobooks.</p>
+                        <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
                     </div>
                     <div class="col-12 pb-1">
-                        <p class="text">TTS is the way digital assistants such as Siri or Alexa communicate
-                            with you.</p>
+                        <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
                     </div>
                     <div class="col-12 pb-1">
-                        <p class="text">Convenient way for streamers, youtubers etc. to not have to read
-                            messages such as donation messages.</p>
+                        <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
                     </div>
                     <div class="col-12">
-                        <p class="text">For fun - it is a way to "make others" say silly things.</p>
+                        <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
                     </div>
                 </div>
             </div>
@@ -102,36 +98,26 @@
 <!--                SC -->
         <div class="col-12 col-md-6 pb-lg-0">
             <div class="mt-4">
-                <h3>Why use STS?</h3>
+                <h3>{% block stswhy %}{% endblock stswhy %}?</h3>
             </div>
             <div class="container">
                 <div class="row mb-2 mb-md-0">
                     <div class="col-12 pb-1">
-                        <p class="text">Dubbing of movies, adds etc. can be done anyone and not change how the
-                            actors and actresses sound.</p>
+                        <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
                     </div>
                     <div class="col-12 pb-1">
-                        <p class="text">STS can be found in online games and voice parodies.</p>
+                        <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
                     </div>
                     <div class="col-12 pb-1">
-                        <p class="text">Creation of "AI covers" uses STS to make songs sound like they were sung by
-                            other artists.</p>
-                    </div>
-                    <div class="col-12 pb-1">
-                        <p class="text">Convenient way for streamers, youtubers etc. to not have to read
-                            messages such as donation messages.</p>
-                    </div>
-                    <div class="col-12">
-                        <p class="text">For fun - it is a way to "make others" say silly things.</p>
+                        <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
                     </div>
                 </div>
             </div>
-                <div class="row pt-3">
-                    <div class="col-12 pb">
-                        The main advantage of STS over TTS is the possibility to produce deepfakes in real-time,
-                        this means that the voice is converted as the person is speaking.
-                    </div>
+            <div class="row pt-3">
+                <div class="col-12 pb">
+                    {% block stswhy5 %}{% endblock stswhy5 %}
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -139,27 +125,24 @@
 <!--    WHAT    -->
 <div class="container mt-4">
     <div class="mt-4">
-        <h3>What to look out for?</h3>
+        <h3>{% block what %}{% endblock what %}?</h3>
     </div>
     <div class="container">
         <div class="row mb-2 mb-md-0">
             <div class="col-12">
-                <p class="text">Since the deepfake may sound identical to a person you know it can be easy to
-                    exploit this:</p>
+                <p class="text">{% block what2 %}{% endblock what2 %}:</p>
             </div>
             <div class="col-12">
                 Vishing
                 <ul>
                     <li>
-                        <p class="text">an attack where the voice is used to gain victims trust and the aim can be
-                            fraud or stealing sensitive information</p>
+                        <p class="text">{% block vish1 %}{% endblock vish1 %}</p>
                     </li>
                     <li>
-                        <p class="text">Imagine getting a call from someone that sounds like your boss/subordinate
-                            asking you for a password your company uses or a door code</p>
+                        <p class="text">{% block vish2 %}{% endblock vish2 %}</p>
                     </li>
                     <li>
-                        <p class="text">Or your family member in distress asking you for some money</p>
+                        <p class="text">{% block vish3 %}{% endblock vish3 %}</p>
                     </li>
                 </ul>
             </div>
@@ -168,48 +151,40 @@
                 Scam
                 <ul>
                     <li>
-                        <p class="text">an attack where the aim is to defraud you of your money</p>
+                        <p class="text">{% block scam1 %}{% endblock scam1 %}</p>
                     </li>
                     <li>
-                        <p class="text">often seen in form of adds, but could be even phone calls, podcasts...</p>
+                        <p class="text">{% block scam2 %}{% endblock scam2 %}</p>
                     </li>
                     <li>
-                        <p class="text">a well-known person (and someone you trust) tells you to buy or to invest in
-                            something</p>
+                        <p class="text">{% block scam3 %}{% endblock scam3 %}</p>
                     </li>
                     <li>
-                        <p class="text">only for you to see neither the money nor product/service you paid for</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-12">
-                Biometrics
-                <ul>
-                    <li>
-                        <p class="text">an attacker committing identity theft and using your voice can lead to these
-                            systems being unable to distinguish between you and them</p>
-                    </li>
-                    <li>
-                        <p class="text">things like smart locks with voice activation or telephone transactions,
-                            where voice is used to confirm ones identity are at risk</p>
+                        <p class="text">{% block scam4 %}{% endblock scam4 %}</p>
                     </li>
                 </ul>
             </div>
 
             <div class="col-12">
-                <p class="text">
-                    Using voice deepfakes is also easy way to spread</p> disinformation<p class="text">, because an
-                    attacker can make anyone say things they never said and would never say
-                </p>
+                {% block bio1 %}{% endblock bio1 %}
                 <ul>
                     <li>
-                        <p class="text">an attacker committing identity theft and using your voice can lead to these
-                            systems being unable to distinguish between you and them</p>
+                        <p class="text">{% block bio2 %}{% endblock bio2 %}</p>
                     </li>
                     <li>
-                        <p class="text">misleading information, propaganda or racist remarks can be used to hurt
-                            anyone in the eyes of others or to support ones own agenda</p>
+                        <p class="text">{% block bio3 %}{% endblock bio3 %}</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                {% block what3 %}{% endblock what3 %}
+                <ul>
+                    <li>
+                        <p class="text">{% block what4 %}{% endblock what4 %}</p>
+                    </li>
+                    <li>
+                        <p class="text">{% block what5 %}{% endblock what5 %}</p>
                     </li>
                 </ul>
             </div>
@@ -221,10 +196,10 @@
 <div class="container mt-4">
     <div class="row justify-content-center text-center">
         <div class="col-12 col-md-5 py-2">
-            <button class="btn btn-audio" onclick="showDiv('TTS')">How can TTS work in practice?</button>
+            <button class="btn btn-audio" onclick="showDiv('TTS')">{% block ttsscen %}{% endblock ttsscen %}?</button>
         </div>
         <div class="col-12 col-md-5 py-2">
-            <button class="btn btn-audio" onclick="showDiv('STS')">How can STS work in practice?</button>
+            <button class="btn btn-audio" onclick="showDiv('STS')">{% block stsscen %}{% endblock stsscen %}?</button>
         </div>
     </div>
 </div>
@@ -235,62 +210,50 @@
 
 <!--    ATTACK SCENARIOS    -->
 <div id="TTS" class="container mt-4" style="display: none">
-    TTS Scenario 1:
+    TTS {% block ttsscen1 %}{% endblock ttsscen1 %} 1:
     <div class="container">
         <ol>
             <li>
-                <p class="text">A tech-savvy scammer plans to defraud individuals by impersonating a well-known
-                    actor in a commercial.</p>
+                <p class="text">{% block ttsscen11 %}{% endblock ttsscen11 %}</p>
             </li>
             <li>
-                <p class="text">The scammer utilizes deepfake technology to convincingly replicate the actor's voice
-                    and crafts a script for the scam.</p>
+                <p class="text">{% block ttsscen12 %}{% endblock ttsscen12 %}</p>
             </li>
             <li>
-                <p class="text">Creating a fake investment opportunity, the scammer employs a text-to-speech
-                    algorithm to narrate the script in the actor's voice.</p>
+                <p class="text">{% block ttsscen13 %}{% endblock ttsscen13 %}</p>
             </li>
             <li>
-                <p class="text">The narration promotes a fraudulent investment scheme, leveraging the actor's
-                    credibility to gain trust.</p>
+                <p class="text">{% block ttsscen14 %}{% endblock ttsscen14 %}</p>
             </li>
             <li>
-                <p class="text">The scammer disseminates the audio message through various channels, including
-                    YouTube ads, social media, and messaging platformsThe scammer disseminates the audio message
-                    through various channels, including YouTube ads, social media, and messaging platforms.</p>
+                <p class="text">{% block ttsscen15 %}{% endblock ttsscen15 %}</p>
             </li>
             <li>
-                <p class="text">Unsuspecting victims, deceived by the convincing voice, fall prey to the scam,
-                    investing money in the fraudulent scheme.</p>
+                <p class="text">{% block ttsscen16 %}{% endblock ttsscen16 %}</p>
             </li>
         </ol>
     </div>
 
-    TTS Scenario 2:
+    TTS {% block ttsscen2 %}{% endblock ttsscen2 %} 2:
     <div class="container">
         <ol>
             <li>
-                <p class="text">A notorious fake news outlet aims to spread disinformation about a specific
-                    politician.</p>
+                <p class="text">{% block ttsscen21 %}{% endblock ttsscen21 %}</p>
             </li>
             <li>
-                <p class="text">The outlet downloads a video of the politician's speech and replicates their voice
-                    using deepfake technology.</p>
+                <p class="text">{% block ttsscen22 %}{% endblock ttsscen22 %}</p>
             </li>
             <li>
-                <p class="text">Crafting a script portraying the politician in a manner contrary to their beliefs,
-                    the outlet employs text-to-speech deepfake technology for narration.</p>
+                <p class="text">{% block ttsscen23 %}{% endblock ttsscen23 %}</p>
             </li>
             <li>
-                <p class="text">The outlet replaces the original audio in the video with the deepfake voice.</p>
+                <p class="text">{% block ttsscen24 %}{% endblock ttsscen24 %}</p>
             </li>
             <li>
-                <p class="text">The fabricated news story is published, supported by the deepfake, and outraged
-                    readers share the misinformation on social media.</p>
+                <p class="text">{% block ttsscen25 %}{% endblock ttsscen25 %}</p>
             </li>
             <li>
-                <p class="text">Other fake news outlets amplify the narrative, further damaging the politician's
-                    reputation and enhancing the fake story's credibility.</p>
+                <p class="text">{% block ttsscen26 %}{% endblock ttsscen26 %}</p>
             </li>
         </ol>
     </div>
@@ -298,63 +261,50 @@
 
 
 <div id="STS" class="container mt-4" style="display: none">
-    STS Scenario 1:
+    STS {% block stsscen1 %}{% endblock stsscen1 %} 1:
     <div class="container">
         <ol>
             <li>
-                <p class="text">A hacker, aiming to access a company's system, opts for voice conversion over
-                    traditional hacking methods.</p>
+                <p class="text">{% block stsscen11 %}{% endblock stsscen11 %}</p>
             </li>
             <li>
-                <p class="text">After identifying an employee with sufficient clearance, the hacker gathers
-                    information from the corporate website and social networks, including the target's habits.</p>
+                <p class="text">{% block stsscen12 %}{% endblock stsscen12 %}</p>
             </li>
             <li>
-                <p class="text">Discovering the target frequents a café, the hacker records the employee's speech
-                    covertly during conversations.</p>
+                <p class="text">{% block stsscen13 %}{% endblock stsscen13 %}</p>
             </li>
             <li>
-                <p class="text">Using segments of the recorded audio, the hacker analyzes and replicates the
-                    target's speech through voice conversion.</p>
+                <p class="text">{% block stsscen14 %}{% endblock stsscen14 %}</p>
             </li>
             <li>
-                <p class="text">Posing as the employee, the hacker calls the company's IT department, leveraging the
-                    replicated voice to request a forgotten passport.</p>
+                <p class="text">{% block stsscen15 %}{% endblock stsscen15 %}</p>
             </li>
             <li>
-                <p class="text">The small size of the company allows the hacker's ruse to succeed, as the IT
-                    specialist immediately provides the supposed coworker with the forgotten passport, granting
-                    unauthorized access.</p>
+                <p class="text">{% block stsscen16 %}{% endblock stsscen16 %}</p>
             </li>
         </ol>
     </div>
 
-    STS Scenario 2:
+    STS {% block stsscen2 %}{% endblock stsscen2 %} 2:
     <div class="container">
         <ol>
             <li>
-                <p class="text">A crafty thief, driven by a desire for financial gain, targets a wealthy family by
-                    exploiting their familial concern.</p>
+                <p class="text">{% block stsscen21 %}{% endblock stsscen21 %}</p>
             </li>
             <li>
-                <p class="text">The thief thoroughly researches the target's social media, discovering that the
-                    parents are currently on vacation through images and videos.</p>
+                <p class="text">{% block stsscen22 %}{% endblock stsscen22 %}</p>
             </li>
             <li>
-                <p class="text">Utilizing the mother's voice heard in videos, the thief creates a deepfake and
-                    employs voice conversion technology to mimic her voice convincingly.</p>
+                <p class="text">{% block stsscen23 %}{% endblock stsscen23 %}</p>
             </li>
             <li>
-                <p class="text">Seizing a strategic moment, the thief places a call to the target, impersonating
-                    the distressed mother in need during the vacation.</p>
+                <p class="text">{% block stsscen24 %}{% endblock stsscen24 %}</p>
             </li>
             <li>
-                <p class="text">Employing voice conversion technology to mimic the mother's voice, the thief
-                    fabricates an emergency, urgently requesting financial assistance.</p>
+                <p class="text">{% block stsscen25 %}{% endblock stsscen25 %}</p>
             </li>
             <li>
-                <p class="text">Capitalizing on the emotional distress and urgency, the thief successfully convinces
-                    the target to wire them money, completing the deceptive scheme.</p>
+                <p class="text">{% block stsscen26 %}{% endblock stsscen26 %}</p>
             </li>
         </ol>
     </div>
@@ -366,10 +316,10 @@
     <div class="fixed-sm-bottom mb-3">
         <div class="row">
             <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
-                <a class="btn btn-my-secondary" href="{{ url_for('videos') }}">Back</a>
+                <a class="btn btn-my-secondary" href="{{ url_for('videos') }}">{% block but1 %}{% endblock but1 %}</a>
             </div>
             <div class="col-12 col-md-6 my-2 text-center">
-                <a class="btn btn-my-primary" href="{{ url_for('end') }}">Continue</a>
+                <a class="btn btn-my-primary" href="{{ url_for('end') }}">{% block but2 %}{% endblock but2 %}</a>
             </div>
         </div>
     </div>
