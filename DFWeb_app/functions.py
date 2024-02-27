@@ -15,6 +15,7 @@ def check_answers(answers1: list[str], answers2: list[str]) -> tuple[list[bool],
     for i in range(len(ANSWERS)):
         answers1[i] = answers1[i] == ANSWERS[i]
         answers2[i] = answers2[i] == ANSWERS[i]
+    # noinspection PyTypeChecker
     return answers1, answers2
 
 
@@ -60,3 +61,13 @@ def add_user(data: list[bool | int], answers_1: list[bool], answers_2: list[bool
         db.session.add(answer)
     db.session.commit()
     return
+
+
+def print_query():
+    u = User.query.order_by(User.id.desc()).first()
+    if u:
+        print(u.id, u.sex, u.age, u.encountered, u)
+        a = Answer.query.order_by(Answer.id.desc()).first()
+        print(a)
+        b = Answer.query.filter_by(question=1).all()
+        print(b)

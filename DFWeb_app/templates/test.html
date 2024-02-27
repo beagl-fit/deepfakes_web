@@ -10,8 +10,13 @@
 </div>
 
 <!--    QUESTION 1    -->
-<form id="testForm" action="{% if session.get('pre-test_completed') %} {{ url_for('index') }} {% else %}
-        {{ url_for('general') }} {% endif %}" method="post">
+<form id="testForm" action="{% if session.get('pre-test_completed') and not session.get('post-test_completed') %}
+                                    {{ url_for('test') }}
+                            {% elif session.get('post-test_completed') %}
+                                {{ url_for('index') }}
+                            {% else %}
+                                {{ url_for('general') }}
+                            {% endif %}" method="post">
     <div class="container">
         <div class="justify-content-center align-items-center mt-4">
             <div class="row py-2">

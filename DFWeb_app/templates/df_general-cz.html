@@ -1,42 +1,115 @@
 {% extends "df_general.html" %}
 
-{% block text %}
-    Chtěli by jste se dozvědět o
-{% endblock text %}
+{% block deep %}
+  <p class="text">z </p>hlubokého učení<p class="text"> (typ umělé inteligence, nebo zkráceně
+  </p>AI<p class="text">) které je použito pro vytváření </p>fakes
+{% endblock deep %}
 
-{% block btn_text %}
-    Začít Kurz
-{% endblock btn_text %}
+{% block fake %}
+  <p class="text">události, které se nikdy nestaly, nejčastěji prezentovány ve formě</p> textů <p class="text">nebo
+    </p>obrázků<p class="text">,</p> audio <p class="text">či</p> video nahrávek
+{% endblock fake %}
 
-{% block btn_text2 %}
-    Začít Kurz
-{% endblock btn_text2 %}
+{% block df %}
+    Obecně řečeno, deepfakes jsou obrázky, videa a řeč lidí manipulovány pomocí AI
+{% endblock df %}
 
-{% block download_btn_text %}
-    Stáhnout Prezentaci
-{% endblock download_btn_text %}
 
-{% block modal_title %}
-    Přeskočit část?
-{% endblock modal_title %}
+<!--  WHAT  -->
+{% block what %}
+    K čemu lze deepfakes využít?
+{% endblock what %}
 
-{% block modal_body %}
-    Zdá se, že už jste tento kurz někdy začaly.<br>
-    Chtěli by jste část přeskočit?
-{% endblock modal_body %}
+{% block what2 %}
+    Zábava<br>
+    Vzdělávání<br>
+    Zdravotnictví
+{% endblock what2 %}
 
-{% block modal_btn1 %}
-    Ne
-{% endblock modal_btn1 %}
+{% block what3 %}
+    Dezinformace<br>
+    Manipulace<br>
+    Podvod
+{% endblock what3 %}
 
-{% block modal_btn2 %}
-    Přeskočit Informace
-{% endblock modal_btn2 %}
 
-{% block modal_btn3 %}
-    Přeskočit dotazník
-{% endblock modal_btn3 %}
+<!--  HOW  -->
+{% block how %}
+    Deepfakes může vytvořit nebo změnit hlas či tvář osoby a být téměř nerozeznatelný od skutečnosti
+{% endblock how %}
 
-{% block modal_btn4 %}
-    Přeskočit Informace
-{% endblock modal_btn4 %}
+{% block how2 %}
+  Jak AI vytváří věci?
+{% endblock how2 %}
+
+{% block how3 %}
+  <p class="text">Vezměme si </p>AI<p class="text"> které je dán úkol vytvořit </p>obrázek
+  <p class="text">člověka</p>
+{% endblock how3 %}
+
+{% block how4 %}
+  <p class="text">Napočátku AI dostane </p>mnoho obrázků <p class="text">lidí a je jí dáno za úkol analyzovat je během
+    procesu </p>tréninku
+{% endblock how4 %}
+
+{% block how5 %}
+  <p class="text">Následně je jí dáno za úkol vytvořit </p>nový obrázek <p class="text">založený na </p> výsledcích
+    <p class="text"> tohoto tréninku</p>
+{% endblock how5 %}
+
+{% block how6 %}
+  <p class="text">Při správném provedení</p> AI vytvoří<p class="text"> obrázek osoby, která má</p> správné
+    rysy<p class="text">, jako je tvar hlavy, nos, ústa atd.</p>
+{% endblock how6 %}
+
+{% block how7 %}
+    Protože umělá inteligence neví, co je člověk, ani jak by měl vypadat nos nebo oči, spoléhá se na obrázky, které jsme
+    jí poskytli
+{% endblock how7 %}
+
+{% block how8 %}
+    Pokud tedy poskytneme například pouze obrázky muže s blond vlasy, dostaneme nazpátek pouze obrázky mužů s blond
+    vlasy
+{% endblock how8 %}
+
+{% block how9 %}
+    To může nebo nemusí být žádoucí chování, v závislosti na tom, čeho při generování chceme dosáhnout
+{% endblock how9 %}
+
+{% block how10 %}
+    Tento proces je stejný pro zvuk i video, jen potřebuje příslušné vstupní data
+{% endblock how10 %}
+
+
+<!--  WHY  -->
+{% block why %}
+    Proč deepfakes vypadají a zní tak reálně?
+{% endblock why %}
+
+{% block why2 %}
+  <p class="text">Protože používají generativní kompetitivní sítě (</p>GAN<p class="text"> z anglického Generative
+    Adversarial Networks)</p>
+{% endblock why2 %}
+
+{% block why3 %}
+  <p class="text">GAN je složen ze </p>2 AI
+{% endblock why3 %}
+
+{% block why4 %}
+  <p class="text">1. AI se nazývá</p> tvůrce <p class="text">a ta se snaží udělat co nejpřesvěčivější deepfake</p>
+{% endblock why4 %}
+
+{% block why5 %}
+  <p class="text">2. AI nazývaná</p> soudce<p class="text"> dostává buďto </p>deepfake<p class="text"> vytvořený
+    tvůrcem, nebo </p>reálný obrázek<p class="text"> a snaží se správně rozpoznat, jestli se jedná o deepfake, či ne</p>
+{% endblock why5 %}
+
+{% block why6 %}
+  Jakmile tvůrce dokáže produkovat deepfakes, které spolehlivě oklamou soudce, lze je použít k oklamání lidí i strojů
+{% endblock why6 %}
+
+
+<!--  BUTTONS  -->
+{% block but1 %}
+    Pokračovat
+{% endblock but1 %}

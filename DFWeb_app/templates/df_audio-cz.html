@@ -1,10 +1,309 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "df_audio.html" %}
 
-</body>
-</html>
+{% block tit %}
+    ZVUKOVÉ DEEPFAKES
+{% endblock tit %}
+
+{% block audio %}
+    <p class="text">Umělá inteligence dokáže dělat se zvukovými nahrávkami mnoho věcí, ale deepfakes se zabývají 
+    <h3>vytvořením</h3><p class="text"> hlasu a <h3>převedením</h3><p class="text"> jednoho hlasu na druhý</p>
+{% endblock audio %}
+
+
+<!--    HOW     -->
+{% block how %}
+    Jak to funguje
+{% endblock how %}
+
+{% block how2 %}
+    <p class="text">Namísto obrázků dostává AI pro trénink</p> zvukové nahrávky<p class="text"> konkrétní osoby</p>
+{% endblock how2 %}
+
+{% block how3 %}
+    Jakmile je trénink dokončen, AI je schopna reprodukovat tuto řeč, která
+{% endblock how3 %}
+
+{% block how4 %}
+    <p class="text">je </p>snadno srozumitelná
+{% endblock how4 %}
+
+{% block how5 %}
+    <p class="text">zní </p>nerozeznatelně <p class="text">od zdroje</p>
+{% endblock how5 %}
+
+
+<!--    TTS & STS     -->
+{% block tts %}
+    Syntéza Textu-na-řeč
+{% endblock tts %}
+
+{% block tts2 %}
+    Syntéza textu na řeč nebo TTS (z anglického text-to-speech), je způsob, jak generovat řeč z napsaného textu
+{% endblock tts2 %}
+
+{% block sts %}
+    Převod řeči na řeč
+{% endblock sts %}
+
+{% block sts2 %}
+    Převod řeči na řeč nebo STS (z anglického speech-to-speech) je způsob, jak přimět jednu osobu, aby zněla jako druhá
+{% endblock sts2 %}
+
+
+<!--    TTS WHY     -->
+{% block ttswhy %}
+    Proč používat TTS
+{% endblock ttswhy %}
+
+{% block ttswhy2 %}
+    TTS zpřístupňuje libovolný text lidem se zrakovým postižením, nebo s poruchami čtení.
+{% endblock ttswhy2 %}
+
+{% block ttswhy3 %}
+    Snadný a rychlý způsob vytváření dlouhých nahrávek, jako jsou audioknihy.
+{% endblock ttswhy3 %}
+
+{% block ttswhy4 %}
+    TTS je způsob, jakým s vámi komunikují digitální asistenti, jako je Siri nebo Alexa.
+{% endblock ttswhy4 %}
+
+{% block ttswhy5 %}
+    Pohodlný způsob pro streamery, youtubery atd., aby nemuseli číst zprávy, jako jsou donations.
+{% endblock ttswhy5 %}
+
+{% block ttswhy6 %}
+    Pro zábavu – je to způsob, jak „přimět ostatní“ říkat srandovní věci.
+{% endblock ttswhy6 %}
+
+
+<!--    STS WHY     -->
+{% block stswhy %}
+    Proč používat STS
+{% endblock stswhy %}
+
+{% block stswhy2 %}
+    Dabing filmů, reklam atd. může dělat kdokoli a nezmění se to, jak herci a herečky znějí.
+{% endblock stswhy2 %}
+
+{% block stswhy3 %}
+    STS lze často nalézt ve hrách a parodiích.
+{% endblock stswhy3 %}
+
+{% block stswhy4 %}
+    Tvorba "AI coverů" využívá STS, aby písně zněly, jako by je zpívali jiní umělci.
+{% endblock stswhy4 %}
+
+{% block stswhy5 %}
+    Hlavní výhodou STS oproti TTS je možnost produkovat deepfakes v reálném čase, to znamená, že hlas je konvertován
+    hned při tom, když osoba mluví.
+{% endblock stswhy5 %}
+
+
+<!--   WHAT     -->
+{% block what %}
+    Na co si dát pozor
+{% endblock what %}
+
+{% block what2 %}
+    Vzhledem k tomu, že deepfake může znít stejně jako osoba, kterou znáte, může být snadné jej zneužít
+{% endblock what2 %}
+
+{% block vish1 %}
+    útok, kdy je hlas použit k získání důvěry obětí a cílem může být podvod nebo krádež citlivých informací
+{% endblock vish1 %}
+
+{% block vish2 %}
+    Představte si situaci, kdy vám zavolá někdo, kdo zní, jako by vás váš šéf/podřízený a požádá vás o heslo, nebo kód
+    ke dveřím, které vaše společnost používá
+{% endblock vish2 %}
+
+{% block vish3 %}
+    Nebo váš rodinný příslušník v nouzi vás žádá o nějaké peníze
+{% endblock vish3 %}
+
+{% block scam1 %}
+    útok, jehož cílem je připravit vás o vaše peníze
+{% endblock scam1 %}
+
+{% block scam2 %}
+    často k vidění ve formě reklam, ale mohou to být i telefonní hovory, podcasty...
+{% endblock scam2 %}
+
+{% block scam3 %}
+    dobře známá osoba (a někdo, komu důvěřujete) vám řekne, abyste něco koupili nebo do něčeho investovali
+{% endblock scam3 %}
+
+{% block scam4 %}
+    jenom abyste už nikdy neviděli peníze ani produkt/službu, za kterou jste zaplatili
+{% endblock scam4 %}
+
+{% block bio1 %}
+    Biometrie
+{% endblock bio1 %}
+
+{% block bio2 %}
+    útočník, který se dopustí krádeže identity a použije váš hlas, může dosáhnout toho, že tyto systémy nebudou schopny
+    rozlišit mezi vámi a nimi
+{% endblock bio2 %}
+
+{% block bio3 %}
+    věci jako chytré zámky s hlasovou aktivací nebo telefonní transakce, kde se hlas používá k potvrzení identity, jsou
+    tímto ohroženy
+{% endblock bio3 %}
+
+{% block what3 %}
+    <p class="text">Použití hlasových deepfakes je také snadný způsob, jak šířit</p> dezinformace<p class="text">,
+    protože útočník může kohokoli přimět říkat věci, které nikdy neřekl a nikdy by neřekl</p>
+{% endblock what3 %}
+
+{% block what4 %}
+    zavádějící informace, propaganda nebo rasistické poznámky mohou být použity k ublížení komukoli v očích ostatních,
+    nebo k podpoře vlastních zájmů
+{% endblock what4 %}
+
+
+
+<!--    TTS SCENARIOS     -->
+{% block ttsscen %}
+    Jak může TTS fungovat v praxi
+{% endblock ttsscen %}
+
+
+{% block ttsscen1 %}
+    Scénář
+{% endblock ttsscen1 %}
+
+{% block ttsscen11 %}
+    Technologicky zdatný podvodník plánuje podvést lidi tak, že se v reklamě bude vydávat za známého herce.
+{% endblock ttsscen11 %}
+
+{% block ttsscen12 %}
+    Podvodník využívá technologii deepfake k přesvědčivé replikaci hlasu herce a vytváří scénář pro podvod.
+{% endblock ttsscen12 %}
+
+{% block ttsscen13 %}
+    Podvodník vytváří falešnou investiční příležitost a použije převodu textu na řeč k vyprávění scénáře hlasem herce.
+{% endblock ttsscen13 %}
+
+{% block ttsscen14 %}
+    Vyprávění propaguje podvodné investiční schéma, které využívá hercovu důvěryhodnost k získání důvěry.
+{% endblock ttsscen14 %}
+
+{% block ttsscen15 %}
+    Podvodník šíří zvukovou zprávu prostřednictvím různých kanálů, včetně reklam na YouTube, sociálních médií a
+    platforem pro zasílání zpráv.
+{% endblock ttsscen15 %}
+
+{% block ttsscen16 %}
+    Nic netušící oběti, oklamané přesvědčivým hlasem, se stanou obětí podvodu a investují peníze do podvodu.
+{% endblock ttsscen16 %}
+
+
+{% block ttsscen2 %}
+    Scénář
+{% endblock ttsscen2 %}
+
+{% block ttsscen21 %}
+    Notoricky známý dezinformační web chce rozšířit dezinformace o konkrétním politikovi.
+{% endblock ttsscen21 %}
+
+{% block ttsscen22 %}
+    Web si stáhne video s projevem politika a replikuje jeho hlas pomocí technologie deepfake.
+{% endblock ttsscen22 %}
+
+{% block ttsscen23 %}
+    Následně vytvoří scénář zobrazující politika způsobem, který je v rozporu s jejich přesvědčením, a využívá k
+    vyprávění deepfake technologii převodu textu na řeč.
+{% endblock ttsscen23 %}
+
+{% block ttsscen24 %}
+    Web následně nahradí původní zvuk ve videu deepfakeem.
+{% endblock ttsscen24 %}
+
+{% block ttsscen25 %}
+    Vymyšlený zpravodajský příběh je zveřejněn, podporován deepfakeem, má za následek rozhořčení čtenářů, kteří sdílejí
+    tyto dezinformace na svých sociálních sítích.
+{% endblock ttsscen25 %}
+
+{% block ttsscen26 %}
+    Jiné falešné zprávy umocňují příběh, dále poškozují pověst politika a zvyšují důvěryhodnost smyšleného příběhu.
+{% endblock ttsscen26 %}
+
+<!--    STS SCENARIOS     -->
+{% block stsscen %}
+    Jak může STS fungovat v praxi
+{% endblock stsscen %}
+
+
+{% block stsscen1 %}
+    Scénář
+{% endblock stsscen1 %}
+
+{% block stsscen11 %}
+    Hacker, který se snaží získat přístup k firemnímu systému, volí konverzi hlasu oproti tradičním hackerským metodám.
+{% endblock stsscen11 %}
+
+{% block stsscen12 %}
+    Po identifikaci zaměstnance s dostatečným oprávněním hacker shromažďuje informace z firemního webu a sociálních sítí, včetně zvyků cíle.
+{% endblock stsscen12 %}
+
+{% block stsscen13 %}
+    Hacker zjistí, že cíl navštěvuje kavárnu, a skrytě si nahraje řeč během rozhovorů zaměstnance.
+{% endblock stsscen13 %}
+
+{% block stsscen14 %}
+    Pomocí segmentů nahraného zvuku hacker analyzuje a replikuje řeč cíle prostřednictvím převodu hlasu na hlas.
+{% endblock stsscen14 %}
+
+{% block stsscen15 %}
+    Hacker se vydává za zaměstnance a zavolá IT oddělení společnosti a pomocí replikovaného hlasu požádá o zapomenuté
+    heslo.
+{% endblock stsscen15 %}
+
+{% block stsscen16 %}
+    Malá velikost společnosti umožňuje, aby hackerova lest uspěla, protože IT specialista okamžitě poskytne domnělému
+    spolupracovníkovi zapomenuté heslo a udělí mu tak neoprávněný přístup.
+{% endblock stsscen16 %}
+
+
+{% block stsscen2 %}
+    Scénář
+{% endblock stsscen2 %}
+
+{% block stsscen21 %}
+    Prohnaný zloděj, poháněný touhou po finančním zisku, se zaměří na bohatou rodinu tak, že využije jejich starosti o
+    rodinu.
+{% endblock stsscen21 %}
+
+{% block stsscen22 %}
+    Zloděj důkladně prozkoumá sociální média oběti a díky obrázků a videí zjistí, že její rodiče jsou právě na dovolené.
+{% endblock stsscen22 %}
+
+{% block stsscen23 %}
+    Pomocí hlasu matky, který je slyšet ve videích, zloděj vytvoří deepfake a použije technologii převodu hlasu, aby
+    přesvědčivě napodobil její hlas.
+{% endblock stsscen23 %}
+
+{% block stsscen24 %}
+    Zloděj využije strategického okamžiku a zavolá oběti z dovolené, vydávajíce se za zoufalou matku v nouzi.
+{% endblock stsscen24 %}
+
+{% block stsscen25 %}
+    Pomocí technologie převodu hlasu, která napodobuje hlas matky, zloděj vymyslí situaci, která si naléhavě žádá o
+    finanční pomoc.
+{% endblock stsscen25 %}
+
+{% block stsscen26 %}
+    Vydělávajíc na emocionálním utrpení a naléhavosti, zloděj úspěšně přesvědčí cíl, aby jim poslal peníze, čímž úspěšně
+    dokončí podvod.
+{% endblock stsscen26 %}
+
+
+
+{% block but1 %}
+    Zpět
+{% endblock but1 %}
+
+{% block but2 %}
+    Pokračovat
+{% endblock but2 %}

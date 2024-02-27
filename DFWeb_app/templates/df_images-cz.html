@@ -1,10 +1,475 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "df_images.html" %}
 
-</body>
-</html>
+{% block tit %}
+    OBRAZOVÉ DEEPFAKES
+{% endblock tit %}
+
+{% block head %}
+    Vytvoření člověka
+{% endblock head %}
+
+
+<!--    HOW     -->
+{% block how %}
+    Jak to funguje
+{% endblock how %}
+
+{% block how2 %}
+    AI<p class="text"> dostane za úkol vytvořit obrázek osoby a může dostat </p>specifikace<p class="text"> na to, jak
+    má daná osoba vypadat.</p>
+{% endblock how2 %}
+
+{% block how3 %}
+    <p class="text">Ty mohou být buďto jednoduché např. </p>„hasič"<p class="text"> nebo seznam specifikací</p>„Blond,
+    Žena, Černé brýle, smutná..."<p class="text">.</p>
+{% endblock how3 %}
+
+
+<!--    WHY     -->
+{% block why %}
+    Proč to dělat
+{% endblock why %}
+
+{% block why2 %}
+    <p class="text">Pro trénink</p>softwaru pro rozpoznávání obličeje<p class="text"> jako ten, který používá většina
+    telefonů, aniž by k tomu bylo potřeba spousta skutečných lidí.</p>
+{% endblock why2 %}
+
+{% block why3 %}
+    <p class="text">K zachování anonymity vytvořením </p>„avataru"<p class="text"> namísto použití své reálné fotky.</p>
+{% endblock why3 %}
+
+
+<!--    WHAT     -->
+{% block what %}
+    Na co si dát pozor
+{% endblock what %}
+
+{% block what2 %}
+    Nespoléhejte<p class="text"> na to, že každý, s kým interagujete online, je skutečný člověk jen proto, že má fotku
+    na svém účtu (např. sociálních sítích).</p>
+{% endblock what2 %}
+
+{% block what3 %}
+    Nevěřte <p class="text">každému jen proto, že předpokládáte, že víte, jak vypadají.</p>
+{% endblock what3 %}
+
+
+<!--    EDIT     -->
+{% block edit %}
+    Upravování člověka
+{% endblock edit %}
+
+{% block edit2 %}
+    Toto jsou deepfakes některých známých lidí, poznáte je?<br><p class="text">(kliknutím na každý obrázek se o nich
+    dozvíte více)</p>
+{% endblock edit2 %}
+
+
+
+
+
+
+
+
+
+<!--    FACE SWAP     -->
+{% block swap %}
+    <p class="text">This SOMEONE and they had their </p><h3>FACE SWAPPED</h3> <p class="text">with SOMEBODY</p>
+{% endblock swap %}
+
+
+<!--    HOW     -->
+{% block swaphow %}
+    Jak to funguje
+{% endblock swaphow %}
+
+{% block swaphow2 %}
+    AI dostane 2 obrázky.
+{% endblock swaphow2 %}
+
+{% block swaphow3 %}
+    Vezme obličej osoby na jednom obrázku.
+{% endblock swaphow3 %}
+
+{% block swaphow4 %}
+    A dá ho jako tvář osoby na druhém obrázku.
+{% endblock swaphow4 %}
+
+
+<!--    WHY     -->
+{% block swapwhy %}
+    Proč to dělat
+{% endblock swapwhy %}
+
+{% block swapwhy2 %}
+    Pro zábavu! <p class="text"> - Vyzkoušejte aplikace pro výměnu tváří a vyměňte si tváře se přátely, nebo celebritou.
+    </p>
+{% endblock swapwhy2 %}
+
+
+<!--    WHAT     -->
+{% block swapwhat %}
+    Na co si dát pozor
+{% endblock swapwhat %}
+
+{% block swapwhat2 %}
+    Lidé mohou zaměnit vaši tvář nebo tvář někoho, koho znáte, za s jakýkoliv druhem obrázku, často např.
+    pornografickým.
+{% endblock swapwhat2 %}
+
+{% block swapwhat3 %}
+    <p class="text">Tento obrázek pak může být použit pro</p> vydírání<p class="text">, jako</p> zfalšovaný důkaz
+    <p class="text ">nebo jen sdílený pro šíření</p>dezinformací<p class="text">.</p>
+{% endblock swapwhat3 %}
+
+{% block swapwhat4 %}
+    <p class="text">Výměna obličeje může oklamat některý </p>software pro rozpoznávání obličeje<p class="text">, i když
+    v menší míře než některé jiné typy deepfakes.</p>
+{% endblock swapwhat4 %}
+
+
+<!--    SCENARIOS     -->
+{% block swapscen %}
+    Jak to může probíhat ve skutečnosti
+{% endblock swapscen %}
+
+
+{% block swapscen1 %}
+    Scénář
+{% endblock swapscen1 %}
+
+{% block swapscen11 %}
+    Útočník najde účet oběti na sociálních sítích, který jim umožní přístup k fotkám oběti, jejím dalším účtům, osobním
+    informacím atd.
+{% endblock swapscen11 %}
+
+{% block swapscen12 %}
+    Útočník vyhledává pornografické snímky někoho, jehož tělo připomíná tělo oběti, nebo vytvoří nové.
+{% endblock swapscen12 %}
+
+{% block swapscen13 %}
+    Útočník vytvoří deepfakes oběti a poté ji vydírá těmito zmanipulovanými obrázky a hrozí únikem jejich obsahu, pokud
+    nebudou splněny určité požadavky.
+{% endblock swapscen13 %}
+
+
+{% block swapscen2 %}
+    Scénář
+{% endblock swapscen2 %}
+
+{% block swapscen21 %}
+    Jeden spolužák šikanuje druhého a oběť se rozhodne pomstít tím, že podnikne kroky k tomu, aby tyran vykopl ze školy.
+{% endblock swapscen21 %}
+
+{% block swapscen22 %}
+    Jelikož jsou spolužáci, získání fotografie agresora je pro oběť snadné.
+{% endblock swapscen22 %}
+
+{% block swapscen23 %}
+    Následně vytvoří deepfake s vyměněným obličejem pomocí obrázku šikanéra a obrázku osoby, která pije alkohol, nebo
+    kouří.
+{% endblock swapscen23 %}
+
+{% block swapscen24 %}
+    Oběť poté vytvoří nový e-mail, aby anonymně poslala deepfake jejich škole, což má za následek disciplinární opatření
+    pro trýznitele.
+{% endblock swapscen24 %}
+
+
+{% block swapscen3 %}
+    Scénář
+{% endblock swapscen3 %}
+
+{% block swapscen31 %}
+    Arogantní rodič je nespokojen s přístupem učitele ke svému dítěti.
+{% endblock swapscen31 %}
+
+{% block swapscen32 %}
+   Rodič si stáhne obrázky učitele z webových stránek školy a nahé obrázky osob, které se jim podobají.
+{% endblock swapscen32 %}
+
+{% block swapscen33 %}
+    Používají tento materiál k vytvoření deepfake, překrývající učitelovu tvář na ony explicitní obrázky.
+{% endblock swapscen33 %}
+
+{% block swapscen34 %}
+    Poté rodič začne sdílet tento zmanipulovaný obsah, aby obvinil učitele z nevhodného chování, a to buď s ostatními
+    rodiči, nebo prostřednictvím stížnosti na školu s požadavkem na propuštění učitele.
+{% endblock swapscen34 %}
+
+
+
+
+<!--    FACE MANIPULATION     -->
+{% block man %}
+    <p class="text">This SOMEONE and they had their </p><h3>FACE MANIPULATED</h3>
+{% endblock man %}
+
+
+<!--    HOW     -->
+{% block manhow %}
+    Jak to funguje
+{% endblock manhow %}
+
+{% block manhow2 %}
+    AI dostane obrázek a seznam manipulovaných rysů.
+{% endblock manhow2 %}
+
+{% block manhow3 %}
+    Tyto rysy mohou být přidány, pozměněny nebo odebrány.
+{% endblock manhow3 %}
+
+{% block manhow4 %}
+    Vlastnosti jako barvu vlasů nebo výraz lze změnit a věci jako brýle nebo tetování lze přidat či odebrat.
+{% endblock manhow4 %}
+
+
+<!--    WHY     -->
+{% block manwhy %}
+    Proč to dělat
+{% endblock manwhy %}
+
+{% block manwhy2 %}
+    Pro vylepšení fotografie, nebo udělání vtipnější fotografie, bez nutnosti znalosti photoshopu.
+{% endblock manwhy2 %}
+
+{% block manwhy3 %}
+    Pro ušetření peněz za maskéra.
+{% endblock manwhy3 %}
+
+
+<!--    WHAT     -->
+{% block manwhat %}
+    Na co si dát pozor
+{% endblock manwhat %}
+
+{% block manwhat2 %}
+    Cizí lidé mohou manipulovat s vašimi fotografiemi a například vás přimět vypadat opilý nebo přidat nechtěný prvek,
+    jako třeba tetování.
+{% endblock manwhat2 %}
+
+{% block manwhat3 %}
+    <p class="text">Je snadné</p> šířit dezinformace<p class="text"> online pomocí takto zmanipulovaných obrázků.</p>
+{% endblock manwhat3 %}
+
+
+<!--    SCENARIOS     -->
+{% block manscen %}
+    Jak to může probíhat ve skutečnosti
+{% endblock manscen %}
+
+
+{% block manscen1 %}
+    Scénář
+{% endblock manscen1 %}
+
+{% block manscen11 %}
+    Rozzlobený spolupracovník chová k oběti zášť.
+{% endblock manscen11 %}
+
+{% block manscen12 %}
+    Tento rozzlobený spolupracovník si stáhne starší fotografii oběti s viditelnými oblastmi pro tetování, jako je krk,
+    vnitřní zápěstí apod.
+{% endblock manscen12 %}
+
+{% block manscen13 %}
+    Spolupracovník poté vycvičí AI, aby k obrazu oběti přidala nevhodná tetování, jako je hákový kříž.
+{% endblock manscen13 %}
+
+{% block manscen14 %}
+    Následně vytvoří deepfakes zobrazující oběť s těmito přidanými tetováními a anonymně je pošlou šéfovi oběti
+    prostřednictvím e-mailu nebo zpráv.
+{% endblock manscen14 %}
+
+
+{% block manscen2 %}
+    Scénář
+{% endblock manscen2 %}
+
+{% block manscen21 %}
+    Zaostávající politik se rozhodne během voleb vyvolat kontroverzi pro svého soupeře.
+{% endblock manscen21 %}
+
+{% block manscen22 %}
+    Politik pověří svého stratéga vytvořením deepfakes opozičního politika, který pro toto najme politického sabotéra.
+{% endblock manscen22 %}
+
+{% block manscen23 %}
+    Vzhledem k tomu, že cílový politik je veřejně známá osoba, má sabotér dostatečný přístup k fotografiím a tak si dvě
+    z nich vybere.
+{% endblock manscen23 %}
+
+{% block manscen24 %}
+    Na vybraných snímcích jsou fotografie cílového politika s jeho drahou polovičkou a jeho osobní asistentkou.
+{% endblock manscen24 %}
+
+{% block manscen25 %}
+    Sabotér upraví mimiku a zobrazí tak politika, jak flirtuje s asistentkou a jak se rozzlobeně hádá se svou
+    partnerkou.
+{% endblock manscen25 %}
+
+{% block manscen26 %}
+    Tyto deepfakes jsou strategicky sdíleny na sociálních sítích pomocí falešných účtů a díky tomu se o těchto
+    fotografiích dozvědí i skuteční lidé, kteří je začnou sdílet dál.
+{% endblock manscen26 %}
+
+
+{% block manscen3 %}
+    Scénář
+{% endblock manscen3 %}
+
+{% block manscen31 %}
+    Přední umělec, kterého čeká velká výstava, přitahuje pozornost a potenciální sponzory, což v konkurenčním umělci
+    vyvolá žárlivost.
+{% endblock manscen31 %}
+
+{% block manscen32 %}
+    Tento závistivý konkurenční umělec si najme člověka, aby vytvořil skandální obrázky ze soukromého setkání mezi
+    umělci.
+{% endblock manscen32 %}
+
+{% block manscen33 %}
+    Ten zachycuje momenty ze setkání, včetně toho, kde má přední umělec zvedlou ruku.
+{% endblock manscen33 %}
+
+{% block manscen34 %}
+    Využitím deepfake manipulace s obličejem pak vytvoří obrázek na kterém má jeho zadavatel modřiny, což spolu s
+    ostatními snímky naznačuje násilnou hádku během setkání.
+{% endblock manscen34 %}
+
+{% block manscen35 %}
+    Strategicky zveřejněné deepfakes způsobí skandál na sociálních sítích a v publikacích souvisejících s uměním,
+    což odradí množství sponzorů a zpochybní reputaci předního umělce.
+{% endblock manscen35 %}
+
+
+
+
+<!--    FACE MORPHING     -->
+{% block mor %}
+    <p class="text">This SOMEONE and they had their </p><h3>FACE MORPHED</h3> <p class="text">with SOMEBODY</p>
+{% endblock mor %}
+
+
+<!--    HOW     -->
+{% block morhow %}
+    Jak to funguje
+{% endblock morhow %}
+
+{% block morhow2 %}
+    AI dostane 2 obrázky a sloučí (morfuje) je dohromady.
+{% endblock morhow2 %}
+
+{% block morhow3 %}
+    Vznikne tak nový obrázek, který vypadá jako první i druhá osoba.
+{% endblock morhow3 %}
+
+{% block morhow4 %}
+    Je tomu tak, protože osoba na novém snímku sdílí dostatečné množství rysů obličejů obou lidí.
+{% endblock morhow4 %}
+
+
+<!--    WHY     -->
+{% block morwhy %}
+    Proč to dělat
+{% endblock morwhy %}
+
+{% block morwhy2 %}
+    Aplikace, které vám ukáží, jak budou vypadat vaše děti, které používají obrázeky vás a vaší drahé polovičky,
+    používají morfování obličeje.
+{% endblock morwhy2 %}
+
+{% block morwhy3 %}
+    Tuto techniku stejně tak využívají aplikace, které vám ukáží, jak budete vypadat, až zestárnete.
+{% endblock morwhy3 %}
+
+
+<!--    WHAT     -->
+{% block morwhat %}
+    Na co si dát pozor
+{% endblock morwhat %}
+
+{% block morwhat2 %}
+    <p class="text">Protože obrázek osoby sdílí rysy obličeje obou lidí, může být použit k obelstění</p> softwaru pro
+    rozpoznávání obličeje<p class="text">.</p>
+{% endblock morwhat2 %}
+
+{% block morwhat3 %}
+    <p class="text">To je zvláště problém pro automatickou pasovou kontrolu na hranicích, kde pasy s morfovanou fotkou
+        dají používat na to, aby na pase</p> 2 lidem<p class="text"> stačily</p> 1 údaje<p class="text">.</p>
+{% endblock morwhat3 %}
+
+
+<!--    SCENARIOS     -->
+{% block morscen %}
+    Jak to může probíhat ve skutečnosti
+{% endblock morscen %}
+
+
+{% block morscen1 %}
+    Scénář
+{% endblock morscen1 %}
+
+{% block morscen11 %}
+    Mezinárodně hledaný zločinec musí do země vstoupit letadlem, aniž by byl odhalen úřady.
+{% endblock morscen11 %}
+
+{% block morscen12 %}
+    Požádají kamaráda, aby jim půjčil jejich občanku a fotografii, aby si mohl vytvořit nový pas.
+{% endblock morscen12 %}
+
+{% block morscen13 %}
+    Zločinec vyfotografuje sebe a spolu s fotkou svého kamaráda tyto fotografie sloučí dohromady, aby vytvořil deepfake,
+    který bude použit jako fotka pasu.
+{% endblock morscen13 %}
+
+{% block morscen14 %}
+    Vyzbrojený fotografií a legitimním průkazem nehledané osoby si zločinec může nechat legitimně vystavit nový pas.
+{% endblock morscen14 %}
+
+{% block morscen15 %}
+    Jakmile pas dorazí, může zločinec nastoupit do jakéhokoli letadla a pomocí automatizovaného systému hraniční
+    kontroly bez problému vstoupit do země.
+{% endblock morscen15 %}
+
+
+{% block morscen2 %}
+    Scénář
+{% endblock morscen2 %}
+
+{% block morscen21 %}
+    Firemní špión má za cíl infiltrovat konkurenční společnost, aby získal citlivé informace.
+{% endblock morscen21 %}
+
+{% block morscen22 %}
+    Špión hledá na webových stránkách společnosti fotografie zaměstnanců a vybírá oběť, jejíž role odpovídá špiónovi
+    cíli.
+{% endblock morscen22 %}
+
+{% block morscen23 %}
+    Špión, pomocí technologie morfování obličeje, vytvoří přesvědčivou deepfake fotografii smícháním vlastních rysů
+    obličeje s rysy vybraného zaměstnance.
+{% endblock morscen23 %}
+
+{% block morscen24 %}
+    Špión, vyzbrojený deepfake obrázkem, využívá sociální sítě ke shromažďování dalších informací o roli cíle, jejich
+    zvycích a interakcích v rámci společnosti.
+{% endblock morscen24 %}
+
+{% block morscen25 %}
+    Při infiltraci do korporace se špión pohybuje nepozorovaně a díky průkazu s deepfake fotografii se dostane k
+    důvěrným informacím.
+{% endblock morscen25 %}
+
+
+
+
+
+{% block but1 %}
+    Zpět
+{% endblock but1 %}
+
+{% block but2 %}
+    Pokračovat
+{% endblock but2 %}

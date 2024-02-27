@@ -15,6 +15,12 @@ class User(db.Model):
 
 
 class Answer(db.Model):
+    """
+    :var user_id: [FK] id of answering user
+    :var question: question number
+    :var answer_1: pre-test answer
+    :var answer_2: post-test answer
+    """
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     question = db.Column(db.Integer, default=0, nullable=False)

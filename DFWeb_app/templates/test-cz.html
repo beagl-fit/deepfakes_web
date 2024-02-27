@@ -1,836 +1,294 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "test.html" %}
 
-<!--<div class="container d-flex justify-content-center mb-4">-->
-<!--    <h2>COURSE INFORMATION</h2>-->
-<!--</div>-->
+{% block question1 %}
+    Hlavní roli při vytváření deepfakes hraje
+{% endblock question1 %}
 
-<div class="container mb-4 text-center">
-    <h1>SURVEY</h1>
-</div>
+{% block question1answer1 %}
+    Nevím
+{% endblock question1answer1 %}
 
-<!--    QUESTION 1    -->
-<form id="testForm" action="{% if session.get('pre-test_completed') %} {{ url_for('index') }} {% else %}
-        {{ url_for('general') }} {% endif %}" method="post">
-    <div class="container">
-        <div class="justify-content-center align-items-center mt-4">
-            <div class="row py-2">
-                <div class="card" style="min-height: 100px; min-width: 350px;">
-                    <div class="card-header">
-                        <h3>1) The main role in the creation of deepfakes is assumed by:</h3>
-                    </div>
-    
-                    <div class="card-body ps-5">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a1" value="1" checked>
-                                    <label class="form-check-label text" for="q1a1">
-                                        I don't know.
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a2" value="2">
-                                    <label class="form-check-label text" for="q1a2">
-                                        Artificial intelligence
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a3" value="3">
-                                    <label class="form-check-label text" for="q1a3">
-                                        Humans
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a4" value="4">
-                                    <label class="form-check-label text" for="q1a4">
-                                        Animals
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 2    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>2) Deepfakes are:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a1" value="1" checked>
-                                <label class="form-check-label text" for="q2a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a2" value="2">
-                                <label class="form-check-label text" for="q2a2">
-                                    Popular news websites where all articles are fake-news.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a3" value="3">
-                                <label class="form-check-label text" for="q2a3">
-                                    A form of media created using artificial intelligence that creates highly realistic,
-                                    but fabricated content.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a4" value="4">
-                                <label class="form-check-label text" for="q2a4">
-                                    A form of media created using artificial intelligence depicting faked deep diving.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 3    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>3) Deepfakes can be used for:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a1" value="1" checked>
-                                <label class="form-check-label text" for="q3a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a2" value="2">
-                                <label class="form-check-label text" for="q3a2">
-                                    Only for good things, they pose a great opportunity.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a3" value="3">
-                                <label class="form-check-label text" for="q3a3">
-                                    Only for bad things, they pose a great threat.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a4" value="4">
-                                <label class="form-check-label text" for="q3a4">
-                                    Both for good and bad things, they pose a great opportunity and a great threat.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    <!--    QUESTION 4    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>4) Choose all correct statements:</h3><br>
-                    <p class="text ps-4">We can commonly see deepfakes in the form of </p>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a1" value="1">
-                                <label class="form-check-label text" for="q4a1">
-                                    Newspaper articles
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a2" value="2">
-                                <label class="form-check-label text" for="q4a2">
-                                    Audio recording
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a3" value="3">
-                                <label class="form-check-label text" for="q4a3">
-                                    Texts
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a4" value="4">
-                                <label class="form-check-label text" for="q4a4">
-                                    Images
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a5" value="5">
-                                <label class="form-check-label text" for="q4a5">
-                                    Video Recordings
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a6" value="6">
-                                <label class="form-check-label text" for="q4a6">
-                                    Web-pages
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a7" value="7">
-                                <label class="form-check-label text" for="q4a7">
-                                    Toys
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a8" value="8">
-                                <label class="form-check-label text" for="q4a8">
-                                    Games
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 5    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>5) Choose true statement</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a1" value="1" checked>
-                                <label class="form-check-label text" for="q5a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a2" value="2">
-                                <label class="form-check-label text" for="q5a2">
-                                    Artificial intelligence can never create anything.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a3" value="3">
-                                <label class="form-check-label text" for="q5a3">
-                                    Artificial intelligence can create things, but it first needs to be trained.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a4" value="4">
-                                <label class="form-check-label text" for="q5a4">
-                                    Artificial intelligence can create anything at any time.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 6    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>6) Fill blank space in following sentence:<br></h3>
-                    <p class="text ps-4">Artificial intelligence can _____ images.</p>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a1" value="1" checked>
-                                <label class="form-check-label text" for="q6a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a2" value="2">
-                                <label class="form-check-label text" for="q6a2">
-                                    create and alter
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a3" value="3">
-                                <label class="form-check-label text" for="q6a3">
-                                    only create
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a4" value="4">
-                                <label class="form-check-label text" for="q6a4">
-                                    only alter
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 7    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>7) Choose all correct statements:</h3><br>
-                    <p class="text ps-4">What can artificial intelligence do to an image of a person when it is
-                        generating a deepfake?</p>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a1" value="1">
-                                <label class="form-check-label text" for="q7a1">
-                                    Swap their face with another person's face.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a2" value="2">
-                                <label class="form-check-label text" for="q7a2">
-                                    Combine their face with another person creating new image that shares facial
-                                    features of both.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a3" value="3">
-                                <label class="form-check-label text" for="q7a3">
-                                    Add things like face accessories or alter facial features such as skin or hair
-                                    color.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a4" value="4">
-                                <label class="form-check-label text" for="q7a4">
-                                    Remove facial features such as piercings or tattoos.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 8    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>8) Choose true statement:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a1" value="1" checked>
-                                <label class="form-check-label text" for="q8a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a2" value="2">
-                                <label class="form-check-label text" for="q8a2">
-                                    Deepfake images pose threat only to people and can't threaten biometrics software.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a3" value="3">
-                                <label class="form-check-label text" for="q8a3">
-                                    Deepfake images pose threat only to biometrics software and can't threaten people.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a4" value="4">
-                                <label class="form-check-label text" for="q8a4">
-                                    Deepfake images pose threat to both people and biometrics software.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 9    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>9) Artificial intelligence can recreate speech of another person that:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a1" value="1" checked>
-                                <label class="form-check-label text" for="q9a1">
-                                    I don't know
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a2" value="2">
-                                <label class="form-check-label text" for="q9a2">
-                                    Is easily understood, but also easily distinguishable from source.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a3" value="3">
-                                <label class="form-check-label text" for="q9a3">
-                                    Sounds indistinguishable from the source, but is not understood easily.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a4" value="4">
-                                <label class="form-check-label text" for="q9a4">
-                                    Is easily understood and sounds indistinguishable from the source.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 10    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>10) Voice deepfakes do sound convincing when they are prepared ahead of time, but they can't be
-                        used during a real-time conversation</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q10" id="q10a1" value="1" checked>
-                                <label class="form-check-label text" for="q10a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q10" id="q10a2" value="2">
-                                <label class="form-check-label text" for="q10a2">
-                                    True
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q10" id="q10a3" value="3">
-                                <label class="form-check-label text" for="q10a3">
-                                    False
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 11    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>6) fill blank space in following sentence:<br></h3>
-                    <p class="text ps-4">When someone I care for calls and asks me to transfer some sum of money to a
-                        specific bank account because they are in an immediate crisis, I _____.</p>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a1" value="1" checked>
-                                <label class="form-check-label text" for="q11a1">
-                                    don't know what would I do
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a2" value="2">
-                                <label class="form-check-label text" for="q11a2">
-                                    immediately do so, because I should allways help people I care for
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a3" value="3">
-                                <label class="form-check-label text" for="q11a3">
-                                    first make sure that it really is them before deciding whether to send the money
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a4" value="4">
-                                <label class="form-check-label text" for="q11a4">
-                                    know that people calling me are scammers that sound like people I care for, and
-                                    therefore I won't send any money to them
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 12    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>12) It is possible to swap face of a person in a video with face of another person:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q12" id="q12a1" value="1" checked>
-                                <label class="form-check-label text" for="q12a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q12" id="q12a2" value="2">
-                                <label class="form-check-label text" for="q12a2">
-                                    True
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q12" id="q12a3" value="3">
-                                <label class="form-check-label text" for="q12a3">
-                                    False
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 13    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>13) It is easy to recognize video deepfakes, because they can't synchronize lips of person to
-                        their speech:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q13" id="q13a1" value="1" checked>
-                                <label class="form-check-label text" for="q13a1">
-                                    I don't know.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q13" id="q13a2" value="2">
-                                <label class="form-check-label text" for="q13a2">
-                                    True
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q13" id="q13a3" value="3">
-                                <label class="form-check-label text" for="q13a3">
-                                    False
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{% block question1answer2 %}
+    Umělá inteligence
+{% endblock question1answer2 %}
 
-<!--    get values of previously answered questions     -->
-    {% if session.get('q1a') %}
-        <div id="q1ans" data-ans="{{ session.get('q1a') }}"></div>
-        <div id="q2ans" data-ans="{{ session.get('q2a') }}"></div>
-        <div id="q3ans" data-ans="{{ session.get('q3a') }}"></div>
-        <div id="q4ans" data-ans="{{ session.get('q4a') }}"></div>
-        <div id="q5ans" data-ans="{{ session.get('q5a') }}"></div>
-        <div id="q6ans" data-ans="{{ session.get('q6a') }}"></div>
-        <div id="q7ans" data-ans="{{ session.get('q7a') }}"></div>
-        <div id="q8ans" data-ans="{{ session.get('q8a') }}"></div>
-        <div id="q9ans" data-ans="{{ session.get('q9a') }}"></div>
-        <div id="q10ans" data-ans="{{ session.get('q10a') }}"></div>
-        <div id="q11ans" data-ans="{{ session.get('q11a') }}"></div>
-        <div id="q12ans" data-ans="{{ session.get('q12a') }}"></div>
-        <div id="q13ans" data-ans="{{ session.get('q13a') }}"></div>
-    {% endif %}
+{% block question1answer3 %}
+    Člověk
+{% endblock question1answer3 %}
+
+{% block question1answer4 %}
+    Zvíře
+{% endblock question1answer4 %}
 
 
-    <!--    CONT/END BUTTONS    -->
-    <div class="container mt-3 d-flex justify-content-center">
-        <div class="fixed-sm-bottom mb-3">
-            <div class="row">
-<!--                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">-->
-<!--                    <a class="btn btn-my-secondary" href="{{ url_for('info') }}">Back</a>-->
-<!--                </div>-->
-                <div class="col-12 col-md-6 my-2 text-center">
-                    <button type="submit" class="btn btn-my-primary" id="continue">Continue</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // if the survey was already completed before, check all the answers like user did
-        if (document.getElementById('q1ans')) {
-            for (let i = 1; i < 14; i++) {
-                let question = 'q' + i;
-                let ansNum = null;
-                let answers = document.getElementsByName(question)
+{% block question2 %}
+    Deepfakes jsou
+{% endblock question2 %}
 
-                if (i === 4 || i === 7) {
-                    ansNum = document.getElementById(question + 'ans').getAttribute('data-ans');
-                    if (ansNum.length > 0) {
-                    ansNum = ansNum.split(',').map(Number);
+{% block question2answer1 %}
+    Nevím
+{% endblock question2answer1 %}
 
-                    ansNum.forEach(function (element) {
-                        answers[element - 1].checked = true;
-                    });
-                    }
-                }
-                else {
-                    ansNum = parseInt(document.getElementById(question + 'ans').getAttribute('data-ans')) - 1;
-                    answers[ansNum].checked = true;
-                }
-            }
-        }
-    });
+{% block question2answer2 %}
+    Oblíbené zpravodajské weby, kde všechny články jsou falešné zprávy (fake-news).
+{% endblock question2answer2 %}
 
-    function getSelectedValue(question) {
-        // function returns value of a (radio button) question, which is passed as an argument
-        const answers = document.getElementsByName(question);
-        let answerValue = null;
+{% block question2answer3 %}
+    Forma médií vytvořená pomocí umělé inteligence, která vytváří vysoce realistický, ale vymyšlený obsah.
+{% endblock question2answer3 %}
 
-        for (let i = 0; i < answers.length; i++) {
-            if (answers[i].checked) {
-                answerValue = answers[i].value;
-                break;
-            }
-        }
-        return answerValue;
-    }
-
-    function getSelectedValues(question) {
-        // function returns value(s) of a (checkbox button) question, which is passed as an argument
-        const answers = document.getElementsByName(question);
-        let answerValues = [];
-
-        for (let i = 0; i < answers.length; i++) {
-            if (answers[i].checked) {
-                answerValues.push(answers[i].value);
-            }
-        }
-        return answerValues.join(',');
-    }
+{% block question2answer4 %}
+    Forma média vytvořená pomocí umělé inteligence zobrazující zfalšované potápění do hloubky.
+{% endblock question2answer4 %}
 
 
-    document.getElementById('testForm').addEventListener('submit', function () {
-        // upon submitting the form answers, the selected values are saved to hidden inputs so that they can be stored
-        for (let question = 1; question < 14; question++) {
-            // Get selected value(s) of a question
-            let name = 'q' + question;
-            let selectedValue = null;
-            if (question === 4 || question === 7)
-                selectedValue = getSelectedValues(name);
-            else
-                selectedValue = getSelectedValue(name);
 
-            // Add the selected value(s) as a hidden input to the form
-            let hiddenInput = document.createElement('input');
-            hiddenInput.type = 'hidden';
-            hiddenInput.name = name + 'a';
-            hiddenInput.value = selectedValue;
-            document.getElementById('testForm').appendChild(hiddenInput);
-        }
-    });
-</script>
+{% block question3 %}
+    Deepfakes mohou být použity pro
+{% endblock question3 %}
 
-{% endblock content %}
+{% block question3answer1 %}
+    Nevím
+{% endblock question3answer1 %}
+
+{% block question3answer2 %}
+    Jen pro dobré věci, představují skvělou příležitost.
+{% endblock question3answer2 %}
+
+{% block question3answer3 %}
+    Pouze pro špatné účely, představují velkou hrozbu.
+{% endblock question3answer3 %}
+
+{% block question3answer4 %}
+    Jak pro dobré, tak pro špatné věci, představují jak velkou příležitost, tak velkou hrozbu.
+{% endblock question3answer4 %}
+
+
+
+{% block question4 %}
+    <h3>4) Vyberte všechna správná tvrzení:</h3><br>
+    <p class="text ps-4">Běžně můžeme vidět deepfakes ve formě</p>
+{% endblock question4 %}
+
+{% block question4answer1 %}
+    Novinových článků
+{% endblock question4answer1 %}
+
+{% block question4answer2 %}
+    Zvukových záznamů
+{% endblock question4answer2 %}
+
+{% block question4answer3 %}
+    Textů
+{% endblock question4answer3 %}
+
+{% block question4answer4 %}
+    Obrázků
+{% endblock question4answer4 %}
+
+{% block question4answer5 %}
+    Videí
+{% endblock question4answer5 %}
+
+{% block question4answer6 %}
+    Webových stránek
+{% endblock question4answer6 %}
+
+{% block question4answer7 %}
+    Hraček
+{% endblock question4answer7 %}
+
+{% block question4answer8 %}
+    Her
+{% endblock question4answer8 %}
+
+
+
+{% block question5 %}
+    Zvolte pravdivé tvrzení
+{% endblock question5 %}
+
+{% block question5answer1 %}
+    Nevím
+{% endblock question5answer1 %}
+
+{% block question5answer2 %}
+    Umělá inteligence nemůže nikdy nic vytvořit.
+{% endblock question5answer2 %}
+
+{% block question5answer3 %}
+    Umělá inteligence může vytvářet věci, ale nejprve je třeba ji natrénovat.
+{% endblock question5answer3 %}
+
+{% block question5answer4 %}
+    Umělá inteligence dokáže vytvořit cokoliv a kdykoliv.
+{% endblock question5answer4 %}
+
+
+
+{% block question6 %}
+    <h3>6) Doplňte mezeru v následující větě:<br></h3>
+    <p class="text ps-4">Umělá inteligence umí _____ obrázky.</p>
+{% endblock question6 %}
+
+{% block question6answer1 %}
+    Nevím
+{% endblock question6answer1 %}
+
+{% block question6answer2 %}
+    vytvářet a upravovat
+{% endblock question6answer2 %}
+
+{% block question6answer3 %}
+    pouze vytvářet
+{% endblock question6answer3 %}
+
+{% block question6answer4 %}
+    pouze upravovat
+{% endblock question6answer4 %}
+
+
+
+{% block question7 %}
+    <h3>7) Vyberte všechna správná tvrzení:</h3><br>
+    <p class="text ps-4">Co může udělat umělá inteligence s obrazem člověka, když vytváří deepfake?</p>
+{% endblock question7 %}
+
+{% block question7answer1 %}
+    Vyměnit jejich obličej za obličej jiného člověka.
+{% endblock question7answer1 %}
+
+{% block question7answer2 %}
+    Zkombinat jejich obličej s obličejem jiné osoby a vytvořit nový obrázek, který sdílí rysy obou obličejů.
+{% endblock question7answer2 %}
+
+{% block question7answer3 %}
+    Přidat věci jako módní doplňky, nebo upravit rysy obličeje, jako barvu pleti, nebo vlasů.
+{% endblock question7answer3 %}
+
+{% block question7answer4 %}
+    Odstranit rysy obličeje, například piercing, nebo tetování.
+{% endblock question7answer4 %}
+
+
+
+{% block question8 %}
+    Vyberte pravdivé tvrzení
+{% endblock question8 %}
+
+{% block question8answer1 %}
+    Nevím
+{% endblock question8answer1 %}
+
+{% block question8answer2 %}
+    Deepfake obrázky představují hrozbu pouze pro lidi a nemohou ohrozit biometrický software.
+{% endblock question8answer2 %}
+
+{% block question8answer3 %}
+    Deepfake obrázky představují hrozbu pouze pro biometrický software a nemohou ohrozit lidi.
+{% endblock question8answer3 %}
+
+{% block question8answer4 %}
+    Deepfake obrázky představují hrozbu jak pro lidi, tak pro biometrický software.
+{% endblock question8answer4 %}
+
+
+
+{% block question9%}
+    Umělá inteligence dokáže vytvořit řeč jiné osoby, která
+{% endblock question9%}
+
+{% block question9answer1 %}
+    Nevím
+{% endblock question9answer1 %}
+
+{% block question9answer2 %}
+    Je snadno srozumitelná, ale také snadno odlišitelná od zdroje.
+{% endblock question9answer2 %}
+
+{% block question9answer3 %}
+    Zní stejně jako zdroj, ale není snadné jí rozumět.
+{% endblock question9answer3 %}
+
+{% block question9answer4 %}
+    Je snadno srozumitelná a zní nerozeznatelně od zdroje.
+{% endblock question9answer4 %}
+
+
+
+{% block question10 %}
+    Hlasové deepfakes zní přesvědčivě, když jsou připraveny předem, ale nelze je vytvářet naživo (během konverzace)
+{% endblock question10 %}
+
+{% block question10answer1 %}
+    Nevím
+{% endblock question10answer1 %}
+
+{% block question10answer2 %}
+    Pravda
+{% endblock question10answer2 %}
+
+{% block question10answer3 %}
+    Nepravda
+{% endblock question10answer3 %}
+
+
+
+{% block question11 %}
+    <h3>11) Doplňte mezeru v následující větě:<br></h3>
+    <p class="text ps-4"> Když mi zavolá někdo, koho znám a požádá mě, abych mu poslal peníze na specifický účet,
+        protože se jim něco stalo, _____.</p>
+{% endblock question11 %}
+
+{% block question11answer1 %}
+    nevím, co bych udělal
+{% endblock question11answer1 %}
+
+{% block question11answer2 %}
+    ihned tak udělám, protože mi záleží na lidem kolem mě
+{% endblock question11answer2 %}
+
+{% block question11answer3 %}
+    tak si prvně ověřím, jestli to skutečně je ta osoba, předtím, než se rozhodnu.
+{% endblock question11answer3 %}
+
+{% block question11answer4 %}
+    tak automaticky odmítám, protože vím, že lidé kteří mi volají a zní jako mí známí jsou podvodníci
+{% endblock question11answer4 %}
+
+
+
+{% block question12 %}
+    Ve videu je možné zaměnit tvář jedné osoby za tvář jiné osoby
+{% endblock question12 %}
+
+{% block question12answer1 %}
+    Nevím
+{% endblock question12answer1 %}
+
+{% block question12answer2 %}
+    Pravda
+{% endblock question12answer2 %}
+
+{% block question12answer3 %}
+    Nepravda
+{% endblock question12answer3 %}
+
+
+
+{% block question13 %}
+    Deepfake videa je snadné rozpoznat, protože nedokážou synchronizovat rty osoby s jejich řečí
+{% endblock question13 %}
+
+{% block question13answer1 %}
+    Nevím
+{% endblock question13answer1 %}
+
+{% block question13answer2 %}
+    Pravda
+{% endblock question13answer2 %}
+
+{% block question13answer3 %}
+    Nepravda
+{% endblock question13answer3 %}
