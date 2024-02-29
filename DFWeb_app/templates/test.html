@@ -6,10 +6,9 @@
 <!--</div>-->
 
 <div class="container mb-4 text-center">
-    <h1>SURVEY</h1>
+    <h1>{% block tit %}{% endblock tit %} {% if feedback %}{% block tit2 %}{% endblock tit2 %}{% endif %}</h1>
 </div>
 
-<!--    QUESTION 1    -->
 <form id="testForm" action="{% if session.get('pre-test_completed') and not session.get('post-test_completed') %}
                                     {{ url_for('test') }}
                             {% elif session.get('post-test_completed') %}
@@ -18,6 +17,7 @@
                                 {{ url_for('general') }}
                             {% endif %}" method="post">
     <div class="container">
+    <!--    QUESTION 1    -->
         <div class="justify-content-center align-items-center mt-4">
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
@@ -718,7 +718,7 @@
     </div>
 
 <!--    get values of previously answered questions     -->
-    {% if session.get('q1a') %}
+    {% if session.get('pre-test_completed') %}
         <div id="q1ans" data-ans="{{ session.get('q1a') }}"></div>
         <div id="q2ans" data-ans="{{ session.get('q2a') }}"></div>
         <div id="q3ans" data-ans="{{ session.get('q3a') }}"></div>
@@ -736,14 +736,24 @@
 
 
     <!--    CONT/END BUTTONS    -->
-    <div class="container mt-3 d-flex justify-content-center">
-        <div class="fixed-sm-bottom mb-3">
+    {% if session.get('post-test_completed') %}
+        <div class="container mt-3 d-flex justify-content-center">
             <div class="row">
-<!--                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">-->
-<!--                    <a class="btn btn-my-secondary" href="{{ url_for('info') }}">Back</a>-->
-<!--                </div>-->
                 <div class="col-12 col-md-6 my-2 text-center">
-                    <button type="submit" class="btn btn-my-primary" id="continue">Continue</button>
+                    <H4>{{ feedback[2] }}/{{ feedback[3] }}</H4>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <!--    CONT/END BUTTONS    -->
+    <div class="container mt-3 d-flex justify-content-center">
+        <div class="fixed-sm-bottom mb-1">
+            <div class="row">
+                <div class="col-12 col-md-6 my-2 text-center">
+                    <button type="submit" class="btn btn-my-primary" id="continue">
+                        {% block but %}{% endblock but %}
+                    </button>
                 </div>
             </div>
         </div>
@@ -751,7 +761,11 @@
 </form>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    // not sure how this solved anything, but this does set checked values properly for feedback (instead of defining
+    // the function directly in the event listener)
+    document.addEventListener('DOMContentLoaded', setCheckedRight());
+
+    function setCheckedRight() {
         // if the survey was already completed before, check all the answers like user did
         if (document.getElementById('q1ans')) {
             for (let i = 1; i < 14; i++) {
@@ -770,12 +784,13 @@
                     }
                 }
                 else {
+                    console.log(document.getElementById(question + 'ans'));
                     ansNum = parseInt(document.getElementById(question + 'ans').getAttribute('data-ans')) - 1;
                     answers[ansNum].checked = true;
                 }
             }
         }
-    });
+    }
 
     function getSelectedValue(question) {
         // function returns value of a (radio button) question, which is passed as an argument
@@ -825,5 +840,105 @@
         }
     });
 </script>
+
+<!--    POST-TEST FEEDBACK  -->
+{% if feedback %}
+    <script>
+        // disable all input buttons during the feedback
+        function disableButtons() {
+            // Get all form buttons except the submit button
+            let buttons = document.querySelectorAll('form input');
+
+            // Loop through each button and disable it
+            buttons.forEach(function(button) {
+                button.disabled = true;
+            });
+        }
+
+
+        /* change color of input labels and re-enables checked input buttons for more clarity:
+            unselected wrong - no change
+            unselected right - green
+            selected wrong - dark red
+            selected right - green
+         */
+        // function changeColors(feedback) {
+        //     // loop through all questions
+        //     for (let i = 1; i <= feedback[0].length; i++) {
+        //         // get all answers of a question
+        //         let q = 'q' + i;
+        //         let buttons = document.getElementsByName(q);
+        //
+        //         // difficulties because of multi-answer questions
+        //         let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
+        //         console.log(feedbackIndices, feedback[0][i - 1])
+        //         if (feedbackIndices.length === 1) {
+        //             // for each answer get label
+        //             buttons.forEach(function (button, index) {
+        //                 let label = button.nextElementSibling;
+        //
+        //                 // if the answer was selected, change label's color
+        //                 if (button.checked) {
+        //                     if (feedback[0][i - 1]) {
+        //                         label.style.color = 'green';
+        //                     } else {
+        //                         label.style.color = 'darkred';
+        //                     }
+        //                     // and enable it
+        //                     if (button.disabled) {
+        //                         button.disabled = false;
+        //                     }
+        //                 }
+        //                 // if the answer was not selected, but it should have been, change the color as well
+        //                 else {
+        //                     if (feedbackIndices.includes(index)) {
+        //                         label.style.color = 'green';
+        //                     }
+        //                 }
+        //             });
+        //         }
+        //     }
+        // }
+        function changeColors(feedback) {
+            // loop through all questions
+            for (let i = 1; i <= feedback[0].length; i++) {
+                // get all answers of a question
+                let q = 'q' + i;
+                let buttons = document.getElementsByName(q);
+
+                // for each answer get label
+                let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
+                buttons.forEach(function(button, index) {
+                    let label = button.nextElementSibling;
+
+                    // if the answer was selected, change label's color
+                    if (button.checked) {
+                        if (feedback[0][i - 1] === true || feedbackIndices.includes(index)) {
+                            label.style.color = 'green';
+                        } else {
+                            label.style.color = 'darkred';
+                        }
+                        // and enable it
+                        if (button.disabled) {
+                            button.disabled = false;
+                        }
+                    }
+
+                    // if the answer was not selected, but it should have been, change the color as well
+                    else {
+                        // difficulties because of multi-answer questions
+                        console.log(feedbackIndices)
+                        if (feedbackIndices.includes(index)) {
+                            label.style.color = 'green';
+                        }
+                    }
+                });
+            }
+        }
+
+        disableButtons();
+        changeColors({{ feedback | tojson }});
+    </script>
+{% endif %}
 
 {% endblock content %}

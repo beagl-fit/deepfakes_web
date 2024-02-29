@@ -1,23 +1,37 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!--<div class="container d-flex justify-content-center mb-4">-->
-<!--    <h2>COURSE INFORMATION</h2>-->
-<!--</div>-->
-
 <!--    GENERAL COURSE INFO    -->
-<div class="container mb-4">
-    <ul>
-        <li>
-            <p class="text" style="font-size: 1.4rem">{% block li1 %}{% endblock li1 %}</p>
-        </li>
-        <li>
-            <p class="text" style="font-size: 1.4rem">{% block li2 %}{% endblock li2 %}</p>
-        </li>
-        <li>
-            <p class="text" style="font-size: 1.4rem">{% block li3 %}{% endblock li3 %}</p>
-        </li>
-    </ul>
+<div class="container mb-4 justify-content-center align-items-center">
+    <div class="card" style="min-height: 100px; min-width: 350px;">
+        <div class="card-header">
+            <h2>{% block info %}{% endblock info %}</h2>
+        </div>
+
+        <div class="card-body ps-5">
+            <ul>
+                <li>
+                    <p class="text" style="font-size: 1.4rem">{% block thx %}{% endblock thx %}</p>
+                </li>
+                <li>
+                    <p class="text" style="font-size: 1.4rem">{% block li1 %}{% endblock li1 %}</p>
+                </li>
+                <li>
+                    <p class="text" style="font-size: 1.4rem">{% block li2 %}{% endblock li2 %}</p>
+                </li>
+                <li>
+                    <p class="text" style="font-size: 1.4rem">{% block li3 %}{% endblock li3 %}</p>
+                </li>
+                <li>
+                    <p class="text" style="font-size: 1.4rem">{% block li4 %}{% endblock li4 %}</p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="card-footer text-center">
+            <p class="text" style="font-size: 1.4rem">{% block li5 %}{% endblock li5 %}</p>
+        </div>
+    </div>
 </div>
 
 <!--    FORM    -->
@@ -147,7 +161,7 @@
 
     <!--    CONT/END BUTTONS    -->
     <div class="container mt-3 d-flex justify-content-center">
-        <div class="fixed-sm-bottom mb-3">
+        <div class="fixed-sm-bottom mb-1">
             <div class="row">
                 <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
                     <a class="btn btn-my-secondary" href="{{ url_for('index') }}">{% block b1 %}{% endblock b1 %}</a>

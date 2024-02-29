@@ -1,11 +1,11 @@
 from flask import render_template, request, session, url_for, redirect
 from DFWeb_app import app
-from DFWeb_app.functions import check_answers, make_user_data, add_user, print_query, NUM_OF_ANSWERS
+from DFWeb_app.functions import (check_answers, make_user_data, add_user, print_query, generate_feedback, NUM_OF_ANSWERS,
+                                 MULTI_ANSWER_QUESTION)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(request.method)
     # set the default language to english
     language = 'en'
     lang = request.args.get('lang')
@@ -18,13 +18,13 @@ def index():
     if lang:
         language = lang
 
-    # save language selection to session
-    session['lang'] = language
-
-    # if the method is post, survey (test) has just been submitted
+    # if the method is post, survey (test) has been completed
     if request.method == 'POST':
         # clear session after finishing the course
         session.clear()
+
+    # save language selection to session
+    session['lang'] = language
 
     # renders page in user's language: XXX(-en/-cz).html extend XXX.html which itself is extension of layout.html
     if language == 'en':
@@ -40,6 +40,14 @@ def general():
         for i in range(1, NUM_OF_ANSWERS + 1):
             answer = 'q' + str(i) + 'a'
             session[answer] = request.form.get(answer)
+
+    if request.method == 'GET':
+        # if method is get - pre-test has been skipped, therefore save default answers to session
+        for i in range(1, NUM_OF_ANSWERS + 1):
+            answer = 'q' + str(i) + 'a'
+            session[answer] = ''
+            if i not in MULTI_ANSWER_QUESTION:
+                session[answer] = '1'
 
     # skipped or not, pre-test has been completed
     session['pre-test_completed'] = True
@@ -88,6 +96,7 @@ def info():
     # clear session, mainly to not load any previous test answers upon re-entering
     session.clear()
     session['lang'] = language
+    print(session.get('lang'))
 
     if language == 'en':
         return render_template('info-en.html', title='Info', language='en')
@@ -119,6 +128,8 @@ def test():
 
     # if method is post but pre-test_completed is in session, this means the post-test has just been submitted
     elif request.method == 'POST':
+        session['post-test_completed'] = True
+
         # save data to db and render feedback
         answers1 = []
         answers2 = []
@@ -137,7 +148,11 @@ def test():
         # TODO: uncomment the following line
         # add_user(user_data, ans1, ans2)
 
-        # TODO: do feedback
+        # generate feedback and update session values for test answers
+        feedback = generate_feedback(ans2, answers2)
+        for i in range(1, NUM_OF_ANSWERS + 1):
+            answer = 'q' + str(i) + 'a'
+            session[answer] = request.form.get(answer)
 
     # no matter what the previous page was, render test template
     if session.get('lang') == 'en':

@@ -23,6 +23,13 @@
         {% endblock content %}
     </div>
 
+    <footer class="pe-4" style=" display: flex; background-color: black; justify-content: end;
+     align-items: center; height: 50px">
+<!--        <p style="display: inline">Footer</p>-->
+        <img src="{{ url_for('static', filename='images/fitlogo.png') }}"
+             onclick="window.location.href = 'https://www.fit.vut.cz'" alt="Logo of FIT VUTBR"
+             style="height: 35px; width: 100px">
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
