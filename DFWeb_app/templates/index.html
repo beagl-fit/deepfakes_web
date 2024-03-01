@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
 
-{% block lang_btn %}{% endblock lang_btn %}
+<div class="row justify-content-center" style="background-color: var(--btn-color-how)">
+    <img src="{{ url_for('static', filename='images/collage2.png') }}" alt="DF collage"
+         style="max-width: 1920px; max-height: 500px"/>
+    {% block lang_btn %}{% endblock lang_btn %}
+</div>
 
-<div class="container d-flex align-center justify-content-center" style="min-height: 70vh;">
+<div class="container d-flex align-center justify-content-center" style="min-height: 50vh;">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 text-center">
             <h4>{% block text %}{% endblock text %}</h4>
@@ -15,96 +19,301 @@
                     {% block btn_text %}{% endblock btn_text %}
                 </button>
             {% else %}
-                <a class="btn btn-start" href="{{ url_for('info') }}">{% block btn_text2 %}{% endblock btn_text2 %}</a>
+                <a class="btn btn-start" href="{{ url_for('info') }}">
+                    {% block btn_text2 %}{% endblock btn_text2 %}
+                </a>
             {% endif %}
         </div>
     </div>
 </div>
 
-<div class="container mt-3">
-    <div class="fixed-sm-bottom mb-3">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <a class="btn btn-download" href="{{ url_for('index') }}">{% block download_btn_text %}
-                    {% endblock download_btn_text %}</a>
+<div style="background-color: var(--btn-color-how); color: var(--main-bg-color)">
+    <div class="container d-flex align-center justify-content-center">
+        <ul style="font-size: 3rem">
+            <li>
+                {% block awareness %}{% endblock awareness %}
+            </li>
+            <li>
+                {% block detect %}{% endblock detect %}
+            </li>
+            <li>
+                {% block achieve %}{% endblock achieve %}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="pt-5" style="min-height: 50vh">
+    <h4 class="text-center pb-2">{% block pub %}{% endblock pub %}</h4>
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-inner">
+<!--          1st carousel page     -->
+        <div class="carousel-item active">
+            <div class="row justify-content-center pb-1">
+                <div class="col-12 col-md-4">
+                    <div class="card" style="min-width: 50%; max-width: 100%; height: 250px;">
+                        <div class="card-header text-center">
+                            <h3>{% block card1H %}{% endblock card1H %}</h3>
+                        </div>
+                        <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
+                            <p class="card-text" style="color: var(--text-color-pri)">
+                                {% block card1B %}{% endblock card1B %}
+                            </p>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-4">
+                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                        {% block card1F %}{% endblock card1F %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
+                        <div class="card-header">
+                            <h3>{% block card2H %}{% endblock card2H %}</h3>
+                        </div>
+                        <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
+                            <p class="card-text" style="color: var(--text-color-pri)">
+                                {% block card2B %}{% endblock card2B %}
+                            </p>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-4">
+                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                        {% block card2F %}{% endblock card2F %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+
+<!--      2nd carousel page     -->
+        <div class="carousel-item">
+            <div class="row justify-content-center pb-1">
+                <div class="col-12 col-md-4">
+                    <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
+                        <div class="card-header text-center">
+                            <h3>{% block card3H %}{% endblock card3H %}</h3>
+                        </div>
+                        <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
+                            <p class="card-text" style="color: var(--text-color-pri)">
+                                {% block card3B %}{% endblock card3B %}
+                            </p>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-4">
+                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                        {% block card3F %}{% endblock card3F %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
+                        <div class="card-header">
+                            <h3>{% block card4H %}{% endblock card4H %}</h3>
+                        </div>
+                        <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
+                            <p class="card-text" style="color: var(--text-color-pri)">
+                                {% block card4B %}{% endblock card4B %}
+                            </p>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-4">
+                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                        {% block card4F %}{% endblock card4F %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--          3rd carousel page     -->
+        <div class="carousel-item">
+            <div class="row justify-content-center pb-1">
+                <div class="col-12 col-md-4">
+                    <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
+                        <div class="card-header text-center">
+                            <h3>{% block card5H %}{% endblock card5H %}</h3>
+                        </div>
+                        <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
+                            <p class="card-text" style="color: var(--text-color-pri)">
+                                {% block card5B %}{% endblock card5B %}
+                            </p>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-4">
+                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                        {% block card5F %}{% endblock card5F %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
+                        <div class="card-header">
+                            <h3>{% block card6H %}{% endblock card6H %}</h3>
+                        </div>
+                        <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
+                            <p class="card-text" style="color: var(--text-color-pri)">
+                                {% block card6B %}{% endblock card6B %}
+                            </p>
+                        </div>
+                        <div class="card-footer mt-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-4">
+                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                        {% block card6F %}{% endblock card6F %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2">
+        </button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3">
+        </button>
+      </div>
+    </div>
+
+<!--    ALL PUBLICATION BUTTON  -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <a class="btn btn-audio mb-5" href="#" target="_blank" rel="noopener noreferrer" style="padding-left: 20px;
+             padding-right: 20px">
+                Show all of our publications
+            </a>
         </div>
     </div>
 </div>
 
-<!--
-possible next pages:
-person not in session -> info
-person in session   -> info
-                    -> encountered df yes   -> completed test yes -> DF general
-                                            -> completed test no -> test
-
-                    -> encountered df no    -> DF general
--->
-<!-- Modal -->
-<div class="modal fade" id="continueModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-3">{% block modal_title %}{% endblock modal_title %}</h1>
+<div class="container-lg">
+    <div class="container mt-3">
+        <div class="fixed-sm-bottom mb-3">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <a class="btn btn-download" href="{{ url_for('index') }}">{% block download_btn_text %}
+                        {% endblock download_btn_text %}</a>
+                </div>
             </div>
-            <div class="modal-body">
-                {% block modal_body %}{% endblock modal_body %}
-            </div>
-            <div id="mod" class="modal-footer" data-df="{{ session.get('df') }}">
-                <button id="no_skip" class="btn btn-my-secondary" style="font-size: 1.5rem; width:auto; height: 3rem;
-                padding: 0 1.5rem 0 1.5rem" >{% block modal_btn1 %}{% endblock modal_btn1 %}</button>
+        </div>
+    </div>
 
-                {% if session.get('df') == '1' %}
-                    {% if not session.get('q1a') %}
-                    <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
-                        width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
-                        {% block modal_btn2 %}{% endblock modal_btn2 %}
-                    </button>
-                    {% else %}
-                        <div id="test" data-test="{{ session.get('q1a') }}"></div>
-                        <button id="skip_survey" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
+    <!--
+    possible next pages:
+    person not in session -> info
+    person in session   -> info
+                        -> encountered df yes   -> completed test yes -> DF general
+                                                -> completed test no -> test
+
+                        -> encountered df no    -> DF general
+    -->
+    <!-- Modal -->
+    <div class="modal fade" id="continueModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3">{% block modal_title %}{% endblock modal_title %}</h1>
+                </div>
+                <div class="modal-body">
+                    {% block modal_body %}{% endblock modal_body %}
+                </div>
+                <div id="mod" class="modal-footer" data-df="{{ session.get('df') }}">
+                    <button id="no_skip" class="btn btn-my-secondary" style="font-size: 1.5rem; width:auto; height: 3rem;
+                    padding: 0 1.5rem 0 1.5rem" >{% block modal_btn1 %}{% endblock modal_btn1 %}</button>
+
+                    {% if session.get('df') == '1' %}
+                        {% if not session.get('q1a') %}
+                        <button id="skip_info" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
                             width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
-                            {% block modal_btn3 %}{% endblock modal_btn3 %}
+                            {% block modal_btn2 %}{% endblock modal_btn2 %}
+                        </button>
+                        {% else %}
+                            <div id="test" data-test="{{ session.get('q1a') }}"></div>
+                            <button id="skip_survey" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
+                                width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
+                                {% block modal_btn3 %}{% endblock modal_btn3 %}
+                            </button>
+                        {% endif %}
+                    {% else %}
+                        <button id="skip_ahead" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
+                        width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
+                            {% block modal_btn4 %}{% endblock modal_btn4 %}
                         </button>
                     {% endif %}
-                {% else %}
-                    <button id="skip_ahead" type="button" class="btn btn-my-primary" style="font-size: 1.5rem;
-                    width:auto; height: 3rem; padding: 0 1.5rem 0 1.5rem">
-                        {% block modal_btn4 %}{% endblock modal_btn4 %}
-                    </button>
-                {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // add function to loaded modal buttons used to skip ahead
-        let df = document.getElementById('mod').getAttribute('data-df');
-        document.getElementById("no_skip").addEventListener("click", function() {
-            window.location.href = "{{ url_for('info') }}";
-        });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // add function to loaded modal buttons used to skip ahead
+            let df = document.getElementById('mod').getAttribute('data-df');
+            document.getElementById("no_skip").addEventListener("click", function() {
+                window.location.href = "{{ url_for('info') }}";
+            });
 
-        if (df === '1') {
-            if (document.getElementById("skip_info"))
-                document.getElementById("skip_info").addEventListener("click", function () {
-                    window.location.href = "{{ url_for('test') }}";
-                });
-            else
-                document.getElementById("skip_survey").addEventListener("click", function () {
+            if (df === '1') {
+                if (document.getElementById("skip_info"))
+                    document.getElementById("skip_info").addEventListener("click", function () {
+                        window.location.href = "{{ url_for('test') }}";
+                    });
+                else
+                    document.getElementById("skip_survey").addEventListener("click", function () {
+                        window.location.href = "{{ url_for('general') }}";
+                    });
+            }
+            else if (df === '0') {
+                document.getElementById("skip_ahead").addEventListener("click", function () {
                     window.location.href = "{{ url_for('general') }}";
                 });
-        }
-        else if (df === '0') {
-            document.getElementById("skip_ahead").addEventListener("click", function () {
-                window.location.href = "{{ url_for('general') }}";
-            });
-        }
-    });
+            }
+        });
 
 
-</script>
+    </script>
 
+</div>
 {% endblock content %}

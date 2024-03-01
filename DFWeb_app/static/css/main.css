@@ -157,8 +157,13 @@ p {
   background: var(--card-bg-color);
   border-radius: 2rem;
 }
+
 .card-header {
   border-bottom: 2px solid black;
+}
+
+.card-footer {
+  border-top: 2px solid black;
 }
 
 .modal-content {
@@ -179,4 +184,17 @@ p {
   gap: 0.625rem;
   border-radius: 1.5rem;
   padding: 1rem 2rem 1rem 2rem;
+  position: absolute;
+  top: 1%;
+  left: 95%;
 }
+
+.bullet-text {
+  color: var(--btn-color-sec);
+}
+
+.carousel-indicators {
+    position: static; /* Ensure the indicators don't overlap the content */
+    margin-top: 10px; /* Adjust the margin to space the indicators from the content */
+}
+

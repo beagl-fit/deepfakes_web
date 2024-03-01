@@ -1,218 +1,221 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!--    GENERAL COURSE INFO    -->
-<div class="container mb-4 justify-content-center align-items-center">
-    <div class="card" style="min-height: 100px; min-width: 350px;">
-        <div class="card-header">
-            <h2>{% block info %}{% endblock info %}</h2>
-        </div>
+<div class="container-lg my-5">
 
-        <div class="card-body ps-5">
-            <ul>
-                <li>
-                    <p class="text" style="font-size: 1.4rem">{% block thx %}{% endblock thx %}</p>
-                </li>
-                <li>
-                    <p class="text" style="font-size: 1.4rem">{% block li1 %}{% endblock li1 %}</p>
-                </li>
-                <li>
-                    <p class="text" style="font-size: 1.4rem">{% block li2 %}{% endblock li2 %}</p>
-                </li>
-                <li>
-                    <p class="text" style="font-size: 1.4rem">{% block li3 %}{% endblock li3 %}</p>
-                </li>
-                <li>
-                    <p class="text" style="font-size: 1.4rem">{% block li4 %}{% endblock li4 %}</p>
-                </li>
-            </ul>
+    <!--    GENERAL COURSE INFO    -->
+    <div class="container mb-4 justify-content-center align-items-center">
+        <div class="card" style="min-height: 100px; min-width: 350px;">
+            <div class="card-header">
+                <h2>{% block info %}{% endblock info %}</h2>
+            </div>
 
-        </div>
-        <div class="card-footer text-center">
-            <p class="text" style="font-size: 1.4rem">{% block li5 %}{% endblock li5 %}</p>
+            <div class="card-body ps-5">
+                <ul>
+                    <li>
+                        <p class="text" style="font-size: 1.4rem">{% block thx %}{% endblock thx %}</p>
+                    </li>
+                    <li>
+                        <p class="text" style="font-size: 1.4rem">{% block li1 %}{% endblock li1 %}</p>
+                    </li>
+                    <li>
+                        <p class="text" style="font-size: 1.4rem">{% block li2 %}{% endblock li2 %}</p>
+                    </li>
+                    <li>
+                        <p class="text" style="font-size: 1.4rem">{% block li3 %}{% endblock li3 %}</p>
+                    </li>
+                    <li>
+                        <p class="text" style="font-size: 1.4rem">{% block li4 %}{% endblock li4 %}</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="card-footer text-center">
+                <p class="text" style="font-size: 1.4rem">{% block li5 %}{% endblock li5 %}</p>
+            </div>
         </div>
     </div>
-</div>
 
-<!--    FORM    -->
-<form id="sessionForm" action="{{ url_for('test') }}" method="post">
-    <!--    SEX RADIOS  -->
-    <div class="container justify-content-center text-center mb-4 pt-5">
-        <h2>{% block s %}{% endblock s %}</h2>
+    <!--    FORM    -->
+    <form id="sessionForm" action="{{ url_for('test') }}" method="post">
+        <!--    SEX RADIOS  -->
+        <div class="container justify-content-center text-center mb-4 pt-5">
+            <h2>{% block s %}{% endblock s %}</h2>
 
-        <div class="row justify-content-end text-start pe-5">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="sex_radio" id="male"
-                                   onchange="setSessionValue('sex_radio')">
-                            <label class="form-check-label text" for="male">
-                                {% block s1 %}{% endblock s1 %}
-                            </label>
+            <div class="row justify-content-end text-start pe-5">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sex_radio" id="male"
+                                       onchange="setSessionValue('sex_radio')">
+                                <label class="form-check-label text" for="male">
+                                    {% block s1 %}{% endblock s1 %}
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="sex_radio" id="female"
-                                   onchange="setSessionValue('sex_radio')">
-                            <label class="form-check-label text" for="female">
-                                {% block s2 %}{% endblock s2 %}
-                            </label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sex_radio" id="female"
+                                       onchange="setSessionValue('sex_radio')">
+                                <label class="form-check-label text" for="female">
+                                    {% block s2 %}{% endblock s2 %}
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--    AGE RADIOS  -->
-    <div class="container justify-content-center text-center mb-4">
-        <h2>{% block a %}{% endblock a %}</h2>
+        <!--    AGE RADIOS  -->
+        <div class="container justify-content-center text-center mb-4">
+            <h2>{% block a %}{% endblock a %}</h2>
 
-        <div class="row justify-content-end text-start pe-5">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age_radio" id="age0"
-                                   onchange="setSessionValue('age_radio')">
-                            <label class="form-check-label text" for="age0">
-                                <18
-                            </label>
+            <div class="row justify-content-end text-start pe-5">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="age_radio" id="age0"
+                                       onchange="setSessionValue('age_radio')">
+                                <label class="form-check-label text" for="age0">
+                                    <18
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age_radio" id="age1"
-                                   onchange="setSessionValue('age_radio')">
-                            <label class="form-check-label text" for="age1">
-                                18-25
-                            </label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="age_radio" id="age1"
+                                       onchange="setSessionValue('age_radio')">
+                                <label class="form-check-label text" for="age1">
+                                    18-25
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age_radio" id="age2"
-                                    onchange="setSessionValue('age_radio')">
-                            <label class="form-check-label text" for="age2">
-                                26-55
-                            </label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="age_radio" id="age2"
+                                        onchange="setSessionValue('age_radio')">
+                                <label class="form-check-label text" for="age2">
+                                    26-55
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age_radio" id="age3"
-                                   onchange="setSessionValue('age_radio')">
-                            <label class="form-check-label text" for="age3">
-                                >55
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--    DF ENCOUNTERED RADIOS   -->
-    <div class="container justify-content-center text-center mb-4">
-        <h2>{% block e %}{% endblock e %}</h2>
-
-        <div class="row justify-content-end text-start pe-5">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="df_radio" id="yes"
-                                   onchange="setSessionValue('df_radio')">
-                            <label class="form-check-label text" for="yes">
-                                {% block e1 %}{% endblock e1 %}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="df_radio" id="no"
-                                   onchange="setSessionValue('df_radio')">
-                            <label class="form-check-label text" for="no">
-                                {% block e2 %}{% endblock e2 %}
-                            </label>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="age_radio" id="age3"
+                                       onchange="setSessionValue('age_radio')">
+                                <label class="form-check-label text" for="age3">
+                                    >55
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-<!--    HIDDEN INPUTS FOR SESSION   -->
-    <input type="hidden" name="sex" id="sex_radio_value" value="">
-    <input type="hidden" name="age" id="age_radio_value" value="">
-    <input type="hidden" name="df" id="df_radio_value" value="">
+        <!--    DF ENCOUNTERED RADIOS   -->
+        <div class="container justify-content-center text-center mb-4">
+            <h2>{% block e %}{% endblock e %}</h2>
 
-    <!--    CONT/END BUTTONS    -->
-    <div class="container mt-3 d-flex justify-content-center">
-        <div class="fixed-sm-bottom mb-1">
-            <div class="row">
-                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
-                    <a class="btn btn-my-secondary" href="{{ url_for('index') }}">{% block b1 %}{% endblock b1 %}</a>
-                </div>
-                <div class="col-12 col-md-6 my-2 text-center">
-                    <button type="submit" class="btn btn-my-primary disabled" id="continue">
-                        {% block b2 %}{% endblock b2 %}
-                    </button>
+            <div class="row justify-content-end text-start pe-5">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="df_radio" id="yes"
+                                       onchange="setSessionValue('df_radio')">
+                                <label class="form-check-label text" for="yes">
+                                    {% block e1 %}{% endblock e1 %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="df_radio" id="no"
+                                       onchange="setSessionValue('df_radio')">
+                                <label class="form-check-label text" for="no">
+                                    {% block e2 %}{% endblock e2 %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
 
-<script>
-    function setSessionValue(radio) {
-        // sets value to X_radio_value, where X are sex/age/df radios
-        // these values are used to create a session
+    <!--    HIDDEN INPUTS FOR SESSION   -->
+        <input type="hidden" name="sex" id="sex_radio_value" value="">
+        <input type="hidden" name="age" id="age_radio_value" value="">
+        <input type="hidden" name="df" id="df_radio_value" value="">
 
-        // Get references to inputs
-        const radios = document.getElementsByName(radio);
-        const radio_value = document.getElementById(radio + '_value');
+        <!--    CONT/END BUTTONS    -->
+        <div class="container mt-3 d-flex justify-content-center">
+            <div class="fixed-sm-bottom mb-1">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
+                        <a class="btn btn-my-secondary" href="{{ url_for('index') }}">{% block b1 %}{% endblock b1 %}</a>
+                    </div>
+                    <div class="col-12 col-md-6 my-2 text-center">
+                        <button type="submit" class="btn btn-my-primary disabled" id="continue">
+                            {% block b2 %}{% endblock b2 %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 
-        // set value of X_radio_value depending on which radio was checked
-        let value = 0;
-        for (const rad of radios) {
-            if (rad.checked) {
-                radio_value.value = value;
-                break;
+    <script>
+        function setSessionValue(radio) {
+            // sets value to X_radio_value, where X are sex/age/df radios
+            // these values are used to create a session
+
+            // Get references to inputs
+            const radios = document.getElementsByName(radio);
+            const radio_value = document.getElementById(radio + '_value');
+
+            // set value of X_radio_value depending on which radio was checked
+            let value = 0;
+            for (const rad of radios) {
+                if (rad.checked) {
+                    radio_value.value = value;
+                    break;
+                }
+                value++;
             }
-            value++;
+
+            const changeEvent = new Event('change', { bubbles: true });
+            radio_value.dispatchEvent(changeEvent);
         }
 
-        const changeEvent = new Event('change', { bubbles: true });
-        radio_value.dispatchEvent(changeEvent);
-    }
+        const sex_radio_value = document.getElementById('sex_radio_value');
+        const age_radio_value = document.getElementById('age_radio_value');
+        const df_radio_value = document.getElementById('df_radio_value');
+        const continueButton = document.getElementById('continue');
 
-    const sex_radio_value = document.getElementById('sex_radio_value');
-    const age_radio_value = document.getElementById('age_radio_value');
-    const df_radio_value = document.getElementById('df_radio_value');
-    const continueButton = document.getElementById('continue');
-
-    // checks if all three inputs have a value and if so, enables continue
-    function checkInputs() {
-        if (sex_radio_value.value && age_radio_value.value && df_radio_value.value) {
-            continueButton.classList.remove('disabled');
+        // checks if all three inputs have a value and if so, enables continue
+        function checkInputs() {
+            if (sex_radio_value.value && age_radio_value.value && df_radio_value.value) {
+                continueButton.classList.remove('disabled');
+            }
         }
-    }
-    sex_radio_value.addEventListener('change', checkInputs);
-    age_radio_value.addEventListener('change', checkInputs);
-    df_radio_value.addEventListener('change', checkInputs);
-</script>
+        sex_radio_value.addEventListener('change', checkInputs);
+        age_radio_value.addEventListener('change', checkInputs);
+        df_radio_value.addEventListener('change', checkInputs);
+    </script>
 
+</div>
 {% endblock content %}

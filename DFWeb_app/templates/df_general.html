@@ -1,149 +1,152 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!--    GENERAL OVERVIEW OF DEEPFAKES-->
-<div class="container d-flex justify-content-center mb-4">
-    <h2>DEEPFAKES</h2>
-</div>
-<div class="container">
-    <div class="row pb-2 pb-lg-0">
-        <div class="col-12">
-            <h3>DEEP: {% block deep %}{% endblock deep %}</h3>
-        </div>
-    </div>
-    <div class="row pb-2 pb-lg-0">
-        <div class="col-12">
-            <h3>FAKES: {% block fake %}{% endblock fake %}</h3>
-        </div>
-    </div>
-</div>
-<div class="container mt-4 mb-4">
-    <p>{% block df %}{% endblock df %}</p>
-</div>
+<div class="container-lg my-5">
 
-<!--    WHAT CAN DEEPFAKES BE USED FOR-->
-<div class="container mt-4">
-    <h3>{% block what %}{% endblock what %}</h3>
+    <!--    GENERAL OVERVIEW OF DEEPFAKES-->
+    <div class="container d-flex justify-content-center mb-4">
+        <h2>DEEPFAKES</h2>
+    </div>
     <div class="container">
+        <div class="row pb-2 pb-lg-0">
+            <div class="col-12">
+                <h3>DEEP: {% block deep %}{% endblock deep %}</h3>
+            </div>
+        </div>
+        <div class="row pb-2 pb-lg-0">
+            <div class="col-12">
+                <h3>FAKES: {% block fake %}{% endblock fake %}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4 mb-4">
+        <p>{% block df %}{% endblock df %}</p>
+    </div>
+
+    <!--    WHAT CAN DEEPFAKES BE USED FOR-->
+    <div class="container mt-4">
+        <h3>{% block what %}{% endblock what %}</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-2 mb-md-0 me-0 me-md-2 text-md-end">
+                    <p class="text">{% block what2 %}{% endblock what2 %}</p>
+                </div>
+                <div class="col-1 d-flex align-items-center justify-content-center">
+                    <p>Vs</p>
+                </div>
+                <div class="col-md-2 mb-2 mb-md-0 ms-0 ms-md-2">
+                    <p class="text">{% block what3 %}{% endblock what3 %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    HOW DOES AI CREATE THINGS-->
+    <div class="container mt-4">
         <div class="row">
-            <div class="col-md-3 mb-2 mb-md-0 me-0 me-md-2 text-md-end">
-                <p class="text">{% block what2 %}{% endblock what2 %}</p>
+            <p>{% block how %}{% endblock how %}</p>
+        </div>
+        <div class="mt-4">
+            <h3>{% block how2 %}{% endblock how2 %}</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">{% block how3 %}{% endblock how3 %}</div>
             </div>
-            <div class="col-1 d-flex align-items-center justify-content-center">
-                <p>Vs</p>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <br>
+                </div>
             </div>
-            <div class="col-md-2 mb-2 mb-md-0 ms-0 ms-md-2">
-                <p class="text">{% block what3 %}{% endblock what3 %}
-                </p>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">{% block how4 %}{% endblock how4 %}</div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">{% block how5 %}{% endblock how5 %}</div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">{% block how6 %}{% endblock how6 %}</div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <br>
+                </div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">{% block how7 %}{% endblock how7 %}</p>
+                </div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">{% block how8 %}{% endblock how8 %}</p>
+                </div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">{% block how9 %}{% endblock how9 %}</p>
+                </div>
+            </div>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">{% block how10 %}{% endblock how10 %}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--    HOW DOES AI CREATE THINGS-->
-<div class="container mt-4">
-    <div class="row">
-        <p>{% block how %}{% endblock how %}</p>
-    </div>
-    <div class="mt-4">
-        <h3>{% block how2 %}{% endblock how2 %}</h3>
-    </div>
-    <div class="container">
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">{% block how3 %}{% endblock how3 %}</div>
+    <!--    WHY SO ARE DEEPFAKES SO REAL?-->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>{% block why %}{% endblock why %}</h3>
         </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <br>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    {% block why2 %}{% endblock why2 %}
+                </div>
             </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">{% block how4 %}{% endblock how4 %}</div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">{% block how5 %}{% endblock how5 %}</div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">{% block how6 %}{% endblock how6 %}</div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <br>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <br>
+                </div>
             </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">{% block how7 %}{% endblock how7 %}</p>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    {% block why3 %}{% endblock why3 %}
+                </div>
             </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">{% block how8 %}{% endblock how8 %}</p>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            {% block why4 %}{% endblock why4 %}
+                        </li>
+                        <li>
+                            {% block why5 %}{% endblock why5 %}
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">{% block how9 %}{% endblock how9 %}</p>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">{% block how10 %}{% endblock how10 %}</p>
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">{% block why6 %}{% endblock why6 %}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--    WHY SO ARE DEEPFAKES SO REAL?-->
-<div class="container mt-4">
-    <div class="mt-4">
-        <h3>{% block why %}{% endblock why %}</h3>
-    </div>
-    <div class="container">
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                {% block why2 %}{% endblock why2 %}
+    <!--    CONT/END BUTTONS-->
+    <div class="container mt-3 d-flex justify-content-center">
+        <div class="fixed-sm-bottom mb-1">
+            <div class="row">
+                <div class="col-12 my-2 text-center">
+                    <a class="btn btn-my-primary" href="{{ url_for('test') }}">{% block but1 %}{% endblock but1 %}</a>
+                </div>
             </div>
         </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <br>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                {% block why3 %}{% endblock why3 %}
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <ul>
-                    <li>
-                        {% block why4 %}{% endblock why4 %}
-                    </li>
-                    <li>
-                        {% block why5 %}{% endblock why5 %}
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">{% block why6 %}{% endblock why6 %}</p>
-            </div>
-        </div>
-    </div>
 </div>
-
-<!--    CONT/END BUTTONS-->
-<div class="container mt-3 d-flex justify-content-center">
-    <div class="fixed-sm-bottom mb-1">
-        <div class="row">
-            <div class="col-12 my-2 text-center">
-                <a class="btn btn-my-primary" href="{{ url_for('test') }}">{% block but1 %}{% endblock but1 %}</a>
-            </div>
-        </div>
-    </div>
 </div>
 
 {% endblock content %}

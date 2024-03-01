@@ -1,494 +1,496 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!--    TITLE  -->
-<div class="container d-flex justify-content-center mb-4">
-    <h2>{% block tit %}{% endblock tit %}</h2>
-</div>
+<div class="container-lg my-5">
 
-
-<!--CREATTING A PERSON-->
-<div class="container mt-4">
-    <div class="row pb-4 pb-lg-2">
-        <h1>{% block head %}{% endblock head %}</h1>
+    <!--    TITLE  -->
+    <div class="container d-flex justify-content-center mb-4">
+        <h2>{% block tit %}{% endblock tit %}</h2>
     </div>
 
-<!--    HOW -->
-    <h3>{% block how %}{% endblock how %}?</h3>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                {% block how2 %}{% endblock how2 %}
-            </div>
-            <div class="col-12">
-                {% block how3 %}{% endblock how3 %}
-            </div>
+
+    <!--CREATTING A PERSON-->
+    <div class="container mt-4">
+        <div class="row pb-4 pb-lg-2">
+            <h1>{% block head %}{% endblock head %}</h1>
         </div>
-    </div>
-</div>
 
-<!--    WHY -->
-<div class="container mt-4">
-    <div class="mt-4">
-        <h3>{% block why %}{% endblock why %}?</h3>
-    </div>
-    <div class="container">
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                {% block why2 %}{% endblock why2 %}
-            </div>
-            <div class="col-12">
-                {% block why3 %}{% endblock why3 %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--    WHAT    -->
-<div class="container mt-4">
-    <div class="mt-4">
-        <h3>{% block what %}{% endblock what %}?</h3>
-    </div>
-    <div class="container">
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                {% block what2 %}{% endblock what2 %}
-            </div>
-            <div class="col-12">
-                {% block what3 %}{% endblock what3 %}
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--EDITING A PERSON-->
-<div class="container mt-4">
-    <div class="row pb-4 pb-lg-2">
-        <h1>{% block edit %}{% endblock edit %}</h1>
-    </div>
-    <div class="row justify-content-center text-center">
-        <div class="col-12 col-md-3 py-2">
-            <button class="btn btn-primary" onclick="showDiv('FS')">IMAGE_A</button>
-        </div>
-        <div class="col-12 col-md-3 py-2">
-            <button class="btn btn-primary" onclick="showDiv('FMor')">IMAGE_B</button>
-        </div>
-        <div class="col-12 col-md-3 py-2">
-            <button class="btn btn-primary" onclick="showDiv('FMan')">IMAGE_C</button>
-        </div>
-        <div class="col-12 py-2">
-            {% block edit2 %}{% endblock edit2 %}
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<!----------------------------------------------------------------------------------------------------->
-<!--    FACE SWAP   -->
-<div id="FS" style="display: none;">
-
-<!--    HOW -->
-    <div class="container py-5">
-        {% block swap %}{% endblock swap %}
-    </div>
-
-    <div class="container">
-        <h3>{% block swaphow %}{% endblock swaphow %}?</h3>
+    <!--    HOW -->
+        <h3>{% block how %}{% endblock how %}?</h3>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p class="text">{% block swaphow2 %}{% endblock swaphow2 %}</p>
+                    {% block how2 %}{% endblock how2 %}
                 </div>
                 <div class="col-12">
-                    <p class="text">{% block swaphow3 %}{% endblock swaphow3 %}</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block swaphow4 %}{% endblock swaphow4 %}</p>
+                    {% block how3 %}{% endblock how3 %}
                 </div>
             </div>
         </div>
     </div>
 
-<!--    WHY -->
-    <div class="container mt-4">
-        <h3>{% block swapwhy %}{% endblock swapwhy %}?</h3>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    {% block swapwhy2 %}{% endblock swapwhy2 %}
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--    WHAT    -->
+    <!--    WHY -->
     <div class="container mt-4">
         <div class="mt-4">
-            <h3>{% block swapwhat %}{% endblock swapwhat %}?</h3>
+            <h3>{% block why %}{% endblock why %}?</h3>
         </div>
         <div class="container">
             <div class="row mb-2 mb-md-0">
                 <div class="col-12">
-                    <p class="text">{% block swapwhat2 %}{% endblock swapwhat2 %}</p>
+                    {% block why2 %}{% endblock why2 %}
                 </div>
                 <div class="col-12">
-                    <ul>
+                    {% block why3 %}{% endblock why3 %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    WHAT    -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>{% block what %}{% endblock what %}?</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    {% block what2 %}{% endblock what2 %}
+                </div>
+                <div class="col-12">
+                    {% block what3 %}{% endblock what3 %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--EDITING A PERSON-->
+    <div class="container mt-4">
+        <div class="row pb-4 pb-lg-2">
+            <h1>{% block edit %}{% endblock edit %}</h1>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-md-3 py-2">
+                <button class="btn btn-primary" onclick="showDiv('FS')">IMAGE_A</button>
+            </div>
+            <div class="col-12 col-md-3 py-2">
+                <button class="btn btn-primary" onclick="showDiv('FMor')">IMAGE_B</button>
+            </div>
+            <div class="col-12 col-md-3 py-2">
+                <button class="btn btn-primary" onclick="showDiv('FMan')">IMAGE_C</button>
+            </div>
+            <div class="col-12 py-2">
+                {% block edit2 %}{% endblock edit2 %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!----------------------------------------------------------------------------------------------------->
+    <!--    FACE SWAP   -->
+    <div id="FS" style="display: none;">
+
+    <!--    HOW -->
+        <div class="container py-5">
+            {% block swap %}{% endblock swap %}
+        </div>
+
+        <div class="container">
+            <h3>{% block swaphow %}{% endblock swaphow %}?</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text">{% block swaphow2 %}{% endblock swaphow2 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">{% block swaphow3 %}{% endblock swaphow3 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">{% block swaphow4 %}{% endblock swaphow4 %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    WHY -->
+        <div class="container mt-4">
+            <h3>{% block swapwhy %}{% endblock swapwhy %}?</h3>
+            <div class="container">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        {% block swapwhy2 %}{% endblock swapwhy2 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    WHAT    -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block swapwhat %}{% endblock swapwhat %}?</h3>
+            </div>
+            <div class="container">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block swapwhat2 %}{% endblock swapwhat2 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                {% block swapwhat3 %}{% endblock swapwhat3 %}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        {% block swapwhat4 %}{% endblock swapwhat4 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--    ATTACK SCENARIOS    -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block swapscen %}{% endblock swapscen %}?</h3>
+            </div>
+            <div class="container">
+                {% block swapscen1 %}{% endblock swapscen1 %} 1:
+                <div class="container">
+                    <ol>
                         <li>
-                            {% block swapwhat3 %}{% endblock swapwhat3 %}
+                            <p class="text">{% block swapscen11 %}{% endblock swapscen11 %}</p>
                         </li>
-                    </ul>
+                        <li>
+                            <p class="text">{% block swapscen12 %}{% endblock swapscen12 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen13 %}{% endblock swapscen13 %}</p>
+                        </li>
+                    </ol>
                 </div>
-                <div class="col-12">
-                    {% block swapwhat4 %}{% endblock swapwhat4 %}
+
+                {% block swapscen2 %}{% endblock swapscen2 %} 2:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block swapscen21 %}{% endblock swapscen21 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen22 %}{% endblock swapscen22 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen23 %}{% endblock swapscen23 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen24 %}{% endblock swapscen24 %}</p>
+                        </li>
+                    </ol>
+                </div>
+
+                {% block swapscen3 %}{% endblock swapscen3 %} 3:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block swapscen31 %}{% endblock swapscen31 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen32 %}{% endblock swapscen32 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen33 %}{% endblock swapscen33 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block swapscen34 %}{% endblock swapscen34 %}</p>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
 
 
-<!--    ATTACK SCENARIOS    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block swapscen %}{% endblock swapscen %}?</h3>
+
+
+    <!----------------------------------------------------------------------------------------------------->
+    <!--    FACE MANIPULATION  -->
+    <div id="FMan" style="display: none;">
+
+    <!--    HOW -->
+        <div class="container py-5">
+            {% block man %}{% endblock man %}
         </div>
         <div class="container">
-            {% block swapscen1 %}{% endblock swapscen1 %} 1:
+            <h3>{% block manhow %}{% endblock manhow %}?</h3>
             <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block swapscen11 %}{% endblock swapscen11 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen12 %}{% endblock swapscen12 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen13 %}{% endblock swapscen13 %}</p>
-                    </li>
-                </ol>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text">{% block manhow2 %}{% endblock manhow2 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">{% block manhow3 %}{% endblock manhow3 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">{% block manhow4 %}{% endblock manhow4 %}</p>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            {% block swapscen2 %}{% endblock swapscen2 %} 2:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block swapscen21 %}{% endblock swapscen21 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen22 %}{% endblock swapscen22 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen23 %}{% endblock swapscen23 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen24 %}{% endblock swapscen24 %}</p>
-                    </li>
-                </ol>
+    <!--    WHY -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block manwhy %}{% endblock manwhy %}?</h3>
             </div>
-
-            {% block swapscen3 %}{% endblock swapscen3 %} 3:
             <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block swapscen31 %}{% endblock swapscen31 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen32 %}{% endblock swapscen32 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen33 %}{% endblock swapscen33 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block swapscen34 %}{% endblock swapscen34 %}</p>
-                    </li>
-                </ol>
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block manwhy2 %}{% endblock manwhy2 %}</p>
+                    </div>
+                </div>
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block manwhy3 %}{% endblock manwhy3 %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    WHAT    -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block manwhat %}{% endblock manwhat %}?</h3>
+            </div>
+            <div class="container">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block manwhat2 %}{% endblock manwhat2 %}</p>
+                    </div>
+                    <div class="col-12">
+                        {% block manwhat3 %}{% endblock manwhat3 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--    ATTACK SCENARIOS    -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block manscen %}{% endblock manscen %}?</h3>
+            </div>
+            <div class="container">
+                {% block manscen1 %}{% endblock manscen1 %} 1:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block manscen11 %}{% endblock manscen11 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen12 %}{% endblock manscen12 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen13 %}{% endblock manscen13 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen14 %}{% endblock manscen14 %}</p>
+                        </li>
+                    </ol>
+                </div>
+
+                {% block manscen2 %}{% endblock manscen2 %} 2:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block manscen21 %}{% endblock manscen21 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen22 %}{% endblock manscen22 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen23 %}{% endblock manscen23 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen24 %}{% endblock manscen24 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen25 %}{% endblock manscen25 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen26 %}{% endblock manscen26 %}</p>
+                        </li>
+                    </ol>
+                </div>
+
+                {% block manscen3 %}{% endblock manscen3 %} 3:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block manscen31 %}{% endblock manscen31 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen32 %}{% endblock manscen32 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen33 %}{% endblock manscen33 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen34 %}{% endblock manscen34 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block manscen35 %}{% endblock manscen35 %}</p>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
+    <!----------------------------------------------------------------------------------------------------->
+    <!--    FACE MORPHING   -->
+    <div id="FMor" style="display: none;">
 
-
-<!----------------------------------------------------------------------------------------------------->
-<!--    FACE MANIPULATION  -->
-<div id="FMan" style="display: none;">
-
-<!--    HOW -->
-    <div class="container py-5">
-        {% block man %}{% endblock man %}
-    </div>
-    <div class="container">
-        <h3>{% block manhow %}{% endblock manhow %}?</h3>
+    <!--    HOW -->
+        <div class="container py-5">
+            {% block mor %}{% endblock mor %}
+        </div>
         <div class="container">
+            <h3>{% block morhow %}{% endblock morhow %}?</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text">{% block morhow2 %}{% endblock morhow2 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">{% block morhow3 %}{% endblock morhow3 %}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">{% block morhow4 %}{% endblock morhow4 %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    WHY -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block morwhy %}{% endblock morwhy %}?</h3>
+            </div>
+            <div class="container">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block morwhy2 %}{% endblock morwhy2 %}</p>
+                    </div>
+                </div>
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block morwhy3 %}{% endblock morwhy3 %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    WHAT    -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block morwhat %}{% endblock morwhat %}?</h3>
+            </div>
+            <div class="container">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        {% block morwhat2 %}{% endblock morwhat2 %}
+                    </div>
+                    <div class="col-12">
+                        {% block morwhat3 %}{% endblock morwhat3 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--    ATTACK SCENARIOS    -->
+        <div class="container mt-4">
+            <div class="mt-4">
+                <h3>{% block morscen %}{% endblock morscen %}?</h3>
+            </div>
+            <div class="container">
+                {% block morscen1 %}{% endblock morscen1 %} 1:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block morscen11 %}{% endblock morscen11 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen12 %}{% endblock morscen12 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen13 %}{% endblock morscen13 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen14 %}{% endblock morscen14 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen15 %}{% endblock morscen15 %}</p>
+                        </li>
+                    </ol>
+                </div>
+
+                {% block morscen2 %}{% endblock morscen2 %} 2:
+                <div class="container">
+                    <ol>
+                        <li>
+                            <p class="text">{% block morscen21 %}{% endblock morscen21 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen22 %}{% endblock morscen22 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen23 %}{% endblock morscen23 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen24 %}{% endblock morscen24 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block morscen25 %}{% endblock morscen25 %}</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--    CONT/END BUTTONS-->
+    <div class="container mt-3 d-flex justify-content-center">
+        <div class="fixed-sm-bottom mb-1">
             <div class="row">
-                <div class="col-12">
-                    <p class="text">{% block manhow2 %}{% endblock manhow2 %}</p>
+                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
+                    <a class="btn btn-my-secondary" href="{{ url_for('general') }}">{% block but1 %}{% endblock but1 %}</a>
                 </div>
-                <div class="col-12">
-                    <p class="text">{% block manhow3 %}{% endblock manhow3 %}</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block manhow4 %}{% endblock manhow4 %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--    WHY -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block manwhy %}{% endblock manwhy %}?</h3>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block manwhy2 %}{% endblock manwhy2 %}</p>
-                </div>
-            </div>
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block manwhy3 %}{% endblock manwhy3 %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--    WHAT    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block manwhat %}{% endblock manwhat %}?</h3>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block manwhat2 %}{% endblock manwhat2 %}</p>
-                </div>
-                <div class="col-12">
-                    {% block manwhat3 %}{% endblock manwhat3 %}
+                <div class="col-12 col-md-6 my-2 text-center">
+                    <a class="btn btn-my-primary" href="{{ url_for('videos') }}">{% block but2 %}{% endblock but2 %}</a>
                 </div>
             </div>
         </div>
     </div>
 
 
-<!--    ATTACK SCENARIOS    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block manscen %}{% endblock manscen %}?</h3>
-        </div>
-        <div class="container">
-            {% block manscen1 %}{% endblock manscen1 %} 1:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block manscen11 %}{% endblock manscen11 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen12 %}{% endblock manscen12 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen13 %}{% endblock manscen13 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen14 %}{% endblock manscen14 %}</p>
-                    </li>
-                </ol>
-            </div>
+    <script>
+        function showDiv(divID) {
+            document.getElementById("FS").style.display = "none";
+            document.getElementById("FMor").style.display = "none";
+            document.getElementById("FMan").style.display = "none";
 
-            {% block manscen2 %}{% endblock manscen2 %} 2:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block manscen21 %}{% endblock manscen21 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen22 %}{% endblock manscen22 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen23 %}{% endblock manscen23 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen24 %}{% endblock manscen24 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen25 %}{% endblock manscen25 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen26 %}{% endblock manscen26 %}</p>
-                    </li>
-                </ol>
-            </div>
-
-            {% block manscen3 %}{% endblock manscen3 %} 3:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block manscen31 %}{% endblock manscen31 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen32 %}{% endblock manscen32 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen33 %}{% endblock manscen33 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen34 %}{% endblock manscen34 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block manscen35 %}{% endblock manscen35 %}</p>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
+            document.getElementById(divID).style.display = "block";
+        }
+    </script>
 </div>
-
-
-<!----------------------------------------------------------------------------------------------------->
-<!--    FACE MORPHING   -->
-<div id="FMor" style="display: none;">
-
-<!--    HOW -->
-    <div class="container py-5">
-        {% block mor %}{% endblock mor %}
-    </div>
-    <div class="container">
-        <h3>{% block morhow %}{% endblock morhow %}?</h3>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p class="text">{% block morhow2 %}{% endblock morhow2 %}</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block morhow3 %}{% endblock morhow3 %}</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block morhow4 %}{% endblock morhow4 %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--    WHY -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block morwhy %}{% endblock morwhy %}?</h3>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block morwhy2 %}{% endblock morwhy2 %}</p>
-                </div>
-            </div>
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block morwhy3 %}{% endblock morwhy3 %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!--    WHAT    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block morwhat %}{% endblock morwhat %}?</h3>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    {% block morwhat2 %}{% endblock morwhat2 %}
-                </div>
-                <div class="col-12">
-                    {% block morwhat3 %}{% endblock morwhat3 %}
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<!--    ATTACK SCENARIOS    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block morscen %}{% endblock morscen %}?</h3>
-        </div>
-        <div class="container">
-            {% block morscen1 %}{% endblock morscen1 %} 1:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block morscen11 %}{% endblock morscen11 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen12 %}{% endblock morscen12 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen13 %}{% endblock morscen13 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen14 %}{% endblock morscen14 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen15 %}{% endblock morscen15 %}</p>
-                    </li>
-                </ol>
-            </div>
-
-            {% block morscen2 %}{% endblock morscen2 %} 2:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block morscen21 %}{% endblock morscen21 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen22 %}{% endblock morscen22 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen23 %}{% endblock morscen23 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen24 %}{% endblock morscen24 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block morscen25 %}{% endblock morscen25 %}</p>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-<!--    CONT/END BUTTONS-->
-<div class="container mt-3 d-flex justify-content-center">
-    <div class="fixed-sm-bottom mb-1">
-        <div class="row">
-            <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
-                <a class="btn btn-my-secondary" href="{{ url_for('general') }}">{% block but1 %}{% endblock but1 %}</a>
-            </div>
-            <div class="col-12 col-md-6 my-2 text-center">
-                <a class="btn btn-my-primary" href="{{ url_for('videos') }}">{% block but2 %}{% endblock but2 %}</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    function showDiv(divID) {
-        document.getElementById("FS").style.display = "none";
-        document.getElementById("FMor").style.display = "none";
-        document.getElementById("FMan").style.display = "none";
-
-        document.getElementById(divID).style.display = "block";
-    }
-</script>
-
 {% endblock content %}

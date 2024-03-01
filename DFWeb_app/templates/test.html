@@ -1,37 +1,93 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!--<div class="container d-flex justify-content-center mb-4">-->
-<!--    <h2>COURSE INFORMATION</h2>-->
-<!--</div>-->
+<div class="container-lg my-5">
 
-<div class="container mb-4 text-center">
-    <h1>{% block tit %}{% endblock tit %} {% if feedback %}{% block tit2 %}{% endblock tit2 %}{% endif %}</h1>
-</div>
+    <!--<div class="container d-flex justify-content-center mb-4">-->
+    <!--    <h2>COURSE INFORMATION</h2>-->
+    <!--</div>-->
 
-<form id="testForm" action="{% if session.get('pre-test_completed') and not session.get('post-test_completed') %}
-                                    {{ url_for('test') }}
-                            {% elif session.get('post-test_completed') %}
-                                {{ url_for('index') }}
-                            {% else %}
-                                {{ url_for('general') }}
-                            {% endif %}" method="post">
-    <div class="container">
-    <!--    QUESTION 1    -->
-        <div class="justify-content-center align-items-center mt-4">
+    <div class="container mb-4 text-center">
+        <h1>{% block tit %}{% endblock tit %} {% if feedback %}{% block tit2 %}{% endblock tit2 %}{% endif %}</h1>
+    </div>
+
+    <form id="testForm" action="{% if session.get('pre-test_completed') and not session.get('post-test_completed') %}
+                                        {{ url_for('test') }}
+                                {% elif session.get('post-test_completed') %}
+                                    {{ url_for('index') }}
+                                {% else %}
+                                    {{ url_for('general') }}
+                                {% endif %}" method="post">
+        <div class="container">
+        <!--    QUESTION 1    -->
+            <div class="justify-content-center align-items-center mt-4">
+                <div class="row py-2">
+                    <div class="card" style="min-height: 100px; min-width: 350px;">
+                        <div class="card-header">
+                            <h3>1) {% block question1 %}{% endblock question1 %}:</h3>
+                        </div>
+
+                        <div class="card-body ps-5">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1a1" value="1" checked>
+                                        <label class="form-check-label text" for="q1a1">
+                                            {% block question1answer1 %}{% endblock question1answer1 %}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1a2" value="2">
+                                        <label class="form-check-label text" for="q1a2">
+                                            {% block question1answer2 %}{% endblock question1answer2 %}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1a3" value="3">
+                                        <label class="form-check-label text" for="q1a3">
+                                            {% block question1answer3 %}{% endblock question1answer3 %}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1a4" value="4">
+                                        <label class="form-check-label text" for="q1a4">
+                                            {% block question1answer4 %}{% endblock question1answer4 %}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 2    -->
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>1) {% block question1 %}{% endblock question1 %}:</h3>
+                        <h3>2) {% block question2 %}{% endblock question2 %}:</h3>
                     </div>
-    
+
                     <div class="card-body ps-5">
                         <div class="row">
                             <div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a1" value="1" checked>
-                                    <label class="form-check-label text" for="q1a1">
-                                        {% block question1answer1 %}{% endblock question1answer1 %}
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a1" value="1" checked>
+                                    <label class="form-check-label text" for="q2a1">
+                                        {% block question2answer1 %}{% endblock question2answer1 %}
                                     </label>
                                 </div>
                             </div>
@@ -39,9 +95,9 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a2" value="2">
-                                    <label class="form-check-label text" for="q1a2">
-                                        {% block question1answer2 %}{% endblock question1answer2 %}
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a2" value="2">
+                                    <label class="form-check-label text" for="q2a2">
+                                        {% block question2answer2 %}{% endblock question2answer2 %}
                                     </label>
                                 </div>
                             </div>
@@ -49,9 +105,9 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a3" value="3">
-                                    <label class="form-check-label text" for="q1a3">
-                                        {% block question1answer3 %}{% endblock question1answer3 %}
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a3" value="3">
+                                    <label class="form-check-label text" for="q2a3">
+                                        {% block question2answer3 %}{% endblock question2answer3 %}
                                     </label>
                                 </div>
                             </div>
@@ -59,9 +115,601 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a4" value="4">
-                                    <label class="form-check-label text" for="q1a4">
-                                        {% block question1answer4 %}{% endblock question1answer4 %}
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a4" value="4">
+                                    <label class="form-check-label text" for="q2a4">
+                                        {% block question2answer4 %}{% endblock question2answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 3    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>3) {% block question3 %}{% endblock question3 %}:</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a1" value="1" checked>
+                                    <label class="form-check-label text" for="q3a1">
+                                        {% block question3answer1 %}{% endblock question3answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a2" value="2">
+                                    <label class="form-check-label text" for="q3a2">
+                                        {% block question3answer2 %}{% endblock question3answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a3" value="3">
+                                    <label class="form-check-label text" for="q3a3">
+                                        {% block question3answer3 %}{% endblock question3answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a4" value="4">
+                                    <label class="form-check-label text" for="q3a4">
+                                        {% block question3answer4 %}{% endblock question3answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!--    QUESTION 4    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        {% block question4 %}{% endblock question4 %}
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a1" value="1">
+                                    <label class="form-check-label text" for="q4a1">
+                                        {% block question4answer1 %}{% endblock question4answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a2" value="2">
+                                    <label class="form-check-label text" for="q4a2">
+                                        {% block question4answer2 %}{% endblock question4answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a3" value="3">
+                                    <label class="form-check-label text" for="q4a3">
+                                        {% block question4answer3 %}{% endblock question4answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a4" value="4">
+                                    <label class="form-check-label text" for="q4a4">
+                                        {% block question4answer4 %}{% endblock question4answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a5" value="5">
+                                    <label class="form-check-label text" for="q4a5">
+                                        {% block question4answer5 %}{% endblock question4answer5 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a6" value="6">
+                                    <label class="form-check-label text" for="q4a6">
+                                        {% block question4answer6 %}{% endblock question4answer6 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a7" value="7">
+                                    <label class="form-check-label text" for="q4a7">
+                                        {% block question4answer7 %}{% endblock question4answer7 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q4" id="q4a8" value="8">
+                                    <label class="form-check-label text" for="q4a8">
+                                        {% block question4answer8 %}{% endblock question4answer8 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 5    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>5) {% block question5 %}{% endblock question5 %}:</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5a1" value="1" checked>
+                                    <label class="form-check-label text" for="q5a1">
+                                        {% block question5answer1 %}{% endblock question5answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5a2" value="2">
+                                    <label class="form-check-label text" for="q5a2">
+                                        {% block question5answer2 %}{% endblock question5answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5a3" value="3">
+                                    <label class="form-check-label text" for="q5a3">
+                                        {% block question5answer3 %}{% endblock question5answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5a4" value="4">
+                                    <label class="form-check-label text" for="q5a4">
+                                        {% block question5answer4 %}{% endblock question5answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 6    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        {% block question6 %}{% endblock question6 %}
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6a1" value="1" checked>
+                                    <label class="form-check-label text" for="q6a1">
+                                        {% block question6answer1 %}{% endblock question6answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6a2" value="2">
+                                    <label class="form-check-label text" for="q6a2">
+                                        {% block question6answer2 %}{% endblock question6answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6a3" value="3">
+                                    <label class="form-check-label text" for="q6a3">
+                                        {% block question6answer3 %}{% endblock question6answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6a4" value="4">
+                                    <label class="form-check-label text" for="q6a4">
+                                        {% block question6answer4 %}{% endblock question6answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 7    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        {% block question7 %}{% endblock question7 %}
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q7" id="q7a1" value="1">
+                                    <label class="form-check-label text" for="q7a1">
+                                        {% block question7answer1 %}{% endblock question7answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q7" id="q7a2" value="2">
+                                    <label class="form-check-label text" for="q7a2">
+                                        {% block question7answer2 %}{% endblock question7answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q7" id="q7a3" value="3">
+                                    <label class="form-check-label text" for="q7a3">
+                                        {% block question7answer3 %}{% endblock question7answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="q7" id="q7a4" value="4">
+                                    <label class="form-check-label text" for="q7a4">
+                                        {% block question7answer4 %}{% endblock question7answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 8    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>8) {% block question8 %}{% endblock question8 %}:</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8a1" value="1" checked>
+                                    <label class="form-check-label text" for="q8a1">
+                                        {% block question8answer1 %}{% endblock question8answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8a2" value="2">
+                                    <label class="form-check-label text" for="q8a2">
+                                        {% block question8answer2 %}{% endblock question8answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8a3" value="3">
+                                    <label class="form-check-label text" for="q8a3">
+                                        {% block question8answer3 %}{% endblock question8answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8a4" value="4">
+                                    <label class="form-check-label text" for="q8a4">
+                                        {% block question8answer4 %}{% endblock question8answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 9    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>9) {% block question9 %}{% endblock question9 %}:</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9a1" value="1" checked>
+                                    <label class="form-check-label text" for="q9a1">
+                                        {% block question9answer1 %}{% endblock question9answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9a2" value="2">
+                                    <label class="form-check-label text" for="q9a2">
+                                        {% block question9answer2 %}{% endblock question9answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9a3" value="3">
+                                    <label class="form-check-label text" for="q9a3">
+                                        {% block question9answer3 %}{% endblock question9answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9a4" value="4">
+                                    <label class="form-check-label text" for="q9a4">
+                                        {% block question9answer4 %}{% endblock question9answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 10    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>10) {% block question10 %}{% endblock question10 %}.</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10a1" value="1" checked>
+                                    <label class="form-check-label text" for="q10a1">
+                                        {% block question10answer1 %}{% endblock question10answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10a2" value="2">
+                                    <label class="form-check-label text" for="q10a2">
+                                        {% block question10answer2 %}{% endblock question10answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10a3" value="3">
+                                    <label class="form-check-label text" for="q10a3">
+                                        {% block question10answer3 %}{% endblock question10answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 11    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        {% block question11 %}{% endblock question11 %}
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11a1" value="1" checked>
+                                    <label class="form-check-label text" for="q11a1">
+                                        {% block question11answer1 %}{% endblock question11answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11a2" value="2">
+                                    <label class="form-check-label text" for="q11a2">
+                                        {% block question11answer2 %}{% endblock question11answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11a3" value="3">
+                                    <label class="form-check-label text" for="q11a3">
+                                        {% block question11answer3 %}{% endblock question11answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11a4" value="4">
+                                    <label class="form-check-label text" for="q11a4">
+                                        {% block question11answer4 %}{% endblock question11answer4 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 12    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>12) {% block question12 %}{% endblock question12 %}:</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12a1" value="1" checked>
+                                    <label class="form-check-label text" for="q12a1">
+                                        {% block question12answer1 %}{% endblock question12answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12a2" value="2">
+                                    <label class="form-check-label text" for="q12a2">
+                                        {% block question12answer2 %}{% endblock question12answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12a3" value="3">
+                                    <label class="form-check-label text" for="q12a3">
+                                        {% block question12answer3 %}{% endblock question12answer3 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--    QUESTION 13    -->
+            <div class="row py-2">
+                <div class="card" style="min-height: 100px; min-width: 350px;">
+                    <div class="card-header">
+                        <h3>13) {% block question13 %}{% endblock question13 %}:</h3>
+                    </div>
+
+                    <div class="card-body ps-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13a1" value="1" checked>
+                                    <label class="form-check-label text" for="q13a1">
+                                        {% block question13answer1 %}{% endblock question13answer1 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13a2" value="2">
+                                    <label class="form-check-label text" for="q13a2">
+                                        {% block question13answer2 %}{% endblock question13answer2 %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13a3" value="3">
+                                    <label class="form-check-label text" for="q13a3">
+                                        {% block question13answer3 %}{% endblock question13answer3 %}
                                     </label>
                                 </div>
                             </div>
@@ -70,875 +718,230 @@
                 </div>
             </div>
         </div>
-    
-    
-    <!--    QUESTION 2    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>2) {% block question2 %}{% endblock question2 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a1" value="1" checked>
-                                <label class="form-check-label text" for="q2a1">
-                                    {% block question2answer1 %}{% endblock question2answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a2" value="2">
-                                <label class="form-check-label text" for="q2a2">
-                                    {% block question2answer2 %}{% endblock question2answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a3" value="3">
-                                <label class="form-check-label text" for="q2a3">
-                                    {% block question2answer3 %}{% endblock question2answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2a4" value="4">
-                                <label class="form-check-label text" for="q2a4">
-                                    {% block question2answer4 %}{% endblock question2answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 3    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>3) {% block question3 %}{% endblock question3 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a1" value="1" checked>
-                                <label class="form-check-label text" for="q3a1">
-                                    {% block question3answer1 %}{% endblock question3answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a2" value="2">
-                                <label class="form-check-label text" for="q3a2">
-                                    {% block question3answer2 %}{% endblock question3answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a3" value="3">
-                                <label class="form-check-label text" for="q3a3">
-                                    {% block question3answer3 %}{% endblock question3answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q3" id="q3a4" value="4">
-                                <label class="form-check-label text" for="q3a4">
-                                    {% block question3answer4 %}{% endblock question3answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    <!--    QUESTION 4    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    {% block question4 %}{% endblock question4 %}
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a1" value="1">
-                                <label class="form-check-label text" for="q4a1">
-                                    {% block question4answer1 %}{% endblock question4answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a2" value="2">
-                                <label class="form-check-label text" for="q4a2">
-                                    {% block question4answer2 %}{% endblock question4answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a3" value="3">
-                                <label class="form-check-label text" for="q4a3">
-                                    {% block question4answer3 %}{% endblock question4answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a4" value="4">
-                                <label class="form-check-label text" for="q4a4">
-                                    {% block question4answer4 %}{% endblock question4answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a5" value="5">
-                                <label class="form-check-label text" for="q4a5">
-                                    {% block question4answer5 %}{% endblock question4answer5 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a6" value="6">
-                                <label class="form-check-label text" for="q4a6">
-                                    {% block question4answer6 %}{% endblock question4answer6 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a7" value="7">
-                                <label class="form-check-label text" for="q4a7">
-                                    {% block question4answer7 %}{% endblock question4answer7 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q4" id="q4a8" value="8">
-                                <label class="form-check-label text" for="q4a8">
-                                    {% block question4answer8 %}{% endblock question4answer8 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 5    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>5) {% block question5 %}{% endblock question5 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a1" value="1" checked>
-                                <label class="form-check-label text" for="q5a1">
-                                    {% block question5answer1 %}{% endblock question5answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a2" value="2">
-                                <label class="form-check-label text" for="q5a2">
-                                    {% block question5answer2 %}{% endblock question5answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a3" value="3">
-                                <label class="form-check-label text" for="q5a3">
-                                    {% block question5answer3 %}{% endblock question5answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q5" id="q5a4" value="4">
-                                <label class="form-check-label text" for="q5a4">
-                                    {% block question5answer4 %}{% endblock question5answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 6    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    {% block question6 %}{% endblock question6 %}
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a1" value="1" checked>
-                                <label class="form-check-label text" for="q6a1">
-                                    {% block question6answer1 %}{% endblock question6answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a2" value="2">
-                                <label class="form-check-label text" for="q6a2">
-                                    {% block question6answer2 %}{% endblock question6answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a3" value="3">
-                                <label class="form-check-label text" for="q6a3">
-                                    {% block question6answer3 %}{% endblock question6answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q6" id="q6a4" value="4">
-                                <label class="form-check-label text" for="q6a4">
-                                    {% block question6answer4 %}{% endblock question6answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 7    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    {% block question7 %}{% endblock question7 %}
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a1" value="1">
-                                <label class="form-check-label text" for="q7a1">
-                                    {% block question7answer1 %}{% endblock question7answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a2" value="2">
-                                <label class="form-check-label text" for="q7a2">
-                                    {% block question7answer2 %}{% endblock question7answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a3" value="3">
-                                <label class="form-check-label text" for="q7a3">
-                                    {% block question7answer3 %}{% endblock question7answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="q7" id="q7a4" value="4">
-                                <label class="form-check-label text" for="q7a4">
-                                    {% block question7answer4 %}{% endblock question7answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 8    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>8) {% block question8 %}{% endblock question8 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a1" value="1" checked>
-                                <label class="form-check-label text" for="q8a1">
-                                    {% block question8answer1 %}{% endblock question8answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a2" value="2">
-                                <label class="form-check-label text" for="q8a2">
-                                    {% block question8answer2 %}{% endblock question8answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a3" value="3">
-                                <label class="form-check-label text" for="q8a3">
-                                    {% block question8answer3 %}{% endblock question8answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q8" id="q8a4" value="4">
-                                <label class="form-check-label text" for="q8a4">
-                                    {% block question8answer4 %}{% endblock question8answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 9    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>9) {% block question9 %}{% endblock question9 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a1" value="1" checked>
-                                <label class="form-check-label text" for="q9a1">
-                                    {% block question9answer1 %}{% endblock question9answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a2" value="2">
-                                <label class="form-check-label text" for="q9a2">
-                                    {% block question9answer2 %}{% endblock question9answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a3" value="3">
-                                <label class="form-check-label text" for="q9a3">
-                                    {% block question9answer3 %}{% endblock question9answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q9" id="q9a4" value="4">
-                                <label class="form-check-label text" for="q9a4">
-                                    {% block question9answer4 %}{% endblock question9answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 10    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>10) {% block question10 %}{% endblock question10 %}.</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q10" id="q10a1" value="1" checked>
-                                <label class="form-check-label text" for="q10a1">
-                                    {% block question10answer1 %}{% endblock question10answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q10" id="q10a2" value="2">
-                                <label class="form-check-label text" for="q10a2">
-                                    {% block question10answer2 %}{% endblock question10answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q10" id="q10a3" value="3">
-                                <label class="form-check-label text" for="q10a3">
-                                    {% block question10answer3 %}{% endblock question10answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 11    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    {% block question11 %}{% endblock question11 %}
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a1" value="1" checked>
-                                <label class="form-check-label text" for="q11a1">
-                                    {% block question11answer1 %}{% endblock question11answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a2" value="2">
-                                <label class="form-check-label text" for="q11a2">
-                                    {% block question11answer2 %}{% endblock question11answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a3" value="3">
-                                <label class="form-check-label text" for="q11a3">
-                                    {% block question11answer3 %}{% endblock question11answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q11" id="q11a4" value="4">
-                                <label class="form-check-label text" for="q11a4">
-                                    {% block question11answer4 %}{% endblock question11answer4 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 12    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>12) {% block question12 %}{% endblock question12 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q12" id="q12a1" value="1" checked>
-                                <label class="form-check-label text" for="q12a1">
-                                    {% block question12answer1 %}{% endblock question12answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q12" id="q12a2" value="2">
-                                <label class="form-check-label text" for="q12a2">
-                                    {% block question12answer2 %}{% endblock question12answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q12" id="q12a3" value="3">
-                                <label class="form-check-label text" for="q12a3">
-                                    {% block question12answer3 %}{% endblock question12answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    <!--    QUESTION 13    -->
-        <div class="row py-2">
-            <div class="card" style="min-height: 100px; min-width: 350px;">
-                <div class="card-header">
-                    <h3>13) {% block question13 %}{% endblock question13 %}:</h3>
-                </div>
-    
-                <div class="card-body ps-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q13" id="q13a1" value="1" checked>
-                                <label class="form-check-label text" for="q13a1">
-                                    {% block question13answer1 %}{% endblock question13answer1 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q13" id="q13a2" value="2">
-                                <label class="form-check-label text" for="q13a2">
-                                    {% block question13answer2 %}{% endblock question13answer2 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q13" id="q13a3" value="3">
-                                <label class="form-check-label text" for="q13a3">
-                                    {% block question13answer3 %}{% endblock question13answer3 %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-<!--    get values of previously answered questions     -->
-    {% if session.get('pre-test_completed') %}
-        <div id="q1ans" data-ans="{{ session.get('q1a') }}"></div>
-        <div id="q2ans" data-ans="{{ session.get('q2a') }}"></div>
-        <div id="q3ans" data-ans="{{ session.get('q3a') }}"></div>
-        <div id="q4ans" data-ans="{{ session.get('q4a') }}"></div>
-        <div id="q5ans" data-ans="{{ session.get('q5a') }}"></div>
-        <div id="q6ans" data-ans="{{ session.get('q6a') }}"></div>
-        <div id="q7ans" data-ans="{{ session.get('q7a') }}"></div>
-        <div id="q8ans" data-ans="{{ session.get('q8a') }}"></div>
-        <div id="q9ans" data-ans="{{ session.get('q9a') }}"></div>
-        <div id="q10ans" data-ans="{{ session.get('q10a') }}"></div>
-        <div id="q11ans" data-ans="{{ session.get('q11a') }}"></div>
-        <div id="q12ans" data-ans="{{ session.get('q12a') }}"></div>
-        <div id="q13ans" data-ans="{{ session.get('q13a') }}"></div>
-    {% endif %}
+    <!--    get values of previously answered questions     -->
+        {% if session.get('pre-test_completed') %}
+            <div id="q1ans" data-ans="{{ session.get('q1a') }}"></div>
+            <div id="q2ans" data-ans="{{ session.get('q2a') }}"></div>
+            <div id="q3ans" data-ans="{{ session.get('q3a') }}"></div>
+            <div id="q4ans" data-ans="{{ session.get('q4a') }}"></div>
+            <div id="q5ans" data-ans="{{ session.get('q5a') }}"></div>
+            <div id="q6ans" data-ans="{{ session.get('q6a') }}"></div>
+            <div id="q7ans" data-ans="{{ session.get('q7a') }}"></div>
+            <div id="q8ans" data-ans="{{ session.get('q8a') }}"></div>
+            <div id="q9ans" data-ans="{{ session.get('q9a') }}"></div>
+            <div id="q10ans" data-ans="{{ session.get('q10a') }}"></div>
+            <div id="q11ans" data-ans="{{ session.get('q11a') }}"></div>
+            <div id="q12ans" data-ans="{{ session.get('q12a') }}"></div>
+            <div id="q13ans" data-ans="{{ session.get('q13a') }}"></div>
+        {% endif %}
 
 
-    <!--    CONT/END BUTTONS    -->
-    {% if session.get('post-test_completed') %}
+        <!--    CONT/END BUTTONS    -->
+        {% if session.get('post-test_completed') %}
+            <div class="container mt-3 d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-2 text-center">
+                        <H4>{{ feedback[2] }}/{{ feedback[3] }}</H4>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <!--    CONT/END BUTTONS    -->
         <div class="container mt-3 d-flex justify-content-center">
-            <div class="row">
-                <div class="col-12 col-md-6 my-2 text-center">
-                    <H4>{{ feedback[2] }}/{{ feedback[3] }}</H4>
+            <div class="fixed-sm-bottom mb-1">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-2 text-center">
+                        <button type="submit" class="btn btn-my-primary" id="continue">
+                            {% block but %}{% endblock but %}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    {% endif %}
+    </form>
 
-    <!--    CONT/END BUTTONS    -->
-    <div class="container mt-3 d-flex justify-content-center">
-        <div class="fixed-sm-bottom mb-1">
-            <div class="row">
-                <div class="col-12 col-md-6 my-2 text-center">
-                    <button type="submit" class="btn btn-my-primary" id="continue">
-                        {% block but %}{% endblock but %}
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-
-<script>
-    // not sure how this solved anything, but this does set checked values properly for feedback (instead of defining
-    // the function directly in the event listener)
-    document.addEventListener('DOMContentLoaded', setCheckedRight());
-
-    function setCheckedRight() {
-        // if the survey was already completed before, check all the answers like user did
-        if (document.getElementById('q1ans')) {
-            for (let i = 1; i < 14; i++) {
-                let question = 'q' + i;
-                let ansNum = null;
-                let answers = document.getElementsByName(question)
-
-                if (i === 4 || i === 7) {
-                    ansNum = document.getElementById(question + 'ans').getAttribute('data-ans');
-                    if (ansNum.length > 0) {
-                    ansNum = ansNum.split(',').map(Number);
-
-                    ansNum.forEach(function (element) {
-                        answers[element - 1].checked = true;
-                    });
-                    }
-                }
-                else {
-                    console.log(document.getElementById(question + 'ans'));
-                    ansNum = parseInt(document.getElementById(question + 'ans').getAttribute('data-ans')) - 1;
-                    answers[ansNum].checked = true;
-                }
-            }
-        }
-    }
-
-    function getSelectedValue(question) {
-        // function returns value of a (radio button) question, which is passed as an argument
-        const answers = document.getElementsByName(question);
-        let answerValue = null;
-
-        for (let i = 0; i < answers.length; i++) {
-            if (answers[i].checked) {
-                answerValue = answers[i].value;
-                break;
-            }
-        }
-        return answerValue;
-    }
-
-    function getSelectedValues(question) {
-        // function returns value(s) of a (checkbox button) question, which is passed as an argument
-        const answers = document.getElementsByName(question);
-        let answerValues = [];
-
-        for (let i = 0; i < answers.length; i++) {
-            if (answers[i].checked) {
-                answerValues.push(answers[i].value);
-            }
-        }
-        return answerValues.join(',');
-    }
-
-
-    document.getElementById('testForm').addEventListener('submit', function () {
-        // upon submitting the form answers, the selected values are saved to hidden inputs so that they can be stored
-        for (let question = 1; question < 14; question++) {
-            // Get selected value(s) of a question
-            let name = 'q' + question;
-            let selectedValue = null;
-            if (question === 4 || question === 7)
-                selectedValue = getSelectedValues(name);
-            else
-                selectedValue = getSelectedValue(name);
-
-            // Add the selected value(s) as a hidden input to the form
-            let hiddenInput = document.createElement('input');
-            hiddenInput.type = 'hidden';
-            hiddenInput.name = name + 'a';
-            hiddenInput.value = selectedValue;
-            document.getElementById('testForm').appendChild(hiddenInput);
-        }
-    });
-</script>
-
-<!--    POST-TEST FEEDBACK  -->
-{% if feedback %}
     <script>
-        // disable all input buttons during the feedback
-        function disableButtons() {
-            // Get all form buttons except the submit button
-            let buttons = document.querySelectorAll('form input');
+        // not sure how this solved anything, but this does set checked values properly for feedback (instead of defining
+        // the function directly in the event listener)
+        document.addEventListener('DOMContentLoaded', setCheckedRight());
 
-            // Loop through each button and disable it
-            buttons.forEach(function(button) {
-                button.disabled = true;
-            });
+        function setCheckedRight() {
+            // if the survey was already completed before, check all the answers like user did
+            if (document.getElementById('q1ans')) {
+                for (let i = 1; i < 14; i++) {
+                    let question = 'q' + i;
+                    let ansNum = null;
+                    let answers = document.getElementsByName(question)
+
+                    if (i === 4 || i === 7) {
+                        ansNum = document.getElementById(question + 'ans').getAttribute('data-ans');
+                        if (ansNum.length > 0) {
+                        ansNum = ansNum.split(',').map(Number);
+
+                        ansNum.forEach(function (element) {
+                            answers[element - 1].checked = true;
+                        });
+                        }
+                    }
+                    else {
+                        console.log(document.getElementById(question + 'ans'));
+                        ansNum = parseInt(document.getElementById(question + 'ans').getAttribute('data-ans')) - 1;
+                        answers[ansNum].checked = true;
+                    }
+                }
+            }
+        }
+
+        function getSelectedValue(question) {
+            // function returns value of a (radio button) question, which is passed as an argument
+            const answers = document.getElementsByName(question);
+            let answerValue = null;
+
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].checked) {
+                    answerValue = answers[i].value;
+                    break;
+                }
+            }
+            return answerValue;
+        }
+
+        function getSelectedValues(question) {
+            // function returns value(s) of a (checkbox button) question, which is passed as an argument
+            const answers = document.getElementsByName(question);
+            let answerValues = [];
+
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].checked) {
+                    answerValues.push(answers[i].value);
+                }
+            }
+            return answerValues.join(',');
         }
 
 
-        /* change color of input labels and re-enables checked input buttons for more clarity:
-            unselected wrong - no change
-            unselected right - green
-            selected wrong - dark red
-            selected right - green
-         */
-        // function changeColors(feedback) {
-        //     // loop through all questions
-        //     for (let i = 1; i <= feedback[0].length; i++) {
-        //         // get all answers of a question
-        //         let q = 'q' + i;
-        //         let buttons = document.getElementsByName(q);
-        //
-        //         // difficulties because of multi-answer questions
-        //         let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
-        //         console.log(feedbackIndices, feedback[0][i - 1])
-        //         if (feedbackIndices.length === 1) {
-        //             // for each answer get label
-        //             buttons.forEach(function (button, index) {
-        //                 let label = button.nextElementSibling;
-        //
-        //                 // if the answer was selected, change label's color
-        //                 if (button.checked) {
-        //                     if (feedback[0][i - 1]) {
-        //                         label.style.color = 'green';
-        //                     } else {
-        //                         label.style.color = 'darkred';
-        //                     }
-        //                     // and enable it
-        //                     if (button.disabled) {
-        //                         button.disabled = false;
-        //                     }
-        //                 }
-        //                 // if the answer was not selected, but it should have been, change the color as well
-        //                 else {
-        //                     if (feedbackIndices.includes(index)) {
-        //                         label.style.color = 'green';
-        //                     }
-        //                 }
-        //             });
-        //         }
-        //     }
-        // }
-        function changeColors(feedback) {
-            // loop through all questions
-            for (let i = 1; i <= feedback[0].length; i++) {
-                // get all answers of a question
-                let q = 'q' + i;
-                let buttons = document.getElementsByName(q);
+        document.getElementById('testForm').addEventListener('submit', function () {
+            // upon submitting the form answers, the selected values are saved to hidden inputs so that they can be stored
+            for (let question = 1; question < 14; question++) {
+                // Get selected value(s) of a question
+                let name = 'q' + question;
+                let selectedValue = null;
+                if (question === 4 || question === 7)
+                    selectedValue = getSelectedValues(name);
+                else
+                    selectedValue = getSelectedValue(name);
 
-                // for each answer get label
-                let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
-                buttons.forEach(function(button, index) {
-                    let label = button.nextElementSibling;
+                // Add the selected value(s) as a hidden input to the form
+                let hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = name + 'a';
+                hiddenInput.value = selectedValue;
+                document.getElementById('testForm').appendChild(hiddenInput);
+            }
+        });
+    </script>
 
-                    // if the answer was selected, change label's color
-                    if (button.checked) {
-                        if (feedback[0][i - 1] === true || feedbackIndices.includes(index)) {
-                            label.style.color = 'green';
-                        } else {
-                            label.style.color = 'darkred';
-                        }
-                        // and enable it
-                        if (button.disabled) {
-                            button.disabled = false;
-                        }
-                    }
+    <!--    POST-TEST FEEDBACK  -->
+    {% if feedback %}
+        <script>
+            // disable all input buttons during the feedback
+            function disableButtons() {
+                // Get all form buttons except the submit button
+                let buttons = document.querySelectorAll('form input');
 
-                    // if the answer was not selected, but it should have been, change the color as well
-                    else {
-                        // difficulties because of multi-answer questions
-                        console.log(feedbackIndices)
-                        if (feedbackIndices.includes(index)) {
-                            label.style.color = 'green';
-                        }
-                    }
+                // Loop through each button and disable it
+                buttons.forEach(function(button) {
+                    button.disabled = true;
                 });
             }
-        }
 
-        disableButtons();
-        changeColors({{ feedback | tojson }});
-    </script>
-{% endif %}
 
+            /* change color of input labels and re-enables checked input buttons for more clarity:
+                unselected wrong - no change
+                unselected right - green
+                selected wrong - dark red
+                selected right - green
+             */
+            // function changeColors(feedback) {
+            //     // loop through all questions
+            //     for (let i = 1; i <= feedback[0].length; i++) {
+            //         // get all answers of a question
+            //         let q = 'q' + i;
+            //         let buttons = document.getElementsByName(q);
+            //
+            //         // difficulties because of multi-answer questions
+            //         let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
+            //         console.log(feedbackIndices, feedback[0][i - 1])
+            //         if (feedbackIndices.length === 1) {
+            //             // for each answer get label
+            //             buttons.forEach(function (button, index) {
+            //                 let label = button.nextElementSibling;
+            //
+            //                 // if the answer was selected, change label's color
+            //                 if (button.checked) {
+            //                     if (feedback[0][i - 1]) {
+            //                         label.style.color = 'green';
+            //                     } else {
+            //                         label.style.color = 'darkred';
+            //                     }
+            //                     // and enable it
+            //                     if (button.disabled) {
+            //                         button.disabled = false;
+            //                     }
+            //                 }
+            //                 // if the answer was not selected, but it should have been, change the color as well
+            //                 else {
+            //                     if (feedbackIndices.includes(index)) {
+            //                         label.style.color = 'green';
+            //                     }
+            //                 }
+            //             });
+            //         }
+            //     }
+            // }
+            function changeColors(feedback) {
+                // loop through all questions
+                for (let i = 1; i <= feedback[0].length; i++) {
+                    // get all answers of a question
+                    let q = 'q' + i;
+                    let buttons = document.getElementsByName(q);
+
+                    // for each answer get label
+                    let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
+                    buttons.forEach(function(button, index) {
+                        let label = button.nextElementSibling;
+
+                        // if the answer was selected, change label's color
+                        if (button.checked) {
+                            if (feedback[0][i - 1] === true || feedbackIndices.includes(index)) {
+                                label.style.color = 'green';
+                            } else {
+                                label.style.color = 'darkred';
+                            }
+                            // and enable it
+                            if (button.disabled) {
+                                button.disabled = false;
+                            }
+                        }
+
+                        // if the answer was not selected, but it should have been, change the color as well
+                        else {
+                            // difficulties because of multi-answer questions
+                            console.log(feedbackIndices)
+                            if (feedbackIndices.includes(index)) {
+                                label.style.color = 'green';
+                            }
+                        }
+                    });
+                }
+            }
+
+            disableButtons();
+            changeColors({{ feedback | tojson }});
+        </script>
+    {% endif %}
+
+</div>
 {% endblock content %}

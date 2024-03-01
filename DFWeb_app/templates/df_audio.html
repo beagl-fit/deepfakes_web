@@ -1,333 +1,335 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="container-lg my-5">
 
-<!--    TITLE  -->
-<div class="container d-flex justify-content-center mb-4">
-    <h2>{% block tit %}{% endblock tit %}</h2>
-</div>
-
-
-<!-- VIDEO vs IMAGES -->
-<div class="container mt-4">
-    <div class="row py-4">
-        <div class="col-12">
-            {% block audio %}{% endblock audio %}
-        </div>
+    <!--    TITLE  -->
+    <div class="container d-flex justify-content-center mb-4">
+        <h2>{% block tit %}{% endblock tit %}</h2>
     </div>
 
 
-<!--    HOW -->
-    <h3>{% block how %}{% endblock how %}?</h3>
-    <div class="container">
+    <!-- VIDEO vs IMAGES -->
+    <div class="container mt-4">
+        <div class="row py-4">
+            <div class="col-12">
+                {% block audio %}{% endblock audio %}
+            </div>
+        </div>
+
+
+    <!--    HOW -->
+        <h3>{% block how %}{% endblock how %}?</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    {% block how2 %}{% endblock how2 %}
+                </div>
+                <div class="col-12">
+                    <p class="text">{% block how3 %}{% endblock how3 %}:</p>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            {% block how4 %}{% endblock how4 %}
+                        </li>
+                        <li>
+                            {% block how5 %}{% endblock how5 %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    TTS & SC 1/2    -->
+    <div class="container pt-4">
         <div class="row">
-            <div class="col-12">
-                {% block how2 %}{% endblock how2 %}
-            </div>
-            <div class="col-12">
-                <p class="text">{% block how3 %}{% endblock how3 %}:</p>
-            </div>
-            <div class="col-12">
-                <ul>
-                    <li>
-                        {% block how4 %}{% endblock how4 %}
-                    </li>
-                    <li>
-                        {% block how5 %}{% endblock how5 %}
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--    TTS & SC 1/2    -->
-<div class="container pt-4">
-    <div class="row">
-        <div class="col-6 pb-5 pb-lg-0">
-<!--                TTS -->
-            <h1>{% block tts %}{% endblock tts %}</h1>
-            <div class="row">
-                <div class="col-12">
-                    {% block tts2 %}{% endblock tts2 %}
-                </div>
-            </div>
-        </div>
-
-
-<!--                SC -->
-        <div class="col-6 pb-3 pb-lg-0">
-            <h1>{% block sts %}{% endblock sts %}</h1>
-            <div class="row">
-                <div class="col-12">
-                    {% block sts2 %}{% endblock sts2 %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--    TTS & SC 2/2    -->
-<div class="container">
-    <div class="row">
-<!--            TTS-->
-        <div class="col-12 col-lg-6 pb-lg-0">
-            <div class="mt-4">
-                <h3>{% block ttswhy %}{% endblock ttswhy %}?</h3>
-            </div>
-            <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
-                    </div>
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
-                    </div>
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
-                    </div>
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
-                    </div>
+            <div class="col-6 pb-5 pb-lg-0">
+    <!--                TTS -->
+                <h1>{% block tts %}{% endblock tts %}</h1>
+                <div class="row">
                     <div class="col-12">
-                        <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
+                        {% block tts2 %}{% endblock tts2 %}
+                    </div>
+                </div>
+            </div>
+
+
+    <!--                SC -->
+            <div class="col-6 pb-3 pb-lg-0">
+                <h1>{% block sts %}{% endblock sts %}</h1>
+                <div class="row">
+                    <div class="col-12">
+                        {% block sts2 %}{% endblock sts2 %}
                     </div>
                 </div>
             </div>
         </div>
-
-<!--                SC -->
-        <div class="col-12 col-md-6 pb-lg-0">
-            <div class="mt-4">
-                <h3>{% block stswhy %}{% endblock stswhy %}?</h3>
-            </div>
-            <div class="container">
-                <div class="row mb-2 mb-md-0">
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
-                    </div>
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
-                    </div>
-                    <div class="col-12 pb-1">
-                        <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row pt-3">
-                <div class="col-12 pb">
-                    {% block stswhy5 %}{% endblock stswhy5 %}
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 
-<!--    WHAT    -->
-<div class="container mt-4">
-    <div class="mt-4">
-        <h3>{% block what %}{% endblock what %}?</h3>
-    </div>
+    <!--    TTS & SC 2/2    -->
     <div class="container">
-        <div class="row mb-2 mb-md-0">
-            <div class="col-12">
-                <p class="text">{% block what2 %}{% endblock what2 %}:</p>
-            </div>
-            <div class="col-12">
-                Vishing
-                <ul>
-                    <li>
-                        <p class="text">{% block vish1 %}{% endblock vish1 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block vish2 %}{% endblock vish2 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block vish3 %}{% endblock vish3 %}</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-12">
-                Scam
-                <ul>
-                    <li>
-                        <p class="text">{% block scam1 %}{% endblock scam1 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scam2 %}{% endblock scam2 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scam3 %}{% endblock scam3 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scam4 %}{% endblock scam4 %}</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-12">
-                {% block bio1 %}{% endblock bio1 %}
-                <ul>
-                    <li>
-                        <p class="text">{% block bio2 %}{% endblock bio2 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block bio3 %}{% endblock bio3 %}</p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-12">
-                {% block what3 %}{% endblock what3 %}
-                <ul>
-                    <li>
-                        <p class="text">{% block what4 %}{% endblock what4 %}</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container mt-4">
-    <div class="row justify-content-center text-center">
-        <div class="col-12 col-md-5 py-2">
-            <button class="btn btn-audio" onclick="showDiv('TTS')">{% block ttsscen %}{% endblock ttsscen %}?</button>
-        </div>
-        <div class="col-12 col-md-5 py-2">
-            <button class="btn btn-audio" onclick="showDiv('STS')">{% block stsscen %}{% endblock stsscen %}?</button>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<!--    ATTACK SCENARIOS    -->
-<div id="TTS" class="container mt-4" style="display: none">
-    TTS {% block ttsscen1 %}{% endblock ttsscen1 %} 1:
-    <div class="container">
-        <ol>
-            <li>
-                <p class="text">{% block ttsscen11 %}{% endblock ttsscen11 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen12 %}{% endblock ttsscen12 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen13 %}{% endblock ttsscen13 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen14 %}{% endblock ttsscen14 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen15 %}{% endblock ttsscen15 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen16 %}{% endblock ttsscen16 %}</p>
-            </li>
-        </ol>
-    </div>
-
-    TTS {% block ttsscen2 %}{% endblock ttsscen2 %} 2:
-    <div class="container">
-        <ol>
-            <li>
-                <p class="text">{% block ttsscen21 %}{% endblock ttsscen21 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen22 %}{% endblock ttsscen22 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen23 %}{% endblock ttsscen23 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen24 %}{% endblock ttsscen24 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen25 %}{% endblock ttsscen25 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block ttsscen26 %}{% endblock ttsscen26 %}</p>
-            </li>
-        </ol>
-    </div>
-</div>
-
-
-<div id="STS" class="container mt-4" style="display: none">
-    STS {% block stsscen1 %}{% endblock stsscen1 %} 1:
-    <div class="container">
-        <ol>
-            <li>
-                <p class="text">{% block stsscen11 %}{% endblock stsscen11 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen12 %}{% endblock stsscen12 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen13 %}{% endblock stsscen13 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen14 %}{% endblock stsscen14 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen15 %}{% endblock stsscen15 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen16 %}{% endblock stsscen16 %}</p>
-            </li>
-        </ol>
-    </div>
-
-    STS {% block stsscen2 %}{% endblock stsscen2 %} 2:
-    <div class="container">
-        <ol>
-            <li>
-                <p class="text">{% block stsscen21 %}{% endblock stsscen21 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen22 %}{% endblock stsscen22 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen23 %}{% endblock stsscen23 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen24 %}{% endblock stsscen24 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen25 %}{% endblock stsscen25 %}</p>
-            </li>
-            <li>
-                <p class="text">{% block stsscen26 %}{% endblock stsscen26 %}</p>
-            </li>
-        </ol>
-    </div>
-</div>
-
-
-<!--    CONT/END BUTTONS-->
-<div class="container mt-3 d-flex justify-content-center">
-    <div class="fixed-sm-bottom mb-1">
         <div class="row">
-            <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
-                <a class="btn btn-my-secondary" href="{{ url_for('videos') }}">{% block but1 %}{% endblock but1 %}</a>
+    <!--            TTS-->
+            <div class="col-12 col-lg-6 pb-lg-0">
+                <div class="mt-4">
+                    <h3>{% block ttswhy %}{% endblock ttswhy %}?</h3>
+                </div>
+                <div class="container">
+                    <div class="row mb-2 mb-md-0">
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
+                        </div>
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
+                        </div>
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
+                        </div>
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-6 my-2 text-center">
-                <a class="btn btn-my-primary" href="{{ url_for('end') }}">{% block but2 %}{% endblock but2 %}</a>
+
+    <!--                SC -->
+            <div class="col-12 col-md-6 pb-lg-0">
+                <div class="mt-4">
+                    <h3>{% block stswhy %}{% endblock stswhy %}?</h3>
+                </div>
+                <div class="container">
+                    <div class="row mb-2 mb-md-0">
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
+                        </div>
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
+                        </div>
+                        <div class="col-12 pb-1">
+                            <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-12 pb">
+                        {% block stswhy5 %}{% endblock stswhy5 %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!--    WHAT    -->
+    <div class="container mt-4">
+        <div class="mt-4">
+            <h3>{% block what %}{% endblock what %}?</h3>
+        </div>
+        <div class="container">
+            <div class="row mb-2 mb-md-0">
+                <div class="col-12">
+                    <p class="text">{% block what2 %}{% endblock what2 %}:</p>
+                </div>
+                <div class="col-12">
+                    Vishing
+                    <ul>
+                        <li>
+                            <p class="text">{% block vish1 %}{% endblock vish1 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block vish2 %}{% endblock vish2 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block vish3 %}{% endblock vish3 %}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    Scam
+                    <ul>
+                        <li>
+                            <p class="text">{% block scam1 %}{% endblock scam1 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block scam2 %}{% endblock scam2 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block scam3 %}{% endblock scam3 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block scam4 %}{% endblock scam4 %}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    {% block bio1 %}{% endblock bio1 %}
+                    <ul>
+                        <li>
+                            <p class="text">{% block bio2 %}{% endblock bio2 %}</p>
+                        </li>
+                        <li>
+                            <p class="text">{% block bio3 %}{% endblock bio3 %}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    {% block what3 %}{% endblock what3 %}
+                    <ul>
+                        <li>
+                            <p class="text">{% block what4 %}{% endblock what4 %}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-md-5 py-2">
+                <button class="btn btn-audio" onclick="showDiv('TTS')">{% block ttsscen %}{% endblock ttsscen %}?</button>
+            </div>
+            <div class="col-12 col-md-5 py-2">
+                <button class="btn btn-audio" onclick="showDiv('STS')">{% block stsscen %}{% endblock stsscen %}?</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--    ATTACK SCENARIOS    -->
+    <div id="TTS" class="container mt-4" style="display: none">
+        TTS {% block ttsscen1 %}{% endblock ttsscen1 %} 1:
+        <div class="container">
+            <ol>
+                <li>
+                    <p class="text">{% block ttsscen11 %}{% endblock ttsscen11 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen12 %}{% endblock ttsscen12 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen13 %}{% endblock ttsscen13 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen14 %}{% endblock ttsscen14 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen15 %}{% endblock ttsscen15 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen16 %}{% endblock ttsscen16 %}</p>
+                </li>
+            </ol>
+        </div>
+
+        TTS {% block ttsscen2 %}{% endblock ttsscen2 %} 2:
+        <div class="container">
+            <ol>
+                <li>
+                    <p class="text">{% block ttsscen21 %}{% endblock ttsscen21 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen22 %}{% endblock ttsscen22 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen23 %}{% endblock ttsscen23 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen24 %}{% endblock ttsscen24 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen25 %}{% endblock ttsscen25 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block ttsscen26 %}{% endblock ttsscen26 %}</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div id="STS" class="container mt-4" style="display: none">
+        STS {% block stsscen1 %}{% endblock stsscen1 %} 1:
+        <div class="container">
+            <ol>
+                <li>
+                    <p class="text">{% block stsscen11 %}{% endblock stsscen11 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen12 %}{% endblock stsscen12 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen13 %}{% endblock stsscen13 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen14 %}{% endblock stsscen14 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen15 %}{% endblock stsscen15 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen16 %}{% endblock stsscen16 %}</p>
+                </li>
+            </ol>
+        </div>
+
+        STS {% block stsscen2 %}{% endblock stsscen2 %} 2:
+        <div class="container">
+            <ol>
+                <li>
+                    <p class="text">{% block stsscen21 %}{% endblock stsscen21 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen22 %}{% endblock stsscen22 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen23 %}{% endblock stsscen23 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen24 %}{% endblock stsscen24 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen25 %}{% endblock stsscen25 %}</p>
+                </li>
+                <li>
+                    <p class="text">{% block stsscen26 %}{% endblock stsscen26 %}</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <!--    CONT/END BUTTONS-->
+    <div class="container mt-3 d-flex justify-content-center">
+        <div class="fixed-sm-bottom mb-1">
+            <div class="row">
+                <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">
+                    <a class="btn btn-my-secondary" href="{{ url_for('videos') }}">{% block but1 %}{% endblock but1 %}</a>
+                </div>
+                <div class="col-12 col-md-6 my-2 text-center">
+                    <a class="btn btn-my-primary" href="{{ url_for('end') }}">{% block but2 %}{% endblock but2 %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function showDiv(divID) {
+        document.getElementById("TTS").style.display = "none";
+        document.getElementById("STS").style.display = "none";
+
+        document.getElementById(divID).style.display = "block";
+    }
+    </script>
 </div>
-
-<script>
-function showDiv(divID) {
-    document.getElementById("TTS").style.display = "none";
-    document.getElementById("STS").style.display = "none";
-
-    document.getElementById(divID).style.display = "block";
-}
-</script>
 {% endblock content %}

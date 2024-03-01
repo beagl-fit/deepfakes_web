@@ -18,14 +18,13 @@
 
 </head>
 <body>
-    <div class="container-lg my-5">
-        {% block content %}
-        {% endblock content %}
-    </div>
+    {% block content %}
+    {% endblock content %}
 
-    <footer class="pe-4" style=" display: flex; background-color: black; justify-content: end;
+    <footer class="pe-4" style="display: flex; background-color: black; justify-content: end;
      align-items: center; height: 50px">
-<!--        <p style="display: inline">Footer</p>-->
+        <p class="pe-3  pt-1" style="display: inline; color: var(--main-bg-color)">{% if language == 'en' %}FACULTY OF
+            INFORMATION TECHNOLOGY BRNO UNIVERSITY OF TECHNOLOGY{% else %}FAKULTA INFORMAČNÍCH TECHNOLOGIÍ VYSOKÉ UČENÍ TECHNICKÉ V BRNĚ{% endif %}</p>
         <img src="{{ url_for('static', filename='images/fitlogo.png') }}"
              onclick="window.location.href = 'https://www.fit.vut.cz'" alt="Logo of FIT VUTBR"
              style="height: 35px; width: 100px">
