@@ -194,7 +194,38 @@ p {
 }
 
 .carousel-indicators {
-    position: static; /* Ensure the indicators don't overlap the content */
-    margin-top: 10px; /* Adjust the margin to space the indicators from the content */
+  position: static;
+  margin-top: 10px;
 }
 
+.dropdown-menu {
+  background-color: var(--card-bg-color);
+  font-size: 1.2rem;
+}
+
+.dropdown-menu-1 .dropdown-item {
+  color: var(--btn-color-how);
+}
+
+.dropdown-menu-2 .dropdown-item {
+  color: var(--text-color-pri);
+}
+
+.dropdown-menu-1 .dropdown-item:hover {
+  background-color: var(--btn-color-how); /* Change to your desired highlight color */
+  color: var(--main-bg-color); /* Change to your desired text color */
+}
+
+.dropdown-menu-2 .dropdown-item:hover {
+  background-color: var(--btn-color-sec); /* Change to your desired highlight color */
+  color: var(--text-color-pri); /* Change to your desired text color */
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+
+.clickable-image:hover {
+  filter: brightness(80%);
+}

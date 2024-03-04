@@ -122,8 +122,9 @@ def test():
             df = '1'
         session['df'] = df
 
-        # if a person chooses to skip the initial survey, go to general deepfakes insetead of pre-test
+        # if a person chooses to skip the initial survey, go to general deepfakes instead of pre-test
         if df == '0':
+            return redirect(url_for('pg'))
             return redirect(url_for('general'))
 
     # if method is post but pre-test_completed is in session, this means the post-test has just been submitted
@@ -159,3 +160,11 @@ def test():
         return render_template('test-en.html', title='Survey', language='en', feedback=feedback)
     else:
         return render_template('test-cz.html', title='Pruzkum', language='cs', feedback=feedback)
+
+
+@app.route('/playground', methods=['GET', 'POST'])
+def pg():
+    if session.get('lang') == 'en':
+        return render_template('playground-en.html', title='Playground', language='en')
+    else:
+        return render_template('playground-cz.html', title='Hřiště', language='cs')
