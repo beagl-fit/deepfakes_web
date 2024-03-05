@@ -11,36 +11,100 @@
         <div class="container py-3">
             <div class="row">
                 <div class="col-3">
-                    Swap face from image 2 with the face from image 1;<br>
-                    These can be any two images you can get your hands on, however, to save time I have selected a few
-                    images and generated deepfakes from them
+                    <ul>
+                       <li>
+                           {% block fs-li-1 %}{% endblock fs-li-1 %}
+                       </li>
+                       <li>
+                           {% block fs-li-2%}{% endblock fs-li-2%}
+                       </li>
+                       <li>
+                           {% block fs-li-3%}{% endblock fs-li-3%}
+                       </li>
+                       <li>
+                           {% block fs-li-4%}{% endblock fs-li-4%}
+                       </li>
+                    </ul>
+
                 </div>
                 <div class="col-3">
                     <div class="card" style="height: 300px">
-                        <img id="cardImage" src="{{ url_for('static', filename='images/collage2.png') }}"
-                             style="height: 100%; width: auto;" class="card-img-top clickable-image"
-                             alt="...">
-                        <div class="card-footer dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                             aria-expanded="false" style="color: var(--main-bg-color);
-                              background-color: var(--btn-color-how);
-                              margin-left: -1px; margin-right: -1px; margin-bottom: -1px;">
-                            Select Image 1
+                        <img id="fs-1" src="{{ url_for('static', filename='images/no_image.webp') }}"
+                             style="max-height: 255px; min-height: 255px; width: auto;"
+                             class="card-img-top clickable-image" data-source="-" alt="No Image">
+                        <div class="card-footer dropdown-toggle playground-style-1" id="dropdown-fs-1"
+                             data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: -1px;
+                              margin-right: -1px; margin-bottom: -1px;">
+                            {% block sel1 %}{% endblock sel1 %} 1
                             <ul class="dropdown-menu dropdown-menu-1" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#" onclick="changeImage('image1')">
-                                    Image 1
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-1', 'jb.webp', 'jb',
+                                 'https://www.whitehouse.gov/administration/president-biden/')">
+                                    Joe Biden, {% block jb %}{% endblock jb %}
                                 </a></li>
-                                <li><a class="dropdown-item" href="#" onclick="changeImage('image2')">
-                                    Image 2
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-1', 'jib.jpg', 'jib',
+                                 'https://commons.wikimedia.org/wiki/File:Ji%C5%99ina_Bohdalov%C3%A1_2019.jpg')">
+                                    Jiřina Bohdalová, {% block jib %}{% endblock jib %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-1', 'rdj.webp', 'rdj',
+                                 'https://www.britannica.com/biography/Robert-Downey-Jr#/media/1/1475941/298010')">
+                                    Robert Downey Jr., {% block rdj %}{% endblock rdj %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-1', 'pp.webp', 'pp',
+                                'https://www.novinky.cz/tag/petr-pavel-58345')">
+                                    Petr Pavel, {% block pp %}{% endblock pp %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-1', 'ts.jpg', 'ts',
+                                 'https://people.com/music/taylor-swift-releases-four-new-songs-eras-tour/')">
+                                    Taylor Swift, {% block ts %}{% endblock ts %}
                                 </a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
-                    text
+                    <div class="card" style="height: 300px">
+                        <img id="fs-2" src="{{ url_for('static', filename='images/no_image.webp') }}"
+                             style="max-height: 255px; min-height: 255px; width: auto;"
+                             class="card-img-top clickable-image" data-source="-" alt="No Image">
+                        <div class="card-footer dropdown-toggle playground-style-1" id="dropdown-fs-2"
+                             data-bs-toggle="dropdown" aria-expanded="false" style=" margin-left: -1px;
+                              margin-right: -1px; margin-bottom: -1px;">
+                            {% block sel2 %}{% endblock sel2 %} 2
+                            <ul class="dropdown-menu dropdown-menu-1" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-2', 'jb.webp', 'jb',
+                                 'https://www.whitehouse.gov/administration/president-biden/')">
+                                    Joe Biden, {% block jb2 %}{% endblock jb2 %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-2', 'jib.jpg', 'jib',
+                                 'https://commons.wikimedia.org/wiki/File:Ji%C5%99ina_Bohdalov%C3%A1_2019.jpg')">
+                                    Jiřina Bohdalová, {% block jib2 %}{% endblock jib2 %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-2', 'rdj.webp', 'rdj',
+                                 'https://www.britannica.com/biography/Robert-Downey-Jr#/media/1/1475941/298010')">
+                                    Robert Downey Jr., {% block rdj2 %}{% endblock rdj2 %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-2', 'pp.webp', 'pp',
+                                'https://www.novinky.cz/tag/petr-pavel-58345')">
+                                    Petr Pavel, {% block pp2 %}{% endblock pp2 %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="#" onclick="changeImage('fs-2', 'ts.jpg', 'ts',
+                                 'https://people.com/music/taylor-swift-releases-four-new-songs-eras-tour/')">
+                                    Taylor Swift, {% block ts2 %}{% endblock ts2 %}
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    text
+                    <div class="card" style="height: 300px">
+                        <img id="fs" src="{{ url_for('static', filename='images/no_image.webp') }}"
+                             style="max-height: 255px; min-height: 255px; width: auto;"
+                             class="card-img-top clickable-image"
+                             alt="No Image" data-source="-">
+                        <button class="card-footer playground-style-1" onclick="faceswap()">
+                            {% block fs %}{% endblock fs %} Deepfake
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,7 +133,7 @@
                     <div class="card" style="height: 300px">
                         <div class="card-body">
                             <img id="cardImage2" src="{{ url_for('static', filename='images/collage2.png') }}"
-                                 class="card-img-top" alt="...">
+                                 class="card-img-top" alt="No Image">
                         </div>
                         <div class="card-footer dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown"
                              aria-expanded="false" style="color: var(--text-color-pri);
@@ -123,19 +187,72 @@
         </div>
     </div>
 
-<script>
-    function changeImage(imageName) {
-        // Get the img element by its id
-        let cardImage = document.getElementById('cardImage');
+<!-- Modal -->
+<div class="modal fade modal-xl" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="imageModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="mx-auto modal-body">
+        <img id="modalImage" class="modal-content" src="{{ url_for('static', filename='images/collage2.png') }}" alt="Modal Image" style="max-height: 80vh; width: auto;">
+      </div>
+      <div class="modal-footer">
+        <p style="display: inline">{% block src %}{% endblock src %}: </p>
+        <a id="src"></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-        // Set the src attribute of the img element to the new image URL
-        if (imageName === 'image1') {
-            cardImage.src = "{{ url_for('static', filename='images/collage2.png') }}";
-        } else if (imageName === 'image2') {
-            cardImage.src = "{{ url_for('static', filename='images/icon.png') }}";
+<script>
+    // changes source to the result of faceswap between 2 images user selected
+    function faceswap() {
+        let cardImage = document.getElementById('fs');
+        let image1 = document.getElementById('fs-1');
+        let image2 = document.getElementById('fs-2');
+
+        let src = "/static/images/no_image.webp"
+
+        if (image1.name !== '' && image2.name !== '') {
+            if (image1.name === image2.name)
+                src = image1.src
+            else
+                src = "/static/images/" + image2.name + "_to_" + image1.name + ".png";
+
+            cardImage.setAttribute("data-source", "https://remaker.ai/face-swap-free/");
         }
-        // Add more conditions as needed for other image options
+        cardImage.src = src
     }
+
+
+    // changes image to a different one alongside it's data
+    function changeImage(card, image, name, source) {
+        let cardImage = document.getElementById(card);
+        cardImage.src = "/static/images/" + image;
+        cardImage.name = name;
+        cardImage.setAttribute("data-source", source);
+    }
+
+    let modalImage = document.getElementById("modalImage");
+    let images = document.querySelectorAll(".clickable-image");
+
+    // Loop through the images and add click event listeners
+    images.forEach(function(image) {
+        image.addEventListener("click", function() {
+            image.setAttribute("data-bs-toggle", "modal");
+            image.setAttribute("data-bs-target", "#imageModal");
+            modalImage.src = this.src;
+
+            let source = "";
+            if (this.src !== "") {
+                source = this.getAttribute('data-source')
+            }
+            document.getElementById("src").innerText = source;
+        });
+    });
+
 </script>
 
 {% endblock content %}

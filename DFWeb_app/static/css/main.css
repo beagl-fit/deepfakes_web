@@ -229,3 +229,12 @@ p {
 .clickable-image:hover {
   filter: brightness(80%);
 }
+
+.playground-style-1 {
+  color: var(--main-bg-color);
+  background-color: var(--btn-color-how);
+  font-size: 1.2rem;
+}
+.playground-style-1:hover {
+  filter: brightness(90%);
+}

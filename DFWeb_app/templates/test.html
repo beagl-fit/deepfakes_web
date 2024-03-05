@@ -864,43 +864,6 @@
                 selected wrong - dark red
                 selected right - green
              */
-            // function changeColors(feedback) {
-            //     // loop through all questions
-            //     for (let i = 1; i <= feedback[0].length; i++) {
-            //         // get all answers of a question
-            //         let q = 'q' + i;
-            //         let buttons = document.getElementsByName(q);
-            //
-            //         // difficulties because of multi-answer questions
-            //         let feedbackIndices = feedback[1][i - 1].split(',').map(fb => parseInt(fb, 10) - 1);
-            //         console.log(feedbackIndices, feedback[0][i - 1])
-            //         if (feedbackIndices.length === 1) {
-            //             // for each answer get label
-            //             buttons.forEach(function (button, index) {
-            //                 let label = button.nextElementSibling;
-            //
-            //                 // if the answer was selected, change label's color
-            //                 if (button.checked) {
-            //                     if (feedback[0][i - 1]) {
-            //                         label.style.color = 'green';
-            //                     } else {
-            //                         label.style.color = 'darkred';
-            //                     }
-            //                     // and enable it
-            //                     if (button.disabled) {
-            //                         button.disabled = false;
-            //                     }
-            //                 }
-            //                 // if the answer was not selected, but it should have been, change the color as well
-            //                 else {
-            //                     if (feedbackIndices.includes(index)) {
-            //                         label.style.color = 'green';
-            //                     }
-            //                 }
-            //             });
-            //         }
-            //     }
-            // }
             function changeColors(feedback) {
                 // loop through all questions
                 for (let i = 1; i <= feedback[0].length; i++) {
@@ -915,21 +878,17 @@
 
                         // if the answer was selected, change label's color
                         if (button.checked) {
-                            if (feedback[0][i - 1] === true || feedbackIndices.includes(index)) {
+                            if (feedback[0][i - 1] === true || feedbackIndices.includes(index))
                                 label.style.color = 'green';
-                            } else {
+                            else
                                 label.style.color = 'darkred';
-                            }
                             // and enable it
-                            if (button.disabled) {
+                            if (button.disabled)
                                 button.disabled = false;
-                            }
                         }
 
                         // if the answer was not selected, but it should have been, change the color as well
                         else {
-                            // difficulties because of multi-answer questions
-                            console.log(feedbackIndices)
                             if (feedbackIndices.includes(index)) {
                                 label.style.color = 'green';
                             }
