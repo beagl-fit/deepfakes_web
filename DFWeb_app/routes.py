@@ -1,7 +1,7 @@
 from flask import render_template, request, session, url_for, redirect
 from DFWeb_app import app
-from DFWeb_app.functions import (check_answers, make_user_data, add_user, print_query, generate_feedback, NUM_OF_ANSWERS,
-                                 MULTI_ANSWER_QUESTION)
+from DFWeb_app.functions import (check_answers, make_user_data, add_user, print_query, generate_feedback, get_last_six,
+                                 get_publications, NUM_OF_ANSWERS, MULTI_ANSWER_QUESTION)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -26,11 +26,14 @@ def index():
     # save language selection to session
     session['lang'] = language
 
+    # get the last 6 publications
+    publications = get_last_six()
+
     # renders page in user's language: XXX(-en/-cz).html extend XXX.html which itself is extension of layout.html
     if language == 'en':
-        return render_template('index-en.html', title='Deepfakes', language='en')
+        return render_template('index-en.html', title='Deepfakes', language='en', publications=publications)
     else:
-        return render_template('index-cz.html', title='Deepfakes', language='cs')
+        return render_template('index-cz.html', title='Deepfakes', language='cs', publications=publications)
 
 
 @app.route('/dfg', methods=['GET', 'POST'])
@@ -124,6 +127,7 @@ def test():
 
         # if a person chooses to skip the initial survey, go to general deepfakes instead of pre-test
         if df == '0':
+            # TODO: remove the following line
             return redirect(url_for('pg'))
             return redirect(url_for('general'))
 
@@ -168,3 +172,19 @@ def pg():
         return render_template('playground-en.html', title='Playground', language='en')
     else:
         return render_template('playground-cz.html', title='Hřiště', language='cs')
+
+
+@app.route('/publications')
+def pubs():
+    page = request.args.get('page', 1, type=int)
+    per_page = 6
+
+    publications = get_publications(page, per_page)
+
+    if session.get('lang') == 'en':
+        return render_template('publications-en.html', title='Publications', language='en',
+                               publications=publications, page=page)
+    else:
+        return render_template('publications-cz.html', title='Publikace', language='cs',
+                               publications=publications, page=page)
+

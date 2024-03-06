@@ -54,17 +54,18 @@
                 <div class="col-12 col-md-4">
                     <div class="card" style="min-width: 50%; max-width: 100%; height: 250px;">
                         <div class="card-header text-center">
-                            <h3>{% block card1H %}{% endblock card1H %}</h3>
+                            <h3>{{ publications[0].name }}</h3>
                         </div>
                         <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
                             <p class="card-text" style="color: var(--text-color-pri)">
-                                {% block card1B %}{% endblock card1B %}
+                                {{ publications[0].description }}
                             </p>
                         </div>
                         <div class="card-footer mt-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-4">
-                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a id="0" class="btn btn-audio" href="{{ publications[0].link }}" target="_blank"
+                                       rel="noopener noreferrer">
                                         {% block card1F %}{% endblock card1F %}
                                     </a>
                                 </div>
@@ -77,18 +78,19 @@
 
                 <div class="col-12 col-md-4">
                     <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
-                        <div class="card-header">
-                            <h3>{% block card2H %}{% endblock card2H %}</h3>
+                        <div class="card-header text-center">
+                            <h3>{{ publications[1].name }}</h3>
                         </div>
                         <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
                             <p class="card-text" style="color: var(--text-color-pri)">
-                                {% block card2B %}{% endblock card2B %}
+                                {{ publications[1].description }}
                             </p>
                         </div>
                         <div class="card-footer mt-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-4">
-                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a id="1" class="btn btn-audio" href="{{ publications[1].link }}" target="_blank"
+                                       rel="noopener noreferrer">
                                         {% block card2F %}{% endblock card2F %}
                                     </a>
                                 </div>
@@ -105,17 +107,18 @@
                 <div class="col-12 col-md-4">
                     <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
                         <div class="card-header text-center">
-                            <h3>{% block card3H %}{% endblock card3H %}</h3>
+                            <h3>{{ publications[2].name }}</h3>
                         </div>
                         <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
                             <p class="card-text" style="color: var(--text-color-pri)">
-                                {% block card3B %}{% endblock card3B %}
+                                {{ publications[2].description }}
                             </p>
                         </div>
                         <div class="card-footer mt-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-4">
-                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a id="2" class="btn btn-audio" href="{{ publications[2].link }}" target="_blank"
+                                       rel="noopener noreferrer">
                                         {% block card3F %}{% endblock card3F %}
                                     </a>
                                 </div>
@@ -126,18 +129,19 @@
 
                 <div class="col-12 col-md-4">
                     <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
-                        <div class="card-header">
-                            <h3>{% block card4H %}{% endblock card4H %}</h3>
+                        <div class="card-header text-center">
+                            <h3>{{ publications[3].name }}</h3>
                         </div>
                         <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
                             <p class="card-text" style="color: var(--text-color-pri)">
-                                {% block card4B %}{% endblock card4B %}
+                                {{ publications[3].description }}
                             </p>
                         </div>
                         <div class="card-footer mt-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-4">
-                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a id="3" class="btn btn-audio" href="{{ publications[3].link }}" target="_blank"
+                                       rel="noopener noreferrer">
                                         {% block card4F %}{% endblock card4F %}
                                     </a>
                                 </div>
@@ -154,17 +158,18 @@
                 <div class="col-12 col-md-4">
                     <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
                         <div class="card-header text-center">
-                            <h3>{% block card5H %}{% endblock card5H %}</h3>
+                            <h3>{{ publications[4].name }}</h3>
                         </div>
                         <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
                             <p class="card-text" style="color: var(--text-color-pri)">
-                                {% block card5B %}{% endblock card5B %}
+                                {{ publications[4].description }}
                             </p>
                         </div>
                         <div class="card-footer mt-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-4">
-                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a id="4" class="btn btn-audio" href="{{ publications[4].link }}" target="_blank"
+                                       rel="noopener noreferrer">
                                         {% block card5F %}{% endblock card5F %}
                                     </a>
                                 </div>
@@ -175,18 +180,19 @@
 
                 <div class="col-12 col-md-4">
                     <div class="card" style="min-width: 50%; max-width: 100%; height: 250px">
-                        <div class="card-header">
-                            <h3>{% block card6H %}{% endblock card6H %}</h3>
+                        <div class="card-header text-center">
+                            <h3>{{ publications[5].name }}</h3>
                         </div>
                         <div class="card-body ps-5 pb-1" style="max-height: 200px; overflow: hidden;">
                             <p class="card-text" style="color: var(--text-color-pri)">
-                                {% block card6B %}{% endblock card6B %}
+                                {{ publications[5].description }}
                             </p>
                         </div>
                         <div class="card-footer mt-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-4">
-                                    <a class="btn btn-audio" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a id="5" class="btn btn-audio" href="{{ publications[5].link }}" target="_blank"
+                                       rel="noopener noreferrer">
                                         {% block card6F %}{% endblock card6F %}
                                     </a>
                                 </div>
@@ -220,9 +226,9 @@
 <!--    ALL PUBLICATION BUTTON  -->
     <div class="row">
         <div class="col-12 text-center">
-            <a class="btn btn-audio mb-5" href="#" target="_blank" rel="noopener noreferrer" style="padding-left: 20px;
-             padding-right: 20px">
-                Show all of our publications
+            <a class="btn btn-audio mb-5" href="{{ url_for('pubs') }}" rel="noopener noreferrer"
+               style="padding-left: 20px; padding-right: 20px">
+                {% block pubs %}{% endblock pubs %}
             </a>
         </div>
     </div>
@@ -233,8 +239,10 @@
         <div class="fixed-sm-bottom mb-3">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <a class="btn btn-download" href="{{ url_for('index') }}">{% block download_btn_text %}
-                        {% endblock download_btn_text %}</a>
+                    <a class="btn btn-download" href="{{ url_for('static', filename='files/deepfakes.pdf') }}"
+                       download="deepfakes.pdf">
+                        {% block download_btn_text %}{% endblock download_btn_text %}
+                    </a>
                 </div>
             </div>
         </div>
@@ -261,7 +269,9 @@
                 </div>
                 <div id="mod" class="modal-footer" data-df="{{ session.get('df') }}">
                     <button id="no_skip" class="btn btn-my-secondary" style="font-size: 1.5rem; width:auto; height: 3rem;
-                    padding: 0 1.5rem 0 1.5rem" >{% block modal_btn1 %}{% endblock modal_btn1 %}</button>
+                    padding: 0 1.5rem 0 1.5rem" >
+                        {% block modal_btn1 %}{% endblock modal_btn1 %}
+                    </button>
 
                     {% if session.get('df') == '1' %}
                         {% if not session.get('q1a') %}
@@ -286,31 +296,38 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // add function to loaded modal buttons used to skip ahead
-            let df = document.getElementById('mod').getAttribute('data-df');
-            document.getElementById("no_skip").addEventListener("click", function() {
-                window.location.href = "{{ url_for('info') }}";
-            });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // add function to loaded modal buttons used to skip ahead
+        let df = document.getElementById('mod').getAttribute('data-df');
+        document.getElementById("no_skip").addEventListener("click", function() {
+            window.location.href = "{{ url_for('info') }}";
+        });
 
-            if (df === '1') {
-                if (document.getElementById("skip_info"))
-                    document.getElementById("skip_info").addEventListener("click", function () {
-                        window.location.href = "{{ url_for('test') }}";
-                    });
-                else
-                    document.getElementById("skip_survey").addEventListener("click", function () {
-                        window.location.href = "{{ url_for('general') }}";
-                    });
-            }
-            else if (df === '0') {
-                document.getElementById("skip_ahead").addEventListener("click", function () {
+        if (df === '1') {
+            if (document.getElementById("skip_info"))
+                document.getElementById("skip_info").addEventListener("click", function () {
+                    window.location.href = "{{ url_for('test') }}";
+                });
+            else
+                document.getElementById("skip_survey").addEventListener("click", function () {
                     window.location.href = "{{ url_for('general') }}";
                 });
-            }
-        });
-    </script>
-</div>
+        }
+        else if (df === '0') {
+            document.getElementById("skip_ahead").addEventListener("click", function () {
+                window.location.href = "{{ url_for('general') }}";
+            });
+        }
+
+        // disable publication buttons on empty entries
+        for (let i = 0; i < 6; i++) {
+            let publication = document.getElementById(i.toString());
+            if (publication.getAttribute('href') === '#')
+                publication.classList.add('disabled');
+        }
+    });
+</script>
 {% endblock content %}

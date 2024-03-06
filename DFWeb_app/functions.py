@@ -1,6 +1,6 @@
-from typing import Union, List, Any
+from typing import Union
 
-from DFWeb_app.models import User, Answer
+from DFWeb_app.models import Users, Answers, Publications
 from DFWeb_app import db
 
 NUM_OF_ANSWERS = 13     # test.html needs editing (divs + JS event listeners) if answers are added/removed
@@ -54,25 +54,26 @@ def add_user(data: list[bool | int], answers_1: list[bool], answers_2: list[bool
     :param answers_1: answers of pre-test
     :param answers_2: answers of post-test
     """
-    user = User(sex=data[0], age=data[1], encountered=data[2])
+    user = Users(sex=data[0], age=data[1], encountered=data[2])
     db.session.add(user)
     db.session.commit()
 
     for question in range(1, NUM_OF_ANSWERS + 1):
-        answer = Answer(user_id=user.id, question=question, answer_1=answers_1[question - 1],
-                        answer_2=answers_2[question - 1])
+        answer = Answers(user_id=user.id, question=question, answer_1=answers_1[question - 1],
+                         answer_2=answers_2[question - 1])
         db.session.add(answer)
     db.session.commit()
     return
 
 
+# TODO: remove
 def print_query():
-    u = User.query.order_by(User.id.desc()).first()
+    u = Users.query.order_by(Users.id.desc()).first()
     if u:
         print(u.id, u.sex, u.age, u.encountered, u)
-        a = Answer.query.order_by(Answer.id.desc()).first()
+        a = Answers.query.order_by(Answers.id.desc()).first()
         print(a)
-        b = Answer.query.filter_by(question=1).all()
+        b = Answers.query.filter_by(question=1).all()
         print(b)
 
 
@@ -95,4 +96,39 @@ def generate_feedback(answers: list[bool], answers_value: list[str]) ->\
             fb.append(answers_value[i])
 
     feedback = [fb, ANSWERS, right, len(answers)]
+    # noinspection PyTypeChecker
     return feedback
+
+
+def get_last_six() -> list[Publications]:
+    """
+    Queries db for the last six publications and if there is less than 6 publications, it fills the empty space with
+     filler entries
+    :return: list of publications
+    """
+    last_six = Publications.query.order_by(Publications.id.desc()).limit(6).all()
+    while len(last_six) < 6:
+        last_six.append(Publications(name='------', description='------------------------------------------', link='#'))
+    return last_six
+
+
+# TODO: remove
+def test_pagination():
+    # Create dummy publications (only 6)
+    dummy_publications = [
+        Publications(name=f"Publication {i}", description=f"Description {i}", link=f"Link {i}")
+        for i in range(1, 21)  # Create 20 dummy publications
+    ]
+    for entry in dummy_publications:
+        db.session.add(entry)
+    db.session.commit()
+
+
+def get_publications(page: int, per_page: int) -> list[Publications]:
+    """
+    Queries db for up to X entries from page Y in the Publications table
+    :param page: Y - offset to Publications table
+    :param per_page: X - number of entries per page
+    :return: paginated list of publications
+    """
+    return Publications.query.order_by(Publications.id.desc()).paginate(page=page, per_page=per_page)

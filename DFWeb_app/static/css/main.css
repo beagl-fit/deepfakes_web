@@ -235,6 +235,19 @@ p {
   background-color: var(--btn-color-how);
   font-size: 1.2rem;
 }
+
 .playground-style-1:hover {
   filter: brightness(90%);
+}
+
+.my-pagination {
+  background-color: var(--card-bg-color);
+  border-color: var(--text-color-pri);
+  color: var(--text-color-pri);
+}
+
+.my-pagination:hover {
+  border-color: var(--card-bg-color);
+  background-color: var(--btn-color-how);
+  color: var(--btn-color-sec);
 }
