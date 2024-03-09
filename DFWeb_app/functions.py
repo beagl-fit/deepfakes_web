@@ -1,5 +1,5 @@
+import os
 from typing import Union
-
 from DFWeb_app.models import Users, Answers, Publications
 from DFWeb_app import db
 
@@ -66,15 +66,25 @@ def add_user(data: list[bool | int], answers_1: list[bool], answers_2: list[bool
     return
 
 
-# TODO: remove
-def print_query():
-    u = Users.query.order_by(Users.id.desc()).first()
-    if u:
-        print(u.id, u.sex, u.age, u.encountered, u)
-        a = Answers.query.order_by(Answers.id.desc()).first()
-        print(a)
-        b = Answers.query.filter_by(question=1).all()
-        print(b)
+def create_download_files() -> None:
+    """
+    Creates csv files of Users and Answers db tables
+    :return: void
+    """
+    users = Users.query.all()
+    file_path = os.path.join("DFWeb_app", "static", "files", "users.csv")
+    with open(file_path, "w") as f:
+        for user in users:
+            sex = 'M'
+            if user.sex:
+                sex = 'F'
+            f.write(f"{user.id};{sex};{user.age};{user.encountered}\n")
+
+    answers = Answers.query.all()
+    file_path = os.path.join("DFWeb_app", "static", "files", "answers.csv")
+    with open(file_path, "w") as f:
+        for answer in answers:
+            f.write(f"{answer.user_id};{answer.question};{answer.answer_1};{answer.answer_2}\n")
 
 
 def generate_feedback(answers: list[bool], answers_value: list[str]) ->\
@@ -106,7 +116,7 @@ def get_last_six() -> list[Publications]:
      filler entries
     :return: list of publications
     """
-    last_six = Publications.query.order_by(Publications.id.desc()).limit(6).all()
+    last_six = Publications.query.filter_by(deleted=False).order_by(Publications.id.desc()).limit(6).all()
     while len(last_six) < 6:
         last_six.append(Publications(name='------', description='------------------------------------------', link='#'))
     return last_six
@@ -131,4 +141,37 @@ def get_publications(page: int, per_page: int) -> list[Publications]:
     :param per_page: X - number of entries per page
     :return: paginated list of publications
     """
-    return Publications.query.order_by(Publications.id.desc()).paginate(page=page, per_page=per_page)
+    return Publications.query.filter_by(deleted=False).order_by(Publications.id.desc()).paginate(page=page,
+                                                                                                 per_page=per_page)
+
+
+def add_publication(name, description, link) -> None:
+    """
+    Adds a new publication to the database
+    :param name: Name of publication
+    :param description: Short description of publication
+    :param link: link to the publication
+    :return: Void
+    """
+    publication = Publications(name=name, description=description, link=link)
+    db.session.add(publication)
+    db.session.commit()
+
+
+def delete_publication(pub_id):
+    """
+    Deletes a publication
+    :param pub_id: id of publication to delete
+    :return: Void
+    """
+    publication = Publications.query.filter_by(id=pub_id).first()
+    publication.deleted = True
+    db.session.commit()
+
+
+def get_all_publications() -> list[Publications]:
+    """
+    :return: list of all non-deleted publications
+    """
+    return Publications.query.filter_by(deleted=False).all()
+

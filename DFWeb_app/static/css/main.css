@@ -33,7 +33,6 @@ h3 {
   display: inline;
 }
 
-
 h4 {
   color: var(--text-color-pri);
   font-size: 4.8rem;
@@ -250,4 +249,15 @@ p {
   border-color: var(--card-bg-color);
   background-color: var(--btn-color-how);
   color: var(--btn-color-sec);
+}
+
+.accordion-body {
+  background-color: var(--card-bg-color);
+  color: var(--text-color-sec);
+}
+
+.accordion-button:not(.colapsed) {
+  background-color: var(--text-color-pri);
+  font-size: 1.5rem;
+  color: var(--main-bg-color);
 }

@@ -1,7 +1,10 @@
 from flask import render_template, request, session, url_for, redirect
 from DFWeb_app import app
-from DFWeb_app.functions import (check_answers, make_user_data, add_user, print_query, generate_feedback, get_last_six,
-                                 get_publications, NUM_OF_ANSWERS, MULTI_ANSWER_QUESTION)
+from DFWeb_app.functions import (check_answers, make_user_data, add_user, create_download_files, generate_feedback,
+                                 get_last_six, get_publications, add_publication, delete_publication,
+                                 get_all_publications, NUM_OF_ANSWERS, MULTI_ANSWER_QUESTION)
+from bcrypt import checkpw
+from app import ADMIN_PWD
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -31,9 +34,11 @@ def index():
 
     # renders page in user's language: XXX(-en/-cz).html extend XXX.html which itself is extension of layout.html
     if language == 'en':
-        return render_template('index-en.html', title='Deepfakes', language='en', publications=publications)
+        return render_template('index-en.html', title='Deepfakes', language='en',
+                               publications=publications)
     else:
-        return render_template('index-cz.html', title='Deepfakes', language='cs', publications=publications)
+        return render_template('index-cz.html', title='Deepfakes', language='cs',
+                               publications=publications)
 
 
 @app.route('/dfg', methods=['GET', 'POST'])
@@ -99,7 +104,6 @@ def info():
     # clear session, mainly to not load any previous test answers upon re-entering
     session.clear()
     session['lang'] = language
-    print(session.get('lang'))
 
     if language == 'en':
         return render_template('info-en.html', title='Info', language='en')
@@ -128,7 +132,7 @@ def test():
         # if a person chooses to skip the initial survey, go to general deepfakes instead of pre-test
         if df == '0':
             # TODO: remove the following line
-            return redirect(url_for('pg'))
+            # return redirect(url_for('pg'))
             return redirect(url_for('general'))
 
     # if method is post but pre-test_completed is in session, this means the post-test has just been submitted
@@ -188,3 +192,29 @@ def pubs():
         return render_template('publications-cz.html', title='Publikace', language='cs',
                                publications=publications, page=page)
 
+
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    failed = False
+
+    # login to admin
+    if request.method == 'POST' and not session.get('admin'):
+        # get and check password passed to admin page
+        entered_password = request.form.get('password')
+        # if checkpw(entered_password.encode('utf-8'), ADMIN_PWD):
+        if entered_password == ADMIN_PWD:
+            session['admin'] = True
+        else:
+            failed = True
+
+    # db manipulation - add/delete publications
+    elif request.method == 'POST':
+        if request.form.get('name'):
+            add_publication(request.form.get('name'), request.form.get('desc'), request.form.get('link'))
+        elif request.form.get('hidden_pub_id'):
+            delete_publication(int(request.form.get('hidden_pub_id')))
+
+    create_download_files()
+    publications = get_all_publications()
+    return render_template('admin.html', title='Admin', language='en', failed=failed,
+                           pubs=publications)

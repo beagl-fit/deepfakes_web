@@ -33,8 +33,10 @@ class Publications(db.Model):
     :var name: publication name [100]
     :var description: short summary of publication [250]
     :var link: url of the publication [-]
+    :var deleted: boolean; default false
     """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
     link = db.Column(db.String(), nullable=False)
+    deleted = db.Column(db.Boolean, default=False, nullable=False)
