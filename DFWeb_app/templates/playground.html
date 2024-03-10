@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="container d-flex justify-content-center my-4">
-        <h2>{% block tit %}{% endblock tit %}</h2>
+        <h4>{% block tit %}{% endblock tit %}</h4>
     </div>
     <div class="py-1" style="background-color: var(--btn-color-sec)">
         <div class="container d-flex justify-content-center my-4">
-            <h1>Face Swap</h1>
+            <h3>Face Swap</h3>
         </div>
 
         <div class="container py-3">
@@ -13,16 +13,16 @@
                 <div class="col-3">
                     <ul>
                        <li>
-                           {% block fs-li-1 %}{% endblock fs-li-1 %}
+                           {% block fs_li_1 %}{% endblock fs_li_1 %}
                        </li>
                        <li>
-                           {% block fs-li-2%}{% endblock fs-li-2%}
+                           {% block fs_li_2%}{% endblock fs_li_2%}
                        </li>
                        <li>
-                           {% block fs-li-3%}{% endblock fs-li-3%}
+                           {% block fs_li_3%}{% endblock fs_li_3%}
                        </li>
                        <li>
-                           {% block fs-li-4%}{% endblock fs-li-4%}
+                           {% block fs_li_4%}{% endblock fs_li_4%}
                        </li>
                     </ul>
 
@@ -111,7 +111,7 @@
     </div>
     <div class="py-1">
         <div class="container d-flex justify-content-center my-4">
-            <h1>Face Manipulation</h1>
+            <h3>Face Manipulation</h3>
         </div>
         <div class="container my-2 text-end">
             FACE MANIP
@@ -119,7 +119,7 @@
     </div>
     <div class="py-1" style="background-color: var(--btn-color-how); color: var(--main-bg-color)">
         <div class="container d-flex justify-content-center my-4">
-            <h1 style="color: var(--main-bg-color)">Face Morphing</h1>
+            <h3 style="color: var(--main-bg-color)">Face Morphing</h3>
         </div>
         <div class="container my-2">
             <p>FACE MORPH</p>
@@ -158,7 +158,7 @@
     </div>
     <div class="py-1">
         <div class="container d-flex justify-content-center my-4">
-            <h1>Facial Reenactment</h1>
+            <h3>Facial Reenactment</h3>
         </div>
         <div class="container my-2 text-end">
             Facial Reenactment
@@ -166,10 +166,10 @@
     </div>
     <div class="py-1" style="background-color: #0D302E">
         <div class="container d-flex justify-content-center my-4">
-            <h1>Text-to-speech</h1>
+            <h3>Text-to-speech</h3>
         </div>
         <div class="container my-2">
-            Facial Reenactment
+            tts
         </div>
     </div>
 
@@ -192,7 +192,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="imageModalLabel">Modal title</h1>
+        <h3 class="modal-title fs-5" id="imageModalLabel">Modal title</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="mx-auto modal-body">
@@ -220,7 +220,7 @@
             if (image1.name === image2.name)
                 src = image1.src
             else
-                src = "/static/images/" + image2.name + "_to_" + image1.name + ".png";
+                src = "/static/images/face_swap/" + image2.name + "_to_" + image1.name + ".png";
 
             cardImage.setAttribute("data-source", "https://remaker.ai/face-swap-free/");
         }
@@ -231,7 +231,7 @@
     // changes image to a different one alongside it's data
     function changeImage(card, image, name, source) {
         let cardImage = document.getElementById(card);
-        cardImage.src = "/static/images/" + image;
+        cardImage.src = "/static/images/face_swap/" + image;
         cardImage.name = name;
         cardImage.setAttribute("data-source", source);
     }

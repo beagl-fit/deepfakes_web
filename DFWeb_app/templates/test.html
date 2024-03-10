@@ -4,11 +4,11 @@
 <div class="container-lg my-5">
 
     <!--<div class="container d-flex justify-content-center mb-4">-->
-    <!--    <h2>COURSE INFORMATION</h2>-->
+    <!--    <h4>COURSE INFORMATION</h4>-->
     <!--</div>-->
 
     <div class="container mb-4 text-center">
-        <h1>{% block tit %}{% endblock tit %} {% if feedback %}{% block tit2 %}{% endblock tit2 %}{% endif %}</h1>
+        <h3>{% block tit %}{% endblock tit %} {% if feedback %}{% block tit2 %}{% endblock tit2 %}{% endif %}</h3>
     </div>
 
     <form id="testForm" action="{% if session.get('pre-test_completed') and not session.get('post-test_completed') %}
@@ -24,7 +24,7 @@
                 <div class="row py-2">
                     <div class="card" style="min-height: 100px; min-width: 350px;">
                         <div class="card-header">
-                            <h3>1) {% block question1 %}{% endblock question1 %}:</h3>
+                            <h5>1) {% block question1 %}{% endblock question1 %}:</h5>
                         </div>
 
                         <div class="card-body ps-5">
@@ -78,7 +78,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>2) {% block question2 %}{% endblock question2 %}:</h3>
+                        <h5>2) {% block question2 %}{% endblock question2 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -131,7 +131,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>3) {% block question3 %}{% endblock question3 %}:</h3>
+                        <h5>3) {% block question3 %}{% endblock question3 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -276,7 +276,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>5) {% block question5 %}{% endblock question5 %}:</h3>
+                        <h5>5) {% block question5 %}{% endblock question5 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -435,7 +435,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>8) {% block question8 %}{% endblock question8 %}:</h3>
+                        <h5>8) {% block question8 %}{% endblock question8 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -488,7 +488,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>9) {% block question9 %}{% endblock question9 %}:</h3>
+                        <h5>9) {% block question9 %}{% endblock question9 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -541,7 +541,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>10) {% block question10 %}{% endblock question10 %}.</h3>
+                        <h5>10) {% block question10 %}{% endblock question10 %}.</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -637,7 +637,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>12) {% block question12 %}{% endblock question12 %}:</h3>
+                        <h5>12) {% block question12 %}{% endblock question12 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -680,7 +680,7 @@
             <div class="row py-2">
                 <div class="card" style="min-height: 100px; min-width: 350px;">
                     <div class="card-header">
-                        <h3>13) {% block question13 %}{% endblock question13 %}:</h3>
+                        <h5>13) {% block question13 %}{% endblock question13 %}:</h5>
                     </div>
 
                     <div class="card-body ps-5">
@@ -742,7 +742,7 @@
             <div class="container mt-3 d-flex justify-content-center">
                 <div class="row">
                     <div class="col-12 col-md-6 my-2 text-center">
-                        <H4>{{ feedback[2] }}/{{ feedback[3] }}</H4>
+                        <h1>{{ feedback[2] }}/{{ feedback[3] }}</h1>
                     </div>
                 </div>
             </div>

@@ -1,47 +1,59 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container-lg my-5">
+<div style="background-color: var(--btn-color-sec); color: var(--text-color-pri); background(filter: brightness(80%))">
 
-    <!--    TITLE  -->
-    <div class="container d-flex justify-content-center mb-4">
-        <h2>{% block tit %}{% endblock tit %}</h2>
-    </div>
-
-
-    <!-- MIXING DEEPFAKES -->
-    <div class="container mt-4">
-        <div class="row py-4">
-            <div class="col-12">
-                {% block sec %}{% endblock sec %}
-            </div>
-            <div class="col-12 pt-2">
-                <p class="text">{% block example %}{% endblock example %}:</p>
-            </div>
-            <div class="col-12">
-                <ul>
-                    <li>
-                        <p class="text">{% block example2 %}{% endblock example2 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block example3 %}{% endblock example3 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block example4 %}{% endblock example4 %}</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-12">
-                {% block sec2 %}{% endblock sec2 %}
-            </div>
+    <div class="container-lg py-5">
+        <!--    TITLE  -->
+        <div class="container d-flex justify-content-center mb-4">
+            <h1>{% block tit %}{% endblock tit %}</h1>
         </div>
 
+
+        <!-- MIXING DEEPFAKES -->
+        <div class="container mt-4">
+            {% block sec %}{% endblock sec %}
+            <div class="row py-4">
+                <div class="card my-3 py-1">
+                    <div class="card-header">
+                        <h4>{% block example %}{% endblock example %}:</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <p class="text">{% block example2 %}{% endblock example2 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block example3 %}{% endblock example3 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block example4 %}{% endblock example4 %}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                </div>
+                <div class="col-12 pt-2">
+                </div>
+                <div class="col-12">
+                </div>
+                <div class="col-12">
+                    {% block sec2 %}{% endblock sec2 %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-lg my-5">
     <!----------------------------------------------------------------------------------------------------------------->
     <!--    ADVICE-->
-        <div class="row pt-3 pt-lg-4 pb-2 pt-lg-3">
-            <h1>{% block advice %}{% endblock advice %}:</h1>
+    <div class="card" style="background-color: #0D302E; border-color: var(--btn-color-pri)">
+        <div class="card-header" style="border-color: var(--btn-color-pri)">
+            <h3>{% block advice %}{% endblock advice %}:</h3>
         </div>
-        <div class="row">
+        <div class="card-body" style="color: var(--btn-color-how)">
             <ol>
                 <li>
                     {% block an %}{% endblock an %}!
@@ -76,6 +88,10 @@
                 </li>
             </ol>
         </div>
+    </div>
+    <div class="row pt-3 pt-lg-4 pb-2 pt-lg-3">
+    </div>
+    <div class="row">
     </div>
 
 

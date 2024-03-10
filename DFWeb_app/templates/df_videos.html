@@ -4,157 +4,227 @@
 <div class="container-lg my-5">
 
     <!--    TITLE  -->
-    <div class="container d-flex justify-content-center mb-4">
-        <h2>{% block tit %}{% endblock tit %}</h2>
+    <div class="container mb-4">
+        <div class="row text-center">
+            <h2>{% block tit %}{% endblock tit %}</h2>
+        </div>
     </div>
 
 
     <!-- VIDEO vs IMAGES -->
-    <div class="container mt-4">
-        <p class="text">{% block vid %}{% endblock vid %}:</p>
-        <ul>
-            <li>
-                {% block vid2 %}{% endblock vid2 %}
-            </li>
-            <li>
-                {% block vid3 %}{% endblock vid3 %}
-            </li>
-            <li>
-                {% block vid4 %}{% endblock vid4 %}
-            </li>
-        </ul>
-        <div class="row py-4">
-            <div class="col-12">
-                {% block vid5 %}{% endblock vid5 %}
-            </div>
+    <div class="row pt-3">
+        <div class="col-12 col-md-6">
+            <h4>{% block vid %}{% endblock vid %}:</h4>
         </div>
+        <div class="col-12 col-md-6">
+            <ul>
+                <li>
+                    {% block vid2 %}{% endblock vid2 %}
+                </li>
+                <li>
+                    {% block vid3 %}{% endblock vid3 %}
+                </li>
+                <li>
+                    {% block vid4 %}{% endblock vid4 %}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row text-center">
+        <h5>{% block vid5 %}{% endblock vid5 %}</h5>
+    </div>
+</div>
+
+<div class="py-3" style="background-color: var(--btn-color-sec);">
+    <div class="container mt-4">
         <div class="row pb-4 pb-lg-2">
             <h1>{% block free %}{% endblock free %}</h1>
         </div>
-        <div class="row py-4">
+        <div class="row py-4 text-center bb" style="border-bottom-color: var(--btn-color-how)">
             <div class="col-12">
-                {% block free2 %}{% endblock free2 %}
+                <p class="text">{% block free2 %}{% endblock free2 %}</p>
             </div>
         </div>
 
     <!--    HOW -->
-        <h3>{% block how %}{% endblock how %}?</h3>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    {% block how2 %}{% endblock how2 %}
+            <div class="row justify-content-between pt-5">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <h2>{% block how %}{% endblock how %}&nbsp;?</h2>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col-12 pb-3">
+                            {% block how2 %}{% endblock how2 %}
+                        </div>
+                        <div class="col-12 pb-3">
+                            <p class="text">{% block how3 %}{% endblock how3 %}</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="text">{% block how4 %}{% endblock how4 %}:</p>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <p class="text">{% block how5 %}{% endblock how5 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block how6 %}{% endblock how6 %}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12">
-                    <p class="text">{% block how3 %}{% endblock how3 %}</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block how4 %}{% endblock how4 %}:</p>
-                </div>
-                <div class="col-12">
-                    <ul>
-                        <li>
-
-                            <p class="text">{% block how5 %}{% endblock how5 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block how6 %}{% endblock how6 %}</p>
-                        </li>
-                    </ul>
+                <div class="col-12 col-md-6 my-auto">
+                    <div class="row px-5 ratio ratio-16x9">
+                            <iframe class="object-fit-fill"
+                                    src="https://www.youtube.com/embed/cQ54GDm1eL0?si=FJlPl6Z4Ns4bLgt-" allowfullscreen>
+                            </iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!--    WHY -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block why %}{% endblock why %}?</h3>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block why2 %}{% endblock why2 %}</p>
+<div>
+    <div class="container py-4">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-6 my-auto">
+                <div class="row">
+                    <div class="col-12 pb-3">
+                        <p class="text">
+                            {% block why2 %}{% endblock why2 %}
+                        </p>
+                    </div>
+                    <div class="col-12 pb-3">
+                        <p class="text">
+                            {% block why3 %}{% endblock why3 %}
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <p class="text">
+                            {% block why4 %}{% endblock why4 %}
+                        </p>
+                    </div>
                 </div>
-                <div class="col-12">
-                    <p class="text">{% block why3 %}{% endblock why3 %}</p>
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block why4 %}{% endblock why4 %}</p>
-                </div>
+            </div>
+            <div class="col-12 col-md-5 order-first order-md-last my-auto">
+                <h2>
+                    {% block why %}{% endblock why %}&nbsp;?
+                </h2>
             </div>
         </div>
     </div>
+</div>
 
     <!--    WHAT    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block what %}{% endblock what %}?</h3>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block what2 %}{% endblock what2 %}</p>
+<div class="py-3" style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+ background(filter: brightness(80%))">
+    <div class="container">
+        <div class="row justify-content-between pt-5">
+            <div class="col-12 col-md-5">
+                <div class="row">
+                    <h2 style="color: var(--btn-color-sec)">{% block what %}{% endblock what %}&nbsp;?</h2>
                 </div>
-                <div class="col-12">
-                    <p class="text">{% block what3 %}{% endblock what3 %}</p>
+                <div class="row py-3">
+                    <div class="col-12 pb-3">
+                        {% block what2 %}{% endblock what2 %}
+                    </div>
+                    <div class="col-12">
+                        {% block what3 %}{% endblock what3 %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 my-auto">
+                <div class="row px-5 ratio ratio-16x9">
+                        <iframe class="object-fit-fill"
+                                src="https://www.youtube.com/embed/X17yrEV5sl4?si=xB0iKeykkr9G6FQH" allowfullscreen>
+                        </iframe>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!--    ATTACK SCENARIOS    -->
-    <div class="container mt-4">
-        <div class="mt-4">
-            <h3>{% block scen %}{% endblock scen %}?</h3>
-        </div>
-        <div class="container">
-            {% block scen1 %}{% endblock scen1 %} 1:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block scen11 %}{% endblock scen11 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen12 %}{% endblock scen12 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen13 %}{% endblock scen13 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen14 %}{% endblock scen14 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen15 %}{% endblock scen15 %}</p>
-                    </li>
-                </ol>
+<div class="container mt-4">
+    <div class="mt-4">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-7 order-last order-md-first">
+                <div class="accordion">
+                  <div class="accordion-item">
+                    <h5 class="accordion-header">
+                      <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#free-1" aria-expanded="false"
+                              aria-controls="free-1">
+                        {% block scen1 %}{% endblock scen1 %} 1:
+                      </button>
+                    </h5>
+                    <div id="free-1" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <ol>
+                            <li>
+                                <p class="text">{% block scen11 %}{% endblock scen11 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen12 %}{% endblock scen12 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen13 %}{% endblock scen13 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen14 %}{% endblock scen14 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen15 %}{% endblock scen15 %}</p>
+                            </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h5 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#free-2" aria-expanded="false"
+                              aria-controls="free-2">
+                        {% block scen2 %}{% endblock scen2 %} 2:
+                      </button>
+                    </h5>
+                    <div id="free-2" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <ol>
+                            <li>
+                                <p class="text">{% block scen21 %}{% endblock scen21 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen22 %}{% endblock scen22 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen23 %}{% endblock scen23 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen24 %}{% endblock scen24 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block scen25 %}{% endblock scen25 %}</p>
+                            </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
-
-            {% block scen2 %}{% endblock scen2 %} 2:
-            <div class="container">
-                <ol>
-                    <li>
-                        <p class="text">{% block scen21 %}{% endblock scen21 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen22 %}{% endblock scen22 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen23 %}{% endblock scen23 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen24 %}{% endblock scen24 %}</p>
-                    </li>
-                    <li>
-                        <p class="text">{% block scen25 %}{% endblock scen25 %}</p>
-                    </li>
-                </ol>
+            <div class="col-12 col-md-4 my-auto py-2">
+                <h2>{% block scen %}{% endblock scen %}&nbsp;?</h2>
             </div>
         </div>
     </div>
 
 
     <!--    CONT/END BUTTONS-->
-    <div class="container mt-3 d-flex justify-content-center">
+    <div class="container mt-3 d-flex justify-content-center pt-3">
         <div class="fixed-sm-bottom mb-1">
             <div class="row">
                 <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">

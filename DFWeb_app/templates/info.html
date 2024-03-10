@@ -7,7 +7,7 @@
     <div class="container mb-4 justify-content-center align-items-center">
         <div class="card" style="min-height: 100px; min-width: 350px;">
             <div class="card-header">
-                <h2>{% block info %}{% endblock info %}</h2>
+                <h4>{% block info %}{% endblock info %}</h4>
             </div>
 
             <div class="card-body ps-5">
@@ -40,7 +40,7 @@
     <form id="sessionForm" action="{{ url_for('test') }}" method="post">
         <!--    SEX RADIOS  -->
         <div class="container justify-content-center text-center mb-4 pt-5">
-            <h2>{% block s %}{% endblock s %}</h2>
+            <h4>{% block s %}{% endblock s %}</h4>
 
             <div class="row justify-content-end text-start pe-5">
                 <div class="col-6">
@@ -72,7 +72,7 @@
 
         <!--    AGE RADIOS  -->
         <div class="container justify-content-center text-center mb-4">
-            <h2>{% block a %}{% endblock a %}</h2>
+            <h4>{% block a %}{% endblock a %}</h4>
 
             <div class="row justify-content-end text-start pe-5">
                 <div class="col-6">
@@ -126,7 +126,7 @@
 
         <!--    DF ENCOUNTERED RADIOS   -->
         <div class="container justify-content-center text-center mb-4">
-            <h2>{% block e %}{% endblock e %}</h2>
+            <h4>{% block e %}{% endblock e %}</h4>
 
             <div class="row justify-content-end text-start pe-5">
                 <div class="col-6">
