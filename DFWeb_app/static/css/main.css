@@ -61,7 +61,7 @@ p {
 }
 
 .text-dark {
-  color: var(--card-bg-color);
+  color: var(--main-bg-color);
   font-size: 1.2rem;
   margin-bottom: 0.2rem;
   display: inline;
@@ -74,7 +74,8 @@ p {
   --bs-btn-hover-color: var(--btn-color-pri);
   --bs-btn-hover-bg: var(--btn-color-how);
   --bs-btn-focus-shadow-rgb: #0;
-  --bs-btn-border-color: #0;
+  border: 2px solid var(--btn-color-sec);
+  /*--bs-btn-border-color: #0;*/
   font-size: 2rem;
   padding: 0.425rem 1.875rem;
   justify-content: center;
@@ -92,7 +93,8 @@ p {
   --bs-btn-hover-color: var(--btn-color-sec);
   --bs-btn-hover-bg: var(--btn-color-how);
   --bs-btn-focus-shadow-rgb: #0;
-  --bs-btn-border-color: #0;
+  border: 2px solid var(--btn-color-pri);
+  /*--bs-btn-border-color: #0;*/
   font-size: 2rem;
   /*padding: 0.625rem 1.875rem;*/
   justify-content: center;
@@ -110,7 +112,8 @@ p {
   --bs-btn-hover-color: var(--btn-color-pri);
   --bs-btn-hover-bg: var(--btn-color-how);
   --bs-btn-focus-shadow-rgb: #0;
-  --bs-btn-border-color: #0;
+  /*--bs-btn-border-color: #0;*/
+  border: 2px solid var(--btn-color-sec);
   font-size: 1.6rem;
   justify-content: center;
   align-items: center;
@@ -125,7 +128,8 @@ p {
   --bs-btn-hover-color: var(--btn-color-pri);
   --bs-btn-hover-bg: var(--btn-color-how);
   --bs-btn-focus-shadow-rgb: #0;
-  --bs-btn-border-color: #0;
+  /*--bs-btn-border-color: #0;*/
+  border: 2px solid var(--btn-color-pri);
   font-size: 2rem;
   justify-content: center;
   align-items: center;
@@ -141,7 +145,8 @@ p {
   --bs-btn-hover-color: var(--btn-color-pri);
   --bs-btn-hover-bg: var(--btn-color-how);
   --bs-btn-focus-shadow-rgb: #0;
-  --bs-btn-border-color: #0;
+  /*--bs-btn-border-color: #0;*/
+  border: 2px solid var(--btn-color-sec);
   font-size: 4.8rem;
   justify-content: center;
   align-items: center;
@@ -189,7 +194,8 @@ p {
   --bs-btn-hover-color: var(--btn-color-pri);
   --bs-btn-hover-bg: var(--btn-color-how);
   --bs-btn-focus-shadow-rgb: #0;
-  --bs-btn-border-color: #0;
+  /*--bs-btn-border-color: #0;*/
+  border: 2px solid var(--btn-color-sec);
   font-size: 1.5rem;
   justify-content: center;
   align-items: center;
@@ -277,4 +283,18 @@ p {
 
 .bb {
   border-bottom: 5px solid var(--btn-color-sec);
+}
+
+.nav-audio {
+  font-size: 2.4rem;
+  color: var(--text-color-pri);
+}
+
+.nav-audio:hover {
+  color: var(--text-color-pri);
+  border: 1px solid var(--btn-color-pri);
+}
+
+.dropdown-container .dropdown-menu {
+  z-index: 1000; /* Set a high z-index value to ensure the dropdown menu appears above other elements */
 }

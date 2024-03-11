@@ -1,215 +1,294 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container-lg my-5">
 
+<div style="background-color: var(--btn-color-how); color: var(--btn-color-sec); background(filter: brightness(80%))">
     <!--    TITLE  -->
-    <div class="container d-flex justify-content-center mb-4">
-        <h4>{% block tit %}{% endblock tit %}</h4>
+    <div class="text-center py-5">
+        <h2 style="color: var(--btn-color-sec)">{% block tit %}{% endblock tit %}</h2>
     </div>
 
-
-    <!-- VIDEO vs IMAGES -->
-    <div class="container mt-4">
+    <div class="container mt-4 bb">
         <div class="row py-4">
-            <div class="col-12">
-                {% block audio %}{% endblock audio %}
+            <div class="col-12 text-center">
+                <p class="text-dark">{% block audio %}{% endblock audio %}</p>
             </div>
         </div>
+    </div>
 
 
     <!--    HOW -->
-        <h5>{% block how %}{% endblock how %}?</h5>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    {% block how2 %}{% endblock how2 %}
-                </div>
-                <div class="col-12">
-                    <p class="text">{% block how3 %}{% endblock how3 %}:</p>
-                </div>
-                <div class="col-12">
-                    <ul>
-                        <li>
-                            {% block how4 %}{% endblock how4 %}
-                        </li>
-                        <li>
-                            {% block how5 %}{% endblock how5 %}
-                        </li>
-                    </ul>
+    <div class="container mt-4">
+        <div class="row py-3 justify-content-between">
+            <div class="col-12 col-md-4 my-auto">
+                <h1 style="color: var(--main-bg-color)">{% block how %}{% endblock how %}&nbsp;?</h1>
+            </div>
+            <div class="col-12 col-md-7 my-auto">
+                <div class="row">
+                    <div class="col-12 pb-3">
+                        {% block how2 %}{% endblock how2 %}
+                    </div>
+                    <div class="col-12">
+                        {% block how3 %}{% endblock how3 %}:
+                    </div>
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                {% block how4 %}{% endblock how4 %}
+                            </li>
+                            <li>
+                                {% block how5 %}{% endblock how5 %}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+
+<div class="container-lg my-5">
     <!--    TTS & SC 1/2    -->
-    <div class="container pt-4">
-        <div class="row">
-            <div class="col-6 pb-5 pb-lg-0">
-    <!--                TTS -->
-                <h3>{% block tts %}{% endblock tts %}</h3>
-                <div class="row">
-                    <div class="col-12">
-                        {% block tts2 %}{% endblock tts2 %}
-                    </div>
-                </div>
-            </div>
-
-
-    <!--                SC -->
-            <div class="col-6 pb-3 pb-lg-0">
-                <h3>{% block sts %}{% endblock sts %}</h3>
-                <div class="row">
-                    <div class="col-12">
-                        {% block sts2 %}{% endblock sts2 %}
-                    </div>
-                </div>
-            </div>
+    <div class="card" style="border-radius: 1rem; --bs-card-bg:var(--btn-color-pri);
+     border: 2px solid var(--btn-color-pri); color: var(--text-color-sec)">
+        <div class="card-header" style="border-bottom-color: var(--text-color-pri)">
+            <ul class="nav justify-content-center nav-tabs card-header-tabs nav-fill" id="myTab"
+                role="tablist" style="--bs-nav-tabs-link-active-color:var(--text-color-pri);
+                 --bs-secondary-bg:var(--text-color-pri);">
+                <li class="nav-item">
+                    <button class="nav-link nav-audio active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
+                            type="button" role="tab" aria-controls="tab1" aria-selected="true">
+                        {% block tts %}{% endblock tts %}
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link nav-audio" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
+                            type="button" role="tab" aria-controls="tab2" aria-selected="false">
+                        {% block sts %}{% endblock sts %}
+                    </button>
+                </li>
+                <!-- Add more tabs as needed -->
+            </ul>
         </div>
-    </div>
-
-    <!--    TTS & SC 2/2    -->
-    <div class="container">
-        <div class="row">
-    <!--            TTS-->
-            <div class="col-12 col-lg-6 pb-lg-0">
-                <div class="mt-4">
-                    <h5>{% block ttswhy %}{% endblock ttswhy %}?</h5>
-                </div>
-                <div class="container">
-                    <div class="row mb-2 mb-md-0">
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
-                        </div>
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
-                        </div>
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
-                        </div>
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
-                        </div>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <div class="card-body">
+                    <div class="row py-3 text-center">
                         <div class="col-12">
-                            <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
+                            <h5>{% block tts2 %}{% endblock tts2 %}</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between px-2">
+                        <div class="col-12 col-md-5 my-auto">
+                            <h2>{% block ttswhy %}{% endblock ttswhy %}&nbsp;?</h2>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="row mb-2 mb-md-0">
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-    <!--                SC -->
-            <div class="col-12 col-md-6 pb-lg-0">
-                <div class="mt-4">
-                    <h5>{% block stswhy %}{% endblock stswhy %}?</h5>
-                </div>
-                <div class="container">
-                    <div class="row mb-2 mb-md-0">
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
-                        </div>
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
-                        </div>
-                        <div class="col-12 pb-1">
-                            <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <div class="card-body">
+                    <div class="row py-3 text-center">
+                        <div class="col-12">
+                            <h5>{% block sts2 %}{% endblock sts2 %}</h5>
                         </div>
                     </div>
-                </div>
-                <div class="row pt-3">
-                    <div class="col-12 pb">
-                        {% block stswhy5 %}{% endblock stswhy5 %}
+                    <div class="row justify-content-between px-2">
+                        <div class="col-12 col-md-6">
+                            <div class="row mb-2 mb-md-0">
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text" style="color: var(--text-color-sec)">
+                                        {% block stswhy5 %}{% endblock stswhy5 %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5 my-auto order-first order-md-last">
+                            <h2>{% block stswhy %}{% endblock stswhy %}&nbsp;?</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+
+<div class="py-3" style="background-color: var(--btn-color-sec)">
     <!--    WHAT    -->
     <div class="container mt-4">
-        <div class="mt-4">
-            <h5>{% block what %}{% endblock what %}?</h5>
-        </div>
-        <div class="container">
-            <div class="row mb-2 mb-md-0">
-                <div class="col-12">
-                    <p class="text">{% block what2 %}{% endblock what2 %}:</p>
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-4 my-auto">
+                <h2>{% block what %}{% endblock what %}&nbsp;?</h2>
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="row justify-content-center">
+                    <div class="col-9 text-center">
+                        <h6>{% block what2 %}{% endblock what2 %}:</h6>
+                    </div>
                 </div>
-                <div class="col-12">
-                    Vishing
-                    <ul>
-                        <li>
-                            <p class="text">{% block vish3 %}{% endblock vish3 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block vish4 %}{% endblock vish4 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block vish5 %}{% endblock vish5 %}</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-12">
-                    Scam
-                    <ul>
-                        <li>
-                            <p class="text">{% block scam1 %}{% endblock scam1 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block scam2 %}{% endblock scam2 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block scam3 %}{% endblock scam3 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block scam4 %}{% endblock scam4 %}</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-12">
-                    {% block bio1 %}{% endblock bio1 %}
-                    <ul>
-                        <li>
-                            <p class="text">{% block bio2 %}{% endblock bio2 %}</p>
-                        </li>
-                        <li>
-                            <p class="text">{% block bio3 %}{% endblock bio3 %}</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-12">
-                    {% block what3 %}{% endblock what3 %}
-                    <ul>
-                        <li>
-                            <p class="text">{% block what4 %}{% endblock what4 %}</p>
-                        </li>
-                    </ul>
+                <div class="row py-2">
+                    <div class="accordion">
+                      <div class="accordion-item">
+                        <h5 class="accordion-header">
+                          <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#what-1" aria-expanded="false"
+                                  aria-controls="what-1">
+                            Vishing
+                          </button>
+                        </h5>
+                        <div id="what-1" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <p class="text">{% block vish3 %}{% endblock vish3 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block vish4 %}{% endblock vish4 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block vish5 %}{% endblock vish5 %}</p>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h5 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#what-2" aria-expanded="false"
+                                  aria-controls="what-2">
+                            Scam
+                          </button>
+                        </h5>
+                        <div id="what-2" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <p class="text">{% block scam1 %}{% endblock scam1 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block scam2 %}{% endblock scam2 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block scam3 %}{% endblock scam3 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block scam4 %}{% endblock scam4 %}</p>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h5 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#what-3" aria-expanded="false"
+                                  aria-controls="what-3">
+                            {% block bio1 %}{% endblock bio1 %}
+                          </button>
+                        </h5>
+                        <div id="what-3" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <p class="text">{% block bio2 %}{% endblock bio2 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block bio3 %}{% endblock bio3 %}</p>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h5 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#what-4" aria-expanded="false"
+                                  aria-controls="what-4">
+                            {% block misc %}{% endblock misc %}
+                          </button>
+                        </h5>
+                        <div id="what-4" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    {% block what3 %}{% endblock what3 %}
+                                </li>
+                                <li>
+                                    <p class="text">{% block what4 %}{% endblock what4 %}</p>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <div class="container mt-4">
-        <div class="row justify-content-center text-center">
-            <div class="col-12 col-md-5 py-2">
-                <button class="btn btn-audio" onclick="showDiv('TTS')">{% block ttsscen %}{% endblock ttsscen %}?</button>
-            </div>
-            <div class="col-12 col-md-5 py-2">
-                <button class="btn btn-audio" onclick="showDiv('STS')">{% block stsscen %}{% endblock stsscen %}?</button>
-            </div>
+<div class="container mt-4">
+    <div class="row justify-content-center text-center">
+        <div class="col-12 col-md-5 py-2">
+            <button class="btn btn-audio" onclick="showDiv('TTS')">{% block ttsscen %}{% endblock ttsscen %}?</button>
+        </div>
+        <div class="col-12 col-md-5 py-2">
+            <button class="btn btn-audio" onclick="showDiv('STS')">{% block stsscen %}{% endblock stsscen %}?</button>
         </div>
     </div>
+</div>
 
 
 
 
 
-    <!--    ATTACK SCENARIOS    -->
-    <div id="TTS" class="container mt-4" style="display: none">
-        TTS {% block ttsscen1 %}{% endblock ttsscen1 %} 1:
-        <div class="container">
+<!--    ATTACK SCENARIOS    -->
+<div id="TTS" class="container mt-4" style="display: none">
+    <div class="accordion">
+      <div class="accordion-item">
+        <h5 class="accordion-header">
+          <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#tts-1" aria-expanded="false"
+                  aria-controls="tts-1">
+            TTS {% block ttsscen1 %}{% endblock ttsscen1 %} 1:
+          </button>
+        </h5>
+        <div id="tts-1" class="accordion-collapse collapse">
+          <div class="accordion-body">
             <ol>
                 <li>
                     <p class="text">{% block ttsscen11 %}{% endblock ttsscen11 %}</p>
@@ -230,10 +309,19 @@
                     <p class="text">{% block ttsscen16 %}{% endblock ttsscen16 %}</p>
                 </li>
             </ol>
+          </div>
         </div>
-
-        TTS {% block ttsscen2 %}{% endblock ttsscen2 %} 2:
-        <div class="container">
+      </div>
+      <div class="accordion-item">
+        <h5 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#tts-2" aria-expanded="false"
+                  aria-controls="tts-2">
+            TTS {% block ttsscen2 %}{% endblock ttsscen2 %} 2:
+          </button>
+        </h5>
+        <div id="tts-2" class="accordion-collapse collapse">
+          <div class="accordion-body">
             <ol>
                 <li>
                     <p class="text">{% block ttsscen21 %}{% endblock ttsscen21 %}</p>
@@ -254,13 +342,25 @@
                     <p class="text">{% block ttsscen26 %}{% endblock ttsscen26 %}</p>
                 </li>
             </ol>
+          </div>
         </div>
+      </div>
     </div>
+</div>
 
 
-    <div id="STS" class="container mt-4" style="display: none">
-        STS {% block stsscen1 %}{% endblock stsscen1 %} 1:
-        <div class="container">
+<div id="STS" class="container mt-4" style="display: none">
+    <div class="accordion">
+      <div class="accordion-item">
+        <h5 class="accordion-header">
+          <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#sts-1" aria-expanded="false"
+                  aria-controls="sts-1">
+            STS {% block stsscen1 %}{% endblock stsscen1 %} 1:
+          </button>
+        </h5>
+        <div id="sts-1" class="accordion-collapse collapse">
+          <div class="accordion-body">
             <ol>
                 <li>
                     <p class="text">{% block stsscen11 %}{% endblock stsscen11 %}</p>
@@ -281,10 +381,19 @@
                     <p class="text">{% block stsscen16 %}{% endblock stsscen16 %}</p>
                 </li>
             </ol>
+          </div>
         </div>
-
-        STS {% block stsscen2 %}{% endblock stsscen2 %} 2:
-        <div class="container">
+      </div>
+      <div class="accordion-item">
+        <h5 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#sts-2" aria-expanded="false"
+                  aria-controls="sts-2">
+            STS {% block stsscen2 %}{% endblock stsscen2 %} 2:
+          </button>
+        </h5>
+        <div id="sts-2" class="accordion-collapse collapse">
+          <div class="accordion-body">
             <ol>
                 <li>
                     <p class="text">{% block stsscen21 %}{% endblock stsscen21 %}</p>
@@ -305,9 +414,11 @@
                     <p class="text">{% block stsscen26 %}{% endblock stsscen26 %}</p>
                 </li>
             </ol>
+          </div>
         </div>
+      </div>
     </div>
-
+</div>
 
     <!--    CONT/END BUTTONS-->
     <div class="container mt-3 d-flex justify-content-center">
