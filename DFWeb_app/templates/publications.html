@@ -5,9 +5,15 @@
         <span class="navbar-brand">
             <img src="{{ url_for('static', filename='images/icon.png') }}" alt="">
         </span>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar toggler button for small screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 1.5rem;">
-            <li class="nav-item">
+            <li class="nav-item mx-2">
               <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">
                   {% block home %}{% endblock home %}
               </a>
@@ -21,7 +27,7 @@
               <a class="nav-link active" aria-current="page" style="color: var(--text-color-pri)"
                  href="{{ url_for('info') }}">{% block pubs %}{% endblock pubs %}</a>
             </li>
-              <li class="nav-item">
+              <li class="nav-item mx-2">
                   <a class="nav-link" href="{{ url_for('static', filename='files/deepfakes.pdf') }}"
                      download="deepfakes.pdf">
                       {% block download %}{% endblock download %}
@@ -73,7 +79,7 @@
 
             {% if publications %}
                 <nav aria-label="Publications page nav">
-                    <ul class="pagination justify-content-center pagination-lg">
+                    <ul class="pagination justify-content-center pagination-md">
                         {% for page_num in publications.iter_pages(left_edge=1, right_edge=1) %}
                             {% if page_num %}
                                 {% if page_num != publications.page %}

@@ -27,10 +27,10 @@
 <div class="py-4" style="background-color: var(--text-color-pri); filter: brightness(90%)">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-4 pt-3">
+            <div class="col-12 col-md-4 pt-3">
                 <h1 style="color: var(--main-bg-color)">{% block what %}{% endblock what %}</h1>
             </div>
-            <div class="col-6 my-auto">
+            <div class="col-12 col-md-6 my-auto">
                 <div class="btn-group text-center">
                     <div class="btn-group-vertical">
                         <a class="btn btn-audio btn-lg" rel="noopener noreferrer" target="_blank"
@@ -46,7 +46,7 @@
                             {% block what4 %}{% endblock what4 %}
                         </a>
                     </div>
-                    <h1 class="my-auto px-2" style="color: var(--main-bg-color)">vs</h1>
+                    <h1 class="my-auto px-2 mx-auto" style="color: var(--main-bg-color)">vs</h1>
                     <div class="btn-group-vertical">
                         <a class="btn btn-audio btn-lg" rel="noopener noreferrer" target="_blank"
                            href="https://www.nytimes.com/2023/02/07/technology/artificial-intelligence-training-deepfake.html">
@@ -74,7 +74,7 @@
             <h5>! {% block how %}{% endblock how %} !</h5>
         </div>
             <div class="row mt-4 justify-content-between">
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <div class="container pe-3">
                         <div class="row mb-2 mb-md-0">
                             <div class="col-12 text-center">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 my-auto">
+                <div class="col-12 col-md-3 my-auto order-first order-md-last">
                     <h1>{% block how2 %}{% endblock how2 %}</h1>
                 </div>
             </div>
@@ -130,7 +130,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12">
                             {% block why2 %}{% endblock why2 %}
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 my-auto">
+                <div class="col-12 col-md-6 my-auto">
                     <img src="{{ url_for('static', filename='images/gan.png')}}" alt="...">
                 </div>
             </div>

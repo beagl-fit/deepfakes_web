@@ -131,8 +131,6 @@ def test():
 
         # if a person chooses to skip the initial survey, go to general deepfakes instead of pre-test
         if df == '0':
-            # TODO: remove the following line
-            # return redirect(url_for('pg'))
             return redirect(url_for('general'))
 
     # if method is post but pre-test_completed is in session, this means the post-test has just been submitted
@@ -154,8 +152,7 @@ def test():
         ans1, ans2 = check_answers(answers1, answers2)
 
         # add user and their answers to db
-        # TODO: uncomment the following line
-        # add_user(user_data, ans1, ans2)
+        add_user(user_data, ans1, ans2)
 
         # generate feedback and update session values for test answers
         feedback = generate_feedback(ans2, answers2)
