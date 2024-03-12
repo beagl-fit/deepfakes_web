@@ -1,6 +1,7 @@
 from DFWeb_app import app, db
 from getpass import getpass
 from bcrypt import gensalt, hashpw
+from datetime import timedelta
 
 
 def db_init() -> None:
@@ -29,9 +30,10 @@ def set_admin() -> bytes:
     return hashpw(password.encode('utf-8'), gensalt())
 
 
-# ADMIN_PWD = set_admin()
-ADMIN_PWD = "a"
+ADMIN_PWD = set_admin()
+# ADMIN_PWD = "a"
 
 if __name__ == '__main__':
     db_init()
-    app.run(debug=True)
+    app.permanent_session_lifetime = timedelta(days=7)
+    app.run()

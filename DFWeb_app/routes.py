@@ -198,8 +198,7 @@ def admin():
     if request.method == 'POST' and not session.get('admin'):
         # get and check password passed to admin page
         entered_password = request.form.get('password')
-        # if checkpw(entered_password.encode('utf-8'), ADMIN_PWD):
-        if entered_password == ADMIN_PWD:
+        if checkpw(entered_password.encode('utf-8'), ADMIN_PWD):
             session['admin'] = True
         else:
             failed = True
