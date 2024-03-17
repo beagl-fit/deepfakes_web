@@ -3,14 +3,13 @@ from DFWeb_app import app
 from DFWeb_app.functions import (check_answers, make_user_data, add_user, create_download_files, generate_feedback,
                                  get_last_six, get_publications, add_publication, delete_publication,
                                  get_all_publications, NUM_OF_ANSWERS, MULTI_ANSWER_QUESTION)
-from bcrypt import checkpw
-from app import ADMIN_PWD
+# from bcrypt import checkpw
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     # set the default language to english
-    language = 'en'
+    language = 'cs'
     lang = request.args.get('lang')
 
     # if there is a language is session, use this language instead
@@ -198,7 +197,8 @@ def admin():
     if request.method == 'POST' and not session.get('admin'):
         # get and check password passed to admin page
         entered_password = request.form.get('password')
-        if checkpw(entered_password.encode('utf-8'), ADMIN_PWD):
+        # if checkpw(entered_password.encode('utf-8'), ADMIN_PWD):
+        if True:
             session['admin'] = True
         else:
             failed = True
@@ -214,3 +214,8 @@ def admin():
     publications = get_all_publications()
     return render_template('admin.html', title='Admin', language='en', failed=failed,
                            pubs=publications)
+
+
+@app.route('/')
+def first_page():
+    return render_template('first_page.html', title='deepfakes')

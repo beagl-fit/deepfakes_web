@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row text-center py-5">
+    <div class="col-12 py-2">
+        <a class="btn btn-audio" href="{{ url_for('test') }}">1. test</a>
+    </div>
+    <div class="col-12 py-2">
+        <a class="btn btn-audio" href="{{ url_for('index') }}">2. deepfakes</a>
+    </div>
+    <div class="col-12 py-2">
+        <a class="btn btn-audio" href="{{ url_for('test') }}">3. test</a>
+    </div>
+</div>
+{% endblock content %}
