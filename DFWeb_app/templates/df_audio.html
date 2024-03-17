@@ -16,6 +16,7 @@
     </div>
 
 
+
     <!--    HOW -->
     <div class="container mt-4">
         <div class="row py-3 justify-content-between">
@@ -47,109 +48,11 @@
 </div>
 
 
-<div class="container-lg my-5">
-    <!--    TTS & SC 1/2    -->
-    <div class="card" style="border-radius: 1rem; --bs-card-bg:var(--btn-color-pri);
-     border: 2px solid var(--btn-color-pri); color: var(--text-color-sec)">
-        <div class="card-header" style="border-bottom-color: var(--text-color-pri)">
-            <ul class="nav justify-content-center nav-tabs card-header-tabs nav-fill" id="myTab"
-                role="tablist" style="--bs-nav-tabs-link-active-color:var(--text-color-pri);
-                 --bs-secondary-bg:var(--text-color-pri);">
-                <li class="nav-item">
-                    <button class="nav-link nav-audio active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                            type="button" role="tab" aria-controls="tab1" aria-selected="true">
-                        {% block tts %}{% endblock tts %}
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link nav-audio" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
-                            type="button" role="tab" aria-controls="tab2" aria-selected="false">
-                        {% block sts %}{% endblock sts %}
-                    </button>
-                </li>
-                <!-- Add more tabs as needed -->
-            </ul>
-        </div>
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                <div class="card-body">
-                    <div class="row py-3 text-center">
-                        <div class="col-12">
-                            <h5>{% block tts2 %}{% endblock tts2 %}</h5>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between px-2">
-                        <div class="col-12 col-md-5 my-auto">
-                            <h2>{% block ttswhy %}{% endblock ttswhy %}&nbsp;?</h2>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="row mb-2 mb-md-0">
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
-                                </div>
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
-                                </div>
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
-                                </div>
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
-                                </div>
-                                <div class="col-12">
-                                    <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                <div class="card-body">
-                    <div class="row py-3 text-center">
-                        <div class="col-12">
-                            <h5>{% block sts2 %}{% endblock sts2 %}</h5>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between px-2">
-                        <div class="col-12 col-md-6">
-                            <div class="row mb-2 mb-md-0">
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
-                                </div>
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
-                                </div>
-                                <div class="col-12 pb-2">
-                                    <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
-                                </div>
-                                <div class="col-12">
-                                    <p class="text" style="color: var(--text-color-sec)">
-                                        {% block stswhy5 %}{% endblock stswhy5 %}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-auto order-first order-md-last">
-                            <h2>{% block stswhy %}{% endblock stswhy %}&nbsp;?</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div class="py-3" style="background-color: var(--btn-color-sec)">
     <!--    WHAT    -->
     <div class="container mt-4">
         <div class="row justify-content-between">
-            <div class="col-12 col-md-4 my-auto">
+            <div class="col-12 col-md-4 my-auto order-md-last">
                 <h2>{% block what %}{% endblock what %}&nbsp;?</h2>
             </div>
             <div class="col-12 col-md-7">
@@ -253,6 +156,104 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-lg my-5">
+    <!--    TTS & SC 1/2    -->
+    <div class="card" style="border-radius: 1rem; --bs-card-bg:var(--btn-color-pri);
+     border: 2px solid var(--btn-color-pri); color: var(--text-color-sec)">
+        <div class="card-header" style="border-bottom-color: var(--text-color-pri)">
+            <ul class="nav justify-content-center nav-tabs card-header-tabs nav-fill" id="myTab"
+                role="tablist" style="--bs-nav-tabs-link-active-color:var(--text-color-pri);
+                 --bs-secondary-bg:var(--text-color-pri);">
+                <li class="nav-item">
+                    <button class="nav-link nav-audio active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
+                            type="button" role="tab" aria-controls="tab1" aria-selected="true">
+                        {% block tts %}{% endblock tts %}
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link nav-audio" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
+                            type="button" role="tab" aria-controls="tab2" aria-selected="false">
+                        {% block sts %}{% endblock sts %}
+                    </button>
+                </li>
+                <!-- Add more tabs as needed -->
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <div class="card-body">
+                    <div class="row py-3 text-center">
+                        <div class="col-12">
+                            <h5>{% block tts2 %}{% endblock tts2 %}</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between px-2">
+                        <div class="col-12 col-md-5 my-auto">
+                            <h2>{% block ttswhy %}{% endblock ttswhy %}&nbsp;?</h2>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="row mb-2 mb-md-0">
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy2 %}{% endblock ttswhy2 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy3 %}{% endblock ttswhy3 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy4 %}{% endblock ttswhy4 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block ttswhy5 %}{% endblock ttswhy5 %}</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text">{% block ttswhy6 %}{% endblock ttswhy6 %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <div class="card-body">
+                    <div class="row py-3 text-center">
+                        <div class="col-12">
+                            <h5>{% block sts2 %}{% endblock sts2 %}</h5>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between px-2">
+                        <div class="col-12 col-md-6">
+                            <div class="row mb-2 mb-md-0">
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block stswhy2 %}{% endblock stswhy2 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block stswhy3 %}{% endblock stswhy3 %}</p>
+                                </div>
+                                <div class="col-12 pb-2">
+                                    <p class="text">{% block stswhy4 %}{% endblock stswhy4 %}</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text" style="color: var(--text-color-sec)">
+                                        {% block stswhy5 %}{% endblock stswhy5 %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5 my-auto order-first order-md-last">
+                            <h2>{% block stswhy %}{% endblock stswhy %}&nbsp;?</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                        </div>
                     </div>
                 </div>
             </div>

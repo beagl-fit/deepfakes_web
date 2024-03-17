@@ -31,6 +31,9 @@ def index():
     # get the last 6 publications
     publications = get_last_six()
 
+    if not session.get('last_page'):
+        session['last_page'] = 'index'
+
     # renders page in user's language: XXX(-en/-cz).html extend XXX.html which itself is extension of layout.html
     if language == 'en':
         return render_template('index-en.html', title='Deepfakes', language='en',
@@ -42,6 +45,7 @@ def index():
 
 @app.route('/dfg', methods=['GET', 'POST'])
 def general():
+    session['last_page'] = 'general'
     if request.method == 'POST':
         # if method is post - pre-test has been completed, therefore save answers to session
         for i in range(1, NUM_OF_ANSWERS + 1):
@@ -66,6 +70,7 @@ def general():
 
 @app.route('/dfi')
 def images():
+    session['last_page'] = 'images'
     if session.get('lang') == 'en':
         return render_template('df_images-en.html', title='DF_Images', language='en')
     else:
@@ -74,6 +79,7 @@ def images():
 
 @app.route('/dfv')
 def videos():
+    session['last_page'] = 'videos'
     if session.get('lang') == 'en':
         return render_template('df_videos-en.html', title='DF_Video', language='en')
     else:
@@ -82,6 +88,7 @@ def videos():
 
 @app.route('/dfa')
 def audio():
+    session['last_page'] = 'audio'
     if session.get('lang') == 'en':
         return render_template('df_audio-en.html', title='DF_Audio', language='en')
     else:
@@ -90,6 +97,7 @@ def audio():
 
 @app.route('/dfe')
 def end():
+    session['last_page'] = 'end'
     if session.get('lang') == 'en':
         return render_template('end-en.html', title='DF_Tips', language='en')
     else:
@@ -168,6 +176,7 @@ def test():
 
 @app.route('/playground', methods=['GET', 'POST'])
 def pg():
+    session['last_page'] = 'pg'
     if session.get('lang') == 'en':
         return render_template('playground-en.html', title='Playground', language='en')
     else:

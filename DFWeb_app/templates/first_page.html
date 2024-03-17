@@ -1,14 +1,20 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="row text-center py-5">
-    <div class="col-12 py-2">
-        <a class="btn btn-audio" href="{{ url_for('test') }}">1. test</a>
-    </div>
-    <div class="col-12 py-2">
-        <a class="btn btn-audio" href="{{ url_for('index') }}">2. deepfakes</a>
-    </div>
-    <div class="col-12 py-2">
-        <a class="btn btn-audio" href="{{ url_for('test') }}">3. test</a>
-    </div>
+    {% if session.get('post-test_completed') %}
+        <h1>Děkuji za účast a zpětnou vazbu</h1>
+    {% else %}
+        <div class="col-12 py-2 bb">
+            <a class="btn btn-audio" href="{{ url_for('info') }}">1. test</a><br>
+            ( Přeskočte, pokud jste nikdy o deepfakes neslyšel(a), nebo o nich nic nevíte )
+        </div>
+        <div class="col-12 py-2 bb">
+            <a class="btn btn-audio" href="{{ url_for('index') }}">2. deepfakes</a><br>
+            ( Spustí se automaticky po testu )
+        </div>
+        <div class="col-12 py-2">
+            <a class="btn btn-audio" href="{{ url_for('test') }}">3. test</a>
+        </div>
+    {% endif %}
 </div>
 {% endblock content %}

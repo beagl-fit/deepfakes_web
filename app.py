@@ -45,4 +45,4 @@ if __name__ == '__main__':
     db_init()
     file_init()
     app.permanent_session_lifetime = timedelta(days=7)
-    app.run()
+    app.run(debug=True)

@@ -1,48 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div style="background-color: var(--btn-color-sec); color: var(--text-color-pri); background(filter: brightness(80%))">
-
-    <div class="container-lg py-5">
-        <!--    TITLE  -->
-        <div class="container d-flex justify-content-center mb-4">
-            <h1>{% block tit %}{% endblock tit %}</h1>
-        </div>
 
 
-        <!-- MIXING DEEPFAKES -->
-        <div class="container mt-4">
-            {% block sec %}{% endblock sec %}
-            <div class="row py-4">
-                <div class="card my-3 py-1">
-                    <div class="card-header">
-                        <h4>{% block example %}{% endblock example %}:</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>
-                                <p class="text">{% block example2 %}{% endblock example2 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block example3 %}{% endblock example3 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block example4 %}{% endblock example4 %}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12">
-                </div>
-                <div class="col-12 pt-2">
-                </div>
-                <div class="col-12">
-                </div>
-                <div class="col-12">
-                    {% block sec2 %}{% endblock sec2 %}
-                </div>
-            </div>
-        </div>
+<div class="container-lg pt-5">
+    <!--    TITLE  -->
+    <div class="container d-flex justify-content-center mb-4">
+        <h1>{% block tit %}{% endblock tit %}</h1>
     </div>
 </div>
 
@@ -89,12 +53,47 @@
             </ol>
         </div>
     </div>
-    <div class="row pt-3 pt-lg-4 pb-2 pt-lg-3">
+</div>
+
+<div style="background-color: var(--btn-color-sec); color: var(--text-color-pri); background(filter: brightness(80%))">
+    <!-- MIXING DEEPFAKES -->
+    <div class="container py-4">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-4 my-auto text-center">
+                <h1>{% block rem %}{% endblock rem %}</h1>
+            </div>
+            <div class="col-12 col-md-6">
+                {% block sec %}{% endblock sec %}
+                <div class="row py-4">
+                    <div class="card my-3 py-1">
+                        <div class="card-header">
+                            <h4>{% block example %}{% endblock example %}:</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>
+                                    <p class="text">{% block example2 %}{% endblock example2 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block example3 %}{% endblock example3 %}</p>
+                                </li>
+                                <li>
+                                    <p class="text">{% block example4 %}{% endblock example4 %}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        {% block sec2 %}{% endblock sec2 %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-    </div>
+</div>
 
 
+<div>
     <!--    CONT/END BUTTONS-->
     <div class="container mt-3 d-flex justify-content-center">
         <div class="fixed-sm-bottom mb-1">
