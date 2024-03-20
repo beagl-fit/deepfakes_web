@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container text-center py-5">
+    <h2>{% block thx %}{% endblock thx %}</h2><br>
+    <h3>{% block thx2 %}{% endblock thx2 %}</h3>
+</div>
+
+<div style="background-color: var(--text-color-pri)">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/end/phone.png') }}" alt="...">
+                    <img src="{{ url_for('static', filename='images/end/phone-bad.png') }}" alt="...">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="image-container-2">
+                    <img src="{{ url_for('static', filename='images/end/photo.png') }}" alt="...">
+                    <img src="{{ url_for('static', filename='images/end/photo-bad.png') }}" alt="...">
+                </div>
+            </div>
+            <div class="col-12 col-md-4 my-auto">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/end/youtube.png') }}" alt="...">
+                    <img src="{{ url_for('static', filename='images/end/youtube-bad.png') }}" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--    CONT/END BUTTONS-->
+<div class="container mt-3 d-flex justify-content-center">
+    <div class="fixed-sm-bottom mb-1">
+        <div class="row">
+            <div class="col-12 my-2 text-center">
+                <a class="btn btn-start" href="{{ url_for('first_page') }}">{% block but1 %}{% endblock but1 %}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade-2 {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .image-container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .image-container img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        animation: fade 4s infinite;
+    }
+
+    .image-container img:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .image-container-2 {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .image-container-2 img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        animation: fade 3s infinite;
+    }
+
+    .image-container-2 img:nth-child(2) {
+        animation-delay: 1.5s;
+    }
+</style>
+{% endblock content %}

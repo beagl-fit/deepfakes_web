@@ -11,9 +11,38 @@
   </p> video recordings
 {% endblock fake %}
 
+<!-- DF WHAT -->
+{% block df_what %}
+    What are deepfakes&nbsp;?
+{% endblock df_what %}
+
 {% block df %}
   In general deepfakes are AI-manipulated images, videos or audio of people
 {% endblock df %}
+
+{% block lets %}
+  Let's take images&nbsp;:
+{% endblock lets %}
+
+{% block no %}
+  Not a
+{% endblock no %}
+
+{% block study %}
+    If you can see why, that's great! Studies
+    <a href="https://www.sciencedirect.com/science/article/pii/S2589004221013353#sec2"
+        style="color: darkred" target="_blank" rel="noopener noreferrer">
+        like this</a>
+    show that people can determine what is and isn't a deepfake in 60-80% of cases when given this
+    task.
+{% endblock study %}
+
+{% block study2 %}
+    On the other hand studies <a href="#"
+       style="color: darkred" target="_blank" rel="noopener noreferrer">like this</a>
+    show that 97% of people don't reveal a voice deepfake during a conversation.
+{% endblock study2 %}
+
 
 
 <!--  WHAT  -->
@@ -49,7 +78,7 @@
 
 <!--  HOW  -->
 {% block how %}
-  Deepfakes can create or alter person's voice or face and be almost unrecognisable from the real thing
+  Deepfakes creating or altering person's voice or face can be almost unrecognisable from the real thing
 {% endblock how %}
 
 {% block how2 %}
@@ -125,6 +154,51 @@
   Once the generator can produce deepfakes that can fool the discriminator reliably, they
   can be used to fool humans as well as machines
 {% endblock why6 %}
+
+<!-- ATTACKER MODEL  -->
+{% block am %}
+    Attacker model
+{% endblock am %}
+
+
+{% block step1 %}
+    Step
+{% endblock step1 %}
+{% block step2 %}
+    Step
+{% endblock step2 %}
+{% block step3 %}
+    Step
+{% endblock step3 %}
+
+{% block step11 %}
+    PREPARATION
+{% endblock step11 %}
+{% block step22 %}
+    CREATION
+{% endblock step22 %}
+{% block step33 %}
+    USAGE
+{% endblock step33 %}
+
+
+{% block prep %}
+    A person creating deepfakes first has to collect data.<br><br>
+    This usually are photos, videos and recorded speech of a selected person, but it can also include
+    personal and workplace information, future plans etc.<br><br>
+    The best sources are often social media, sharing platforms and broadcasting.
+{% endblock prep %}
+{% block creation %}
+    With the collected data AI can now create deepfakes.<br><br>
+    These can for example be explicit images of a person, videos where a person is acting like a
+    drunk-head or speech of a person in which they are making racist remarks.
+{% endblock creation %}
+{% block usage %}
+    The attacker can now deploy the deepfakes they created.<br><br>
+    Asking for a money transfer via phone-call, getting access to company's sensitive information during a video
+    conference or harassing/blackmailing someone online are just few examples of how they can choose to use the
+    deepfakes.
+{% endblock usage %}
 
 
 <!--  BUTTONS  -->

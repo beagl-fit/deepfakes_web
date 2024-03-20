@@ -3,6 +3,12 @@
 
 <!--    TITLE  -->
 <div class="container text-center my-5">
+    <div class="container pb-3">
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="34"
+             aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 34%"></div>
+        </div>
+    </div>
     <h2>{% block tit %}{% endblock tit %}</h2>
 </div>
 
@@ -25,7 +31,7 @@
                     </h5>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                       <div class="accordion-body">
-                        {% block how2 %}{% endblock how2 %}<br>
+                        {% block how2 %}{% endblock how2 %}<br><br>
                         {% block how3 %}{% endblock how3 %}
                       </div>
                     </div>
@@ -40,7 +46,7 @@
                     </h5>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                       <div class="accordion-body">
-                        {% block why2 %}{% endblock why2 %}<br>
+                        {% block why2 %}{% endblock why2 %}<br><br>
                         {% block why3 %}{% endblock why3 %}
                       </div>
                     </div>
@@ -55,7 +61,7 @@
                     </h5>
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                       <div class="accordion-body">
-                        {% block what2 %}{% endblock what2 %}<br>
+                        {% block what2 %}{% endblock what2 %}<br><br>
                         {% block what3 %}{% endblock what3 %}
                       </div>
                     </div>
@@ -112,10 +118,11 @@
 
 
 
-<div style="background-color: var(--btn-color-how); color: var(--btn-color-sec); background(filter: brightness(80%))">
-    <!----------------------------------------------------------------------------------------------------->
-    <!--    FACE SWAP   -->
-    <div id="FS" style="display: none;">
+<!----------------------------------------------------------------------------------------------------->
+<!--    FACE SWAP   -->
+<div id="FS" style="display: none;">
+    <div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+     background(filter: brightness(80%))">
         <div class="container py-5">
             <div class="card">
                 <div class="card-body">
@@ -135,29 +142,30 @@
                 </div>
             </div>
         </div>
+    </div>
 
     <!--    HOW -->
-        <div class="container bb">
+        <div class="container py-4">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-4">
-                    <h1 style="color: var(--btn-color-sec)">
+                    <h1>
                         {% block swaphow %}{% endblock swaphow %}&nbsp;?
                     </h1>
                 </div>
-                <div class="col-12 col-md-7 my-auto">
+                <div class="col-12 col-md-6 my-auto">
                     <div class="row">
                         <div class="col-12 pb-3">
-                            <p class="text-dark">
+                            <p class="text">
                                 {% block swaphow2 %}{% endblock swaphow2 %}
                             </p>
                         </div>
                         <div class="col-12 pb-3">
-                            <p class="text-dark">
+                            <p class="text">
                                 {% block swaphow3 %}{% endblock swaphow3 %}
                             </p>
                         </div>
                         <div class="col-12">
-                            <p class="text-dark">
+                            <p class="text">
                                 {% block swaphow4 %}{% endblock swaphow4 %}
                             </p>
                         </div>
@@ -167,7 +175,9 @@
         </div>
 
     <!--    WHY -->
-        <div class="container py-4 bb">
+
+    <div style="background-color: var(--btn-color-sec);">
+        <div class="container py-2">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-4 my-auto">
                     <img src="{{ url_for('static', filename='images/pope-df.webp') }}" alt="..."
@@ -175,42 +185,43 @@
                 </div>
                 <div class="col-12 col-md-5 my-auto">
                     <div class="mt-4">
-                        <h1 style="color: var(--btn-color-sec)">
+                        <h1>
                             {% block swapwhy %}{% endblock swapwhy %}&nbsp;?
                         </h1>
                     </div>
                     <br>
                     <div class="row mb-2 mb-md-0 pb-3">
                         <div class="col-12">
-                            <p class="text-dark">{% block swapwhy2 %}{% endblock swapwhy2 %}</p>
+                            <p class="text">{% block swapwhy2 %}{% endblock swapwhy2 %}</p>
                         </div>
                     </div>
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12">
-                            <p class="text-dark">{% block swapwhy3 %}{% endblock swapwhy3 %}</p>
+                            <p class="text">{% block swapwhy3 %}{% endblock swapwhy3 %}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     <!--    WHAT    -->
-        <div class="container mt-4 bb">
+        <div class="container py-4">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-4">
                     <div class="mt-4">
-                        <h1 style="color: var(--btn-color-sec)">{% block swapwhat %}{% endblock swapwhat %}&nbsp;?</h1>
+                        <h1>{% block swapwhat %}{% endblock swapwhat %}&nbsp;?</h1>
                     </div>
                 </div>
                 <div class="col-12 col-md-7 my-auto pb-3">
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12 pb-3">
-                            <p class="text-dark">{% block swapwhat2 %}{% endblock swapwhat2 %}</p>
+                            <p class="text">{% block swapwhat2 %}{% endblock swapwhat2 %}</p>
                         </div>
                     </div>
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12">
-                            <h5 style="color: var(--btn-color-sec)">{% block swapwhat3 %}{% endblock swapwhat3 %}</h5>
+                            <h5>{% block swapwhat3 %}{% endblock swapwhat3 %}</h5>
                         </div>
                     </div>
                 </div>
@@ -219,89 +230,120 @@
 
 
     <!--    ATTACK SCENARIOS    -->
-        <div class="container mt-4 bb">
+    <div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+     background(filter: brightness(80%))">
+        <div class="container pt-4 pb-1 bb">
             <div class="mt-4">
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-7 order-last order-md-first">
-                        <div class="accordion">
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#swap-1" aria-expanded="false"
-                                      aria-controls="swap-1">
-                                {% block swapscen1 %}{% endblock swapscen1 %} 1:
-                              </button>
-                            </h5>
-                            <div id="swap-1" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block swapscen11 %}{% endblock swapscen11 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen12 %}{% endblock swapscen12 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen13 %}{% endblock swapscen13 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+<!--                        <div class="accordion mb-3">-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#swap-1" aria-expanded="false"-->
+<!--                                      aria-controls="swap-1">-->
+<!--                                {% block swapscen1 %}{% endblock swapscen1 %} 1:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="swap-1" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen11 %}{% endblock swapscen11 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen12 %}{% endblock swapscen12 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen13 %}{% endblock swapscen13 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#swap-2" aria-expanded="false"-->
+<!--                                      aria-controls="swap-2">-->
+<!--                                {% block swapscen2 %}{% endblock swapscen2 %} 2:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="swap-2" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen21 %}{% endblock swapscen21 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen22 %}{% endblock swapscen22 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen23 %}{% endblock swapscen23 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen24 %}{% endblock swapscen24 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#swap-3" aria-expanded="false"-->
+<!--                                      aria-controls="swap-3">-->
+<!--                                {% block swapscen3 %}{% endblock swapscen3 %} 3:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="swap-3" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen31 %}{% endblock swapscen31 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen32 %}{% endblock swapscen32 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen33 %}{% endblock swapscen33 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block swapscen34 %}{% endblock swapscen34 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+                        <div class="row text-center">
+                            <h3 style="color: var(--btn-color-sec)">
+                                {% block swaps %}{% endblock swaps %}
+                            </h3>
+                        </div>
+                        <div class="row">
+                            <img src="{{ url_for('static', filename='images/scenarios/face-swap.png') }}"
+                                 alt="...">
+                        </div>
+                        <div class="row pt-2 pb-5">
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step11 %}{% endblock step11 %} 1&nbsp;:
+                                </h5>
+                                <br>
+                                {% block swap1 %}{% endblock swap1 %}
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#swap-2" aria-expanded="false"
-                                      aria-controls="swap-2">
-                                {% block swapscen2 %}{% endblock swapscen2 %} 2:
-                              </button>
-                            </h5>
-                            <div id="swap-2" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block swapscen21 %}{% endblock swapscen21 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen22 %}{% endblock swapscen22 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen23 %}{% endblock swapscen23 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen24 %}{% endblock swapscen24 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step12 %}{% endblock step12 %} 2&nbsp;:
+                                </h5>
+                                <br>
+                                {% block swap2 %}{% endblock swap2 %}
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#swap-3" aria-expanded="false"
-                                      aria-controls="swap-3">
-                                {% block swapscen3 %}{% endblock swapscen3 %} 3:
-                              </button>
-                            </h5>
-                            <div id="swap-3" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block swapscen31 %}{% endblock swapscen31 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen32 %}{% endblock swapscen32 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen33 %}{% endblock swapscen33 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block swapscen34 %}{% endblock swapscen34 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step13 %}{% endblock step13 %} 3&nbsp;:
+                                </h5>
+                                <br>
+                                {% block swap3 %}{% endblock swap3 %}
                             </div>
-                          </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 my-auto">
@@ -321,14 +363,16 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
 
-    <!----------------------------------------------------------------------------------------------------->
-    <!--    FACE MANIPULATION  -->
-    <div id="FMan" style="display: none;">
+<!----------------------------------------------------------------------------------------------------->
+<!--    FACE MANIPULATION  -->
+<div id="FMan" style="display: none;">
 
+    <div style="background-color: var(--btn-color-sec);">
         <div class="container py-5">
             <div class="card">
                 <div class="card-body">
@@ -346,31 +390,41 @@
         </div>
 
     <!--    HOW -->
-        <div class="container bb">
+        <div class="container py-4">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-4">
-                    <h1 style="color: var(--btn-color-sec)">{% block manhow %}{% endblock manhow %}&nbsp;?</h1>
+                    <h1>{% block manhow %}{% endblock manhow %}&nbsp;?</h1>
                 </div>
                 <div class="col-12 col-md-7 my-auto">
                     <div class="row">
                         <div class="col-12 pb-3">
-                            <p class="text-dark">{% block manhow2 %}{% endblock manhow2 %}</p>
+                            <p class="text">{% block manhow2 %}{% endblock manhow2 %}</p>
                         </div>
                         <div class="col-12 pb-3">
-                            <p class="text-dark">{% block manhow3 %}{% endblock manhow3 %}</p>
+                            <p class="text">{% block manhow3 %}{% endblock manhow3 %}</p>
                         </div>
                         <div class="col-12">
-                            <p class="text-dark">{% block manhow4 %}{% endblock manhow4 %}</p>
+                            <p class="text">{% block manhow4 %}{% endblock manhow4 %}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+     background(filter: brightness(80%))">
     <!--    WHY -->
-        <div class="container py-4 bb">
+        <div class="container py-2">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-6 my-auto">
+                    <img src="{{ url_for('static', filename='images/trump-df.webp') }}" alt="..."
+                                 style="max-width: inherit; border: 5px solid var(--main-bg-color)">
+                </div>
+                <div class="col-12 col-md-5 order-first order-md-last my-auto">
+                    <div class="mb-4">
+                        <h1 style="color: var(--btn-color-sec)">{% block manwhy %}{% endblock manwhy %}&nbsp;?</h1>
+                    </div>
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12 pb-3">
                             <p class="text-dark">{% block manwhy2 %}{% endblock manwhy2 %}&nbsp;</p>
@@ -382,134 +436,161 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-5 order-first order-md-last">
-                    <div class="mt-4">
-                        <h1 style="color: var(--btn-color-sec)">{% block manwhy %}{% endblock manwhy %}&nbsp;?</h1>
+            </div>
+        </div>
+    </div>
+
+<!--    WHAT    -->
+    <div class="container my-2">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-4">
+                <div class="mt-4">
+                    <h1>{% block manwhat %}{% endblock manwhat %}&nbsp;?</h1>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 my-auto">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12 pb-3">
+                        <p class="text">{% block manwhat2 %}{% endblock manwhat2 %}</p>
+                    </div>
+                </div>
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <h5>{% block manwhat3 %}{% endblock manwhat3 %}</h5>
                     </div>
                 </div>
             </div>
         </div>
-
-    <!--    WHAT    -->
-        <div class="container mt-4 bb">
-            <div class="row justify-content-between">
-                <div class="col-12 col-md-4">
-                    <div class="mt-4">
-                        <h1 style="color: var(--btn-color-sec)">{% block manwhat %}{% endblock manwhat %}&nbsp;?</h1>
-                    </div>
-                </div>
-                <div class="col-12 col-md-7 my-auto">
-                    <div class="row mb-2 mb-md-0">
-                        <div class="col-12 pb-3">
-                            <p class="text-dark">{% block manwhat2 %}{% endblock manwhat2 %}</p>
-                        </div>
-                    </div>
-                    <div class="row mb-2 mb-md-0">
-                        <div class="col-12">
-                            <h5 style="color: var(--btn-color-sec)">{% block manwhat3 %}{% endblock manwhat3 %}</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
 
 
+    <div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+     background(filter: brightness(80%))">
     <!--    ATTACK SCENARIOS    -->
-        <div class="container mt-4 bb">
-            <div class="mt-4">
+        <div class="container pt-4 pb-1 bb">
+            <div class="py-4">
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-7">
-                        <div class="accordion">
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#man-1" aria-expanded="false"
-                                      aria-controls="man-1">
-                                {% block manscen1 %}{% endblock manscen1 %} 1:
-                              </button>
-                            </h5>
-                            <div id="man-1" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block manscen11 %}{% endblock manscen11 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen12 %}{% endblock manscen12 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen13 %}{% endblock manscen13 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen14 %}{% endblock manscen14 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+<!--                        <div class="accordion mb-3">-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#man-1" aria-expanded="false"-->
+<!--                                      aria-controls="man-1">-->
+<!--                                {% block manscen1 %}{% endblock manscen1 %} 1:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="man-1" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen11 %}{% endblock manscen11 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen12 %}{% endblock manscen12 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen13 %}{% endblock manscen13 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen14 %}{% endblock manscen14 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#man-2" aria-expanded="false"-->
+<!--                                      aria-controls="man-2">-->
+<!--                                {% block manscen2 %}{% endblock manscen2 %} 2:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="man-2" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen21 %}{% endblock manscen21 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen22 %}{% endblock manscen22 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen23 %}{% endblock manscen23 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen24 %}{% endblock manscen24 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen25 %}{% endblock manscen25 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen26 %}{% endblock manscen26 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#man-3" aria-expanded="false"-->
+<!--                                      aria-controls="man-3">-->
+<!--                                {% block manscen3 %}{% endblock manscen3 %} 3:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="man-3" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen31 %}{% endblock manscen31 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen32 %}{% endblock manscen32 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen33 %}{% endblock manscen33 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen34 %}{% endblock manscen34 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block manscen35 %}{% endblock manscen35 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+                        <div class="row text-center">
+                            <h3 style="color: var(--btn-color-sec)">
+                                {% block mans %}{% endblock mans %}
+                            </h3>
+                        </div>
+                        <div class="row">
+                            <img src="{{ url_for('static', filename='images/scenarios/face-manipulation.png') }}"
+                                 alt="...">
+                        </div>
+                        <div class="row pt-2 pb-5">
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step21 %}{% endblock step21 %} 1&nbsp;:
+                                </h5>
+                                <br>
+                                {% block man1 %}{% endblock man1 %}
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#man-2" aria-expanded="false"
-                                      aria-controls="man-2">
-                                {% block manscen2 %}{% endblock manscen2 %} 2:
-                              </button>
-                            </h5>
-                            <div id="man-2" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block manscen21 %}{% endblock manscen21 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen22 %}{% endblock manscen22 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen23 %}{% endblock manscen23 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen24 %}{% endblock manscen24 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen25 %}{% endblock manscen25 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen26 %}{% endblock manscen26 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step22 %}{% endblock step22 %} 2&nbsp;:
+                                </h5>
+                                <br>
+                                {% block man2 %}{% endblock man2 %}
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#man-3" aria-expanded="false"
-                                      aria-controls="man-3">
-                                {% block manscen3 %}{% endblock manscen3 %} 3:
-                              </button>
-                            </h5>
-                            <div id="man-3" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block manscen31 %}{% endblock manscen31 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen32 %}{% endblock manscen32 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen33 %}{% endblock manscen33 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen34 %}{% endblock manscen34 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block manscen35 %}{% endblock manscen35 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step23 %}{% endblock step23 %} 3&nbsp;:
+                                </h5>
+                                <br>
+                                {% block man3 %}{% endblock man3 %}
                             </div>
-                          </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 my-auto order-first order-md-last">
@@ -528,11 +609,14 @@
             </div>
         </div>
     </div>
+</div>
 
 
-    <!----------------------------------------------------------------------------------------------------->
-    <!--    FACE MORPHING   -->
-    <div id="FMor" style="display: none;">
+<!----------------------------------------------------------------------------------------------------->
+<!--    FACE MORPHING   -->
+<div id="FMor" style="display: none;">
+    <div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+     background(filter: brightness(80%))">
         <div class="container py-5">
             <div class="card">
                 <div class="card-header text-center">
@@ -560,7 +644,7 @@
         </div>
 
     <!--    HOW -->
-        <div class="container bb">
+        <div class="container py-2">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-4">
                     <h1 style="color: var(--btn-color-sec)">
@@ -588,121 +672,154 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
     <!--    WHY -->
-        <div class="container py-4 bb">
-            <div class="row justify-content-between">
-                <div class="col-12 col-md-6 my-auto">
-                    <div class="row mb-2 mb-md-0">
-                        <div class="col-12 pb-3">
-                            <p class="text-dark">{% block morwhy2 %}{% endblock morwhy2 %}&nbsp;</p>
-                        </div>
-                    </div>
-                    <div class="row mb-2 mb-md-0">
-                        <div class="col-12">
-                            <p class="text-dark">{% block morwhy3 %}{% endblock morwhy3 %}</p>
-                        </div>
+    <div class="container py-4">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-6 my-auto">
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12 pb-3">
+                        <p class="text">{% block morwhy2 %}{% endblock morwhy2 %}&nbsp;</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-5 order-first order-md-last">
-                    <div class="mt-4">
-                        <h1 style="color: var(--btn-color-sec)">{% block morwhy %}{% endblock morwhy %}&nbsp;?</h1>
+                <div class="row mb-2 mb-md-0">
+                    <div class="col-12">
+                        <p class="text">{% block morwhy3 %}{% endblock morwhy3 %}</p>
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-5 order-first order-md-last">
+                <div class="mt-4">
+                    <h1>{% block morwhy %}{% endblock morwhy %}&nbsp;?</h1>
+                </div>
+            </div>
         </div>
+    </div>
 
-    <!--    WHAT    -->
-        <div class="container mt-4 bb">
+    <div style="background-color: var(--btn-color-sec)">
+        <!--    WHAT    -->
+        <div class="container py-4 bb">
             <div class="row justify-content-between">
                 <div class="col-12 col-md-4">
                     <div class="mt-4">
-                        <h1 style="color: var(--btn-color-sec)">{% block morwhat %}{% endblock morwhat %}&nbsp;?</h1>
+                        <h1>{% block morwhat %}{% endblock morwhat %}&nbsp;?</h1>
                     </div>
                 </div>
                 <div class="col-12 col-md-7 my-auto">
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12 pb-3">
-                            <h5 style="color: var(--btn-color-sec)">{% block morwhat2 %}{% endblock morwhat2 %}</h5>
+                            <h5>{% block morwhat2 %}{% endblock morwhat2 %}</h5>
                         </div>
                     </div>
                     <div class="row mb-2 mb-md-0">
                         <div class="col-12">
-                            <h5 style="color: var(--btn-color-sec)">{% block morwhat3 %}{% endblock morwhat3 %}</h5>
+                            <h5>{% block morwhat3 %}{% endblock morwhat3 %}</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
+    <div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+     background(filter: brightness(80%))">
     <!--    ATTACK SCENARIOS    -->
-        <div class="container my-4 bb">
+        <div class="container pt-4 py-1">
             <div class="mt-4">
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-7">
-                        <div class="accordion">
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#mor-1" aria-expanded="false"
-                                      aria-controls="mor-1">
-                                {% block morscen1 %}{% endblock morscen1 %} 1:
-                              </button>
-                            </h5>
-                            <div id="mor-1" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block morscen11 %}{% endblock morscen11 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen12 %}{% endblock morscen12 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen13 %}{% endblock morscen13 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen14 %}{% endblock morscen14 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen15 %}{% endblock morscen15 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+<!--                        <div class="accordion mb-3">-->
+<!--                          <div class="accordion-item">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#mor-1" aria-expanded="false"-->
+<!--                                      aria-controls="mor-1">-->
+<!--                                {% block morscen1 %}{% endblock morscen1 %} 1:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="mor-1" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen11 %}{% endblock morscen11 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen12 %}{% endblock morscen12 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen13 %}{% endblock morscen13 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen14 %}{% endblock morscen14 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen15 %}{% endblock morscen15 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="accordion-item ">-->
+<!--                            <h5 class="accordion-header">-->
+<!--                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                                      data-bs-target="#mor-2" aria-expanded="false"-->
+<!--                                      aria-controls="mor-2">-->
+<!--                                {% block morscen2 %}{% endblock morscen2 %} 2:-->
+<!--                              </button>-->
+<!--                            </h5>-->
+<!--                            <div id="mor-2" class="accordion-collapse collapse">-->
+<!--                              <div class="accordion-body">-->
+<!--                                <ol>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen21 %}{% endblock morscen21 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen22 %}{% endblock morscen22 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen23 %}{% endblock morscen23 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen24 %}{% endblock morscen24 %}</p>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <p class="text">{% block morscen25 %}{% endblock morscen25 %}</p>-->
+<!--                                    </li>-->
+<!--                                </ol>-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                        </div>-->
+                        <div class="row text-center">
+                            <h3 style="color: var(--btn-color-sec)">
+                                {% block mors %}{% endblock mors %}
+                            </h3>
+                        </div>
+                        <div class="row">
+                            <img src="{{ url_for('static', filename='images/scenarios/face-morph.png') }}" alt="...">
+                        </div>
+                        <div class="row pt-2 pb-5">
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step31 %}{% endblock step31 %} 1&nbsp;:
+                                </h5>
+                                <br>
+                                {% block mor1 %}{% endblock mor1 %}
                             </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h5 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                      data-bs-target="#mor-2" aria-expanded="false"
-                                      aria-controls="mor-2">
-                                {% block morscen2 %}{% endblock morscen2 %} 2:
-                              </button>
-                            </h5>
-                            <div id="mor-2" class="accordion-collapse collapse">
-                              <div class="accordion-body">
-                                <ol>
-                                    <li>
-                                        <p class="text">{% block morscen21 %}{% endblock morscen21 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen22 %}{% endblock morscen22 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen23 %}{% endblock morscen23 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen24 %}{% endblock morscen24 %}</p>
-                                    </li>
-                                    <li>
-                                        <p class="text">{% block morscen25 %}{% endblock morscen25 %}</p>
-                                    </li>
-                                </ol>
-                              </div>
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step32 %}{% endblock step32 %} 2&nbsp;:
+                                </h5>
+                                <br>
+                                {% block mor2 %}{% endblock mor2 %}
                             </div>
-                          </div>
+                            <div class="col-12 col-md-4">
+                                <h5 style="color: var(--btn-color-sec)">{% block step33 %}{% endblock step33 %} 3&nbsp;:
+                                </h5>
+                                <br>
+                                {% block mor3 %}{% endblock mor3 %}
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 my-auto order-first order-md-last">
@@ -710,7 +827,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center pb-4">
+            <div class="row justify-content-center pb-4 bb">
                 <button class="btn btn-my-primary" onclick="scrollToDeepfakes()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                          class="bi bi-arrow-up" viewBox="0 0 16 16">
@@ -721,14 +838,16 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
 
 
-
+<div style="background-color: var(--btn-color-how); color: var(--btn-color-sec);
+ background(filter: brightness(80%))">
     <!--    CONT/END BUTTONS-->
-    <div class="container mt-3 d-flex justify-content-center">
+    <div class="container pt-3 d-flex justify-content-center">
         <div class="fixed-sm-bottom mb-1">
             <div class="row">
                 <div class="col-12 col-md-6 my-2 order-last order-md-first text-center">

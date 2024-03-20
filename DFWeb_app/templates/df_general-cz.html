@@ -10,9 +10,37 @@
     </p>obrázků<p class="text">,</p> audio <p class="text">či</p> video nahrávek
 {% endblock fake %}
 
+<!-- DF WHAT -->
+{% block df_what %}
+    Co to jsou deepfakes&nbsp;?
+{% endblock df_what %}
+
 {% block df %}
     Obecně řečeno, deepfakes jsou obrázky, videa a řeč lidí manipulovány pomocí AI
 {% endblock df %}
+
+{% block lets %}
+  Například obrázky&nbsp;:
+{% endblock lets %}
+
+{% block no %}
+  Není
+{% endblock no %}
+
+{% block study %}
+    Pokud to vidíte, skvělé! Studie
+    <a href="https://www.sciencedirect.com/science/article/pii/S2589004221013353#sec2"
+        style="color: darkred" target="_blank" rel="noopener noreferrer">
+        jako tato</a>
+    ukazují, že lidé jsou schopni správně rozhodnout co je a co není deepfake v 60-80% případů, když to dostanou za
+    úkol.
+{% endblock study %}
+
+{% block study2 %}
+    Na druhou stranu, studie <a href="#"
+       style="color: darkred" target="_blank" rel="noopener noreferrer">jako tato</a>
+    ukazují, že 97% lidí neodhalilo hlasový deepfake během konverzace.
+{% endblock study2 %}
 
 
 <!--  WHAT  -->
@@ -47,7 +75,8 @@
 
 <!--  HOW  -->
 {% block how %}
-    Deepfakes může vytvořit nebo změnit hlas či tvář osoby a být téměř nerozeznatelný od skutečnosti{% endblock how %}
+    Deepfakes vytvořeného, nebo změněného hlasu, či tvář osoby může být téměř nerozeznatelný od
+    skutečnosti{% endblock how %}
 
 {% block how2 %}
   Jak AI vytváří věci&nbsp;?
@@ -118,6 +147,51 @@
 {% block why6 %}
   Jakmile tvůrce dokáže produkovat deepfakes, které spolehlivě oklamou soudce, lze je použít k oklamání lidí i strojů
 {% endblock why6 %}
+
+<!-- ATTACKER MODEL  -->
+{% block am %}
+    Model útočníka
+{% endblock am %}
+
+
+{% block step1 %}
+    Krok
+{% endblock step1 %}
+{% block step2 %}
+    Krok
+{% endblock step2 %}
+{% block step3 %}
+    Krok
+{% endblock step3 %}
+
+{% block step11 %}
+    PŘÍPRAVA
+{% endblock step11 %}
+{% block step22 %}
+    TVORBA
+{% endblock step22 %}
+{% block step33 %}
+    POUŽITÍ
+{% endblock step33 %}
+
+
+{% block prep %}
+    Osoba vytvářející deepfake musí nejprve shromáždit data.<br><br>
+    Obvykle se jedná o fotografie, videa a nahrávky hlasu vybrané osoby, ale můžou to být i osobní a pracovní informace,
+    budoucí plány atd.<br><br>
+    Nejlepšími zdroji jsou často sociální média, sdílecí platformy a vysílání.
+{% endblock prep %}
+{% block creation %}
+    S nasbíranými daty nyní umělá inteligence může vytvářet deepfakes.<br><br>
+    Tyto mohou například zahrnovat explicitní obrázky osoby, videa, ve kterých osoba jedná jako opilý, nebo projevy
+    osoby, ve kterých dělá rasistické poznámky.
+{% endblock creation %}
+{% block usage %}
+    Útočník nyní může použít deepfakes, které vytvořil.<br><br>
+    Požadování peněžního převodu prostřednictvím hovoru po telefonu, získání přístupu k citlivým informacím společnosti
+    během videokonference nebo obtěžování/vydírání někoho online je jen pár příkladů, jak se útočník může rozhodnout
+    využít deepfakes.
+{% endblock usage %}
 
 
 <!--  BUTTONS  -->

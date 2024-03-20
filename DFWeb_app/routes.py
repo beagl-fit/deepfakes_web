@@ -228,3 +228,11 @@ def admin():
 @app.route('/')
 def first_page():
     return render_template('first_page.html', title='deepfakes')
+
+
+@app.route('/thanks')
+def thanks():
+    if session.get('lang') == 'en':
+        return render_template('thanks-en.html', title='Thank you', language='en')
+    else:
+        return render_template('thanks-cz.html', title='Děkuji', language='cs')

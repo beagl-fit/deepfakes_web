@@ -11,7 +11,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: Impact, system-ui;
+  font-family: Impact, Anton, system-ui;
   color: var(--text-color-sec);
   font-size: 1.2rem;
   line-height: 1.3;
@@ -230,13 +230,13 @@ p {
 }
 
 .dropdown-menu-1 .dropdown-item:hover {
-  background-color: var(--btn-color-how); /* Change to your desired highlight color */
-  color: var(--main-bg-color); /* Change to your desired text color */
+  background-color: var(--btn-color-how);
+  color: var(--main-bg-color);
 }
 
 .dropdown-menu-2 .dropdown-item:hover {
-  background-color: var(--btn-color-sec); /* Change to your desired highlight color */
-  color: var(--text-color-pri); /* Change to your desired text color */
+  background-color: var(--btn-color-sec);
+  color: var(--text-color-pri);
 }
 
 .clickable-image {
@@ -296,5 +296,5 @@ p {
 }
 
 .dropdown-container .dropdown-menu {
-  z-index: 1000; /* Set a high z-index value to ensure the dropdown menu appears above other elements */
+  z-index: 1000;
 }

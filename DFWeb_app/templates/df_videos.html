@@ -2,7 +2,12 @@
 {% block content %}
 
 <div class="container-lg my-5">
-
+    <div class="container pb-3">
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="51"
+             aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 51%"></div>
+        </div>
+    </div>
     <!--    TITLE  -->
     <div class="container mb-4">
         <div class="row text-center">
@@ -153,70 +158,100 @@
     <div class="mt-4">
         <div class="row justify-content-between">
             <div class="col-12 col-md-7 order-last order-md-first">
-                <div class="accordion">
-                  <div class="accordion-item">
-                    <h5 class="accordion-header">
-                      <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                              data-bs-target="#free-1" aria-expanded="false"
-                              aria-controls="free-1">
-                        {% block scen1 %}{% endblock scen1 %} 1:
-                      </button>
-                    </h5>
-                    <div id="free-1" class="accordion-collapse collapse">
-                      <div class="accordion-body">
-                        <ol>
-                            <li>
-                                <p class="text">{% block scen11 %}{% endblock scen11 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen12 %}{% endblock scen12 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen13 %}{% endblock scen13 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen14 %}{% endblock scen14 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen15 %}{% endblock scen15 %}</p>
-                            </li>
-                        </ol>
-                      </div>
+<!--                <div class="accordion">-->
+<!--                  <div class="accordion-item">-->
+<!--                    <h5 class="accordion-header">-->
+<!--                      <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                              data-bs-target="#free-1" aria-expanded="false"-->
+<!--                              aria-controls="free-1">-->
+<!--                        {% block scen1 %}{% endblock scen1 %} 1:-->
+<!--                      </button>-->
+<!--                    </h5>-->
+<!--                    <div id="free-1" class="accordion-collapse collapse">-->
+<!--                      <div class="accordion-body">-->
+<!--                        <ol>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen11 %}{% endblock scen11 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen12 %}{% endblock scen12 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen13 %}{% endblock scen13 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen14 %}{% endblock scen14 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen15 %}{% endblock scen15 %}</p>-->
+<!--                            </li>-->
+<!--                        </ol>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="accordion-item">-->
+<!--                    <h5 class="accordion-header">-->
+<!--                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                              data-bs-target="#free-2" aria-expanded="false"-->
+<!--                              aria-controls="free-2">-->
+<!--                        {% block scen2 %}{% endblock scen2 %} 2:-->
+<!--                      </button>-->
+<!--                    </h5>-->
+<!--                    <div id="free-2" class="accordion-collapse collapse">-->
+<!--                      <div class="accordion-body">-->
+<!--                        <ol>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen21 %}{% endblock scen21 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen22 %}{% endblock scen22 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen23 %}{% endblock scen23 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen24 %}{% endblock scen24 %}</p>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <p class="text">{% block scen25 %}{% endblock scen25 %}</p>-->
+<!--                            </li>-->
+<!--                        </ol>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+                <div class="row text-center">
+                    <h3>
+                        {% block frs %}{% endblock frs %}
+                    </h3>
+                </div>
+                <div class="row">
+                    <img src="{{ url_for('static', filename='images/scenarios/facial-reenactment.png') }}"
+                         alt="...">
+                </div>
+                <div class="row pt-2 pb-5">
+                    <div class="col-12 col-md-4">
+                        <h5>{% block step1 %}{% endblock step1 %} 1&nbsp;:
+                        </h5>
+                        <br>
+                        <p class="text">{% block fr1 %}{% endblock fr1 %}</p>
                     </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h5 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                              data-bs-target="#free-2" aria-expanded="false"
-                              aria-controls="free-2">
-                        {% block scen2 %}{% endblock scen2 %} 2:
-                      </button>
-                    </h5>
-                    <div id="free-2" class="accordion-collapse collapse">
-                      <div class="accordion-body">
-                        <ol>
-                            <li>
-                                <p class="text">{% block scen21 %}{% endblock scen21 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen22 %}{% endblock scen22 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen23 %}{% endblock scen23 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen24 %}{% endblock scen24 %}</p>
-                            </li>
-                            <li>
-                                <p class="text">{% block scen25 %}{% endblock scen25 %}</p>
-                            </li>
-                        </ol>
-                      </div>
+                    <div class="col-12 col-md-4">
+                        <h5>{% block step2 %}{% endblock step2 %} 2&nbsp;:
+                        </h5>
+                        <br>
+                        <p class="text">{% block fr2 %}{% endblock fr2 %}</p>
                     </div>
-                  </div>
+                    <div class="col-12 col-md-4">
+                        <h5>{% block step3 %}{% endblock step3 %} 3&nbsp;:
+                        </h5>
+                        <br>
+                        <p class="text">{% block fr3 %}{% endblock fr3 %}</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 my-auto py-2">
+            <div class="col-12 col-md-4 my-auto py-2 order-first order-md-last">
                 <h2>{% block scen %}{% endblock scen %}&nbsp;?</h2>
             </div>
         </div>
