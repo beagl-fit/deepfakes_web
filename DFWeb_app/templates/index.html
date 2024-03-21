@@ -19,7 +19,7 @@
                     {% block btn_text %}{% endblock btn_text %}
                 </button>
             {% else %}
-                <a href="{{ url_for('general') }}" class="btn btn-start">
+                <a href="{{ url_for('introduction') }}" class="btn btn-start">
                     {% block btn_text2 %}{% endblock btn_text2 %}
                 </a>
             {% endif %}
@@ -313,7 +313,7 @@
 
         if (last_page !== 'index') {
             document.getElementById("no_skip").addEventListener("click", function () {
-                window.location.href = "{{ url_for('general') }}";
+                window.location.href = "{{ url_for('introduction') }}";
             });
 
             document.getElementById("skip").addEventListener("click", function () {

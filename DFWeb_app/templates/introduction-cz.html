@@ -1,0 +1,18 @@
+{% extends "introduction.html" %}
+
+{% block head %}
+    Díky, že jste začali tuto cestu!<br>
+    Během cesty se dozvíte:
+{% endblock head %}
+
+{% block image %}
+    <img src="{{ url_for('static', filename='images/intro-cs.png') }}" alt="...">
+{% endblock image %}
+
+{% block also %}
+    Budete také moci sledovat postup po cestě díky lištám, jako jsou tyto:
+{% endblock also %}
+
+{% block but %}
+    Vydat se
+{% endblock but %}

@@ -1,0 +1,18 @@
+{% extends "introduction.html" %}
+
+{% block head %}
+    Thank you for starting this journey!<br>
+    During the journey you will learn:
+{% endblock head %}
+
+{% block image %}
+    <img src="{{ url_for('static', filename='images/intro-en.png') }}" alt="...">
+{% endblock image %}
+
+{% block also %}
+    And you will be able to monitor your journey's progress on bars like this:
+{% endblock also %}
+
+{% block but %}
+    Embark
+{% endblock but %}
