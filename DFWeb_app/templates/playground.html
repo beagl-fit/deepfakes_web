@@ -301,7 +301,7 @@
                                             Donald Trump
                                         </a></li>
                                         <li><a class="dropdown-item" href="#" onclick="tts(1, 2)">
-                                            Miloš Zeman
+                                            Barack Obama
                                         </a></li>
                                     </ul>
                                 </div>
@@ -349,6 +349,136 @@
         </div>
     </div>
 
+    <div class="py-1">
+        <div class="container d-flex justify-content-center my-4">
+            <h2>{% block know %}{% endblock know %}</h2>
+        </div>
+        <div class="container my-3 py-3">
+            <div class="row justify-content-between">
+                <div class="col-12 col-md-4">
+                    <div class="row pb-3">
+                        <ul>
+                            <li>
+                                <p class="text">{% block decide %}{% endblock decide %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block decide2 %}{% endblock decide2 %}</p>
+                            </li>
+                            <li>
+                                <p class="text">{% block decide3 %}{% endblock decide3 %}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="card" style="min-width: 30vh; min-height: 30vh; border: 2px solid
+                         var(--btn-color-how)">
+                            <div class="card-header text-center" style="border-bottom-color: var(--btn-color-how)">
+                                <h5 style="display: inline">{% block right %}{% endblock right %}:</h5>
+                                <h5 id="real" style="color: green; display: none">{% block not %}{% endblock not %}
+                                    deepfake</h5>
+                                <h5 id="deepfake" style="color: darkred; display: none">Deepfake</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="text" id="0" style="display: none">{% block cb1 %}{% endblock cb1 %}</p>
+                                <p class="text" id="1" style="display: none">{% block cb2 %}{% endblock cb2 %}</p>
+                                <p class="text" id="2" style="display: none">{% block cb3 %}{% endblock cb3 %}</p>
+                                <p class="text" id="3" style="display: none">{% block cb4 %}{% endblock cb4 %}</p>
+                                <p class="text" id="4" style="display: none">{% block cb5 %}{% endblock cb5 %}</p>
+                                <p class="text" id="5" style="display: none">{% block cb6 %}{% endblock cb6 %}</p>
+                                <p class="text" id="6" style="display: none">{% block cb7 %}{% endblock cb7 %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 col-md-5 my-auto mx-auto py-2 text-center">
+                    <img src="{{ url_for('static', filename='images/face_morph/rock.webp') }}" alt="..."
+                         style="border: 3px solid var(--card-bg-color); max-height: 500px" class="img-fluid
+                          clickable-image" id="10">
+                        <audio id="11" controls style="display: none">
+                          <source src="{{ url_for('static', filename='audio/11.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio id="12" controls style="display: none">
+                          <source src="{{ url_for('static', filename='audio/zeman.mp3') }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    <img src="{{ url_for('static', filename='images/pope-df.webp') }}" alt="..."
+                         style="border: 3px solid var(--card-bg-color); max-height: 500px; display: none"
+                         class="img-fluid clickable-image" id="13">
+                    <img src="{{ url_for('static', filename='images/trump-df.webp') }}" alt="..."
+                         style="border: 3px solid var(--card-bg-color); max-height: 500px; display: none"
+                         class="img-fluid clickable-image" id="14">
+                    <img src="{{ url_for('static', filename='images/face_swap/ts.jpg') }}" alt="..."
+                         style="border: 3px solid var(--card-bg-color); max-height: 500px; display: none"
+                         class="img-fluid clickable-image" id="15">
+                    <img src="{{ url_for('static', filename='images/face_swap/jib_to_rdj.png') }}" alt="..."
+                         style="border: 3px solid var(--card-bg-color); max-height: 500px; display: none"
+                         class="img-fluid clickable-image" id="16">
+                    <div class="row text-center">
+                        <div class="col pt-3">
+                            <button class="btn btn-audio" onclick="deepfake_recognition()" id="reveal_btn">
+                                {% block reveal %}{% endblock reveal %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-1" style="background-color: var(--btn-color-how); color: var(--main-bg-color)">
+        <div class="container d-flex justify-content-center my-4">
+            <h1 style="color: var(--main-bg-color)">{% block can %}{% endblock can %}</h1>
+        </div>
+        <div class="container my-3 py-3">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="card" style="border: 5px solid var(--main-bg-color); background-color: #373737;"
+                         id="card">
+                        <div class="card-header text-center">
+                            <h5 id="q0">{% block q1 %}{% endblock q1 %}</h5>
+                            <h5 id="q1" style="display: none">{% block q2 %}{% endblock q2 %}</h5>
+                            <h5 id="q2" style="display: none">{% block q3 %}{% endblock q3 %}</h5>
+                            <h5 id="q3" style="display: none">{% block q4 %}{% endblock q4 %}</h5>
+                            <h5 id="q4" style="display: none">{% block q5 %}{% endblock q5 %}</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-8 col-md-4 text-center pb-2">
+                                    <button id="btn-true" class="btn btn-my-secondary" onclick="question(0)">
+                                        {% block true %}{% endblock true %}
+                                    </button>
+                                </div>
+                                <div class="col-8 col-md-4 text-center pb-2">
+                                    <button id="btn-false" class="btn btn-my-primary" onclick="question(1)"
+                                            style="--bs-btn-bg: darkred; --bs-btn-hover-color: darkred;
+                                             --bs-btn-hover-bg: #FFCCCB;">
+                                        {% block false %}{% endblock false %}
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-8 col-md-3 text-center">
+                                    <button id="btn-next" class="btn btn-my-primary" style="display:none;"
+                                            onclick="question(2)">
+                                        {% block next %}{% endblock next %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <h5 id="a0" style="display: none">{% block a1 %}{% endblock a1 %}</h5>
+                            <h5 id="a1" style="display: none">{% block a2 %}{% endblock a2 %}</h5>
+                            <h5 id="a2" style="display: none">{% block a3 %}{% endblock a3 %}</h5>
+                            <h5 id="a3" style="display: none">{% block a4 %}{% endblock a4 %}</h5>
+                            <h5 id="a4" style="display: none">{% block a5 %}{% endblock a5 %}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -375,8 +505,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="mx-auto modal-body">
-        <img id="modalImage" class="modal-content" src="{{ url_for('static', filename='images/collage2.png') }}"
-             alt="Modal Image" style="max-height: 80vh; width: auto;">
+        <img id="modalImage" class="modal-content img-fluid"
+             src="{{ url_for('static', filename='images/collage2.png') }}" alt="Modal Image" style="max-height: 80vh;
+              width: auto;">
       </div>
       <div class="modal-footer">
         <p style="display: inline">{% block src %}{% endblock src %}: </p>
@@ -387,6 +518,100 @@
 </div>
 
 <script>
+    // changes buttons and displays questions and answers of the questions card
+    let question_num = 0;
+
+    function question(answer) {
+        let answers = [0,0,1,0,1];
+        let btn_true = document.getElementById('btn-true');
+        let btn_false = document.getElementById('btn-false');
+        let btn = document.getElementById('btn-next');
+        let card = document.getElementById('card');
+
+
+        if (answer < 2) {
+            btn_true.style.display = 'none';
+            btn_false.style.display = 'none';
+            btn.style.display = 'block';
+
+            let an = document.getElementById('a' + question_num.toString());
+            an.style.display = 'block';
+
+            if (answer === answers[question_num]) {
+                an.style.color = '#40FF40';
+                card.style.borderColor = '#40FF40';
+            } else {
+                an.style.color = '#FF8A8A';
+                card.style.borderColor = '#FF8A8A';
+            }
+            question_num++;
+
+            if (question_num >= answers.length) {
+                btn.classList.add('disabled');
+                // document.getElementsByTagName(lang)
+                btn.innerText = 'End';
+                if ('{{ language }}' === 'cs')
+                    btn.innerText = 'Konec';
+            }
+
+        } else {
+            btn_true.style.display = 'block';
+            btn_false.style.display = 'block';
+            btn.style.display = 'none';
+            let foo = 'a' + (question_num - 1).toString();
+            let bar = 'q' + (question_num - 1).toString();
+            document.getElementById(foo).style.display = 'none';
+            document.getElementById(bar).style.display = 'none';
+            document.getElementById('q' + question_num.toString()).style.display = 'block';
+            card.style.borderColor = '#282828';
+        }
+    }
+
+
+    // changes text of button, text of the commentary and the img or audio elements, and disables the button once the
+    // end is reached
+    let enigma = 0;
+    let click = 0;
+
+    function deepfake_recognition() {
+        let answers = [0,1,0,1,1,0,1];
+        let real = document.getElementById('real');
+        let deepfake = document.getElementById('deepfake');
+        let button = document.getElementById('reveal_btn');
+        if (click % 2 === 0) {
+            button.innerText = 'Next';
+            if ('{{ language }}' === 'cs')
+                button.innerText = 'Další';
+            if (answers[enigma] === 0) {
+                real.style.display = 'inline';
+            }
+            else {
+                deepfake.style.display = 'inline';
+            }
+            document.getElementById((enigma).toString()).style.display = 'block';
+            enigma++;
+            if (enigma >= answers.length) {
+                button.innerText = 'End';
+                if ('{{ language }}' === 'cs')
+                    button.innerText = 'Konec';
+                button.classList.add('disabled');
+            }
+        }
+        else {
+            button.innerText = 'Reveal';
+            if ('{{ language }}' === 'cs')
+                button.innerText = 'Odhalit';
+            real.style.display = 'none';
+            deepfake.style.display = 'none';
+
+            document.getElementById((10 + enigma - 1).toString()).style.display = 'none';
+            document.getElementById((10 + enigma).toString()).style.display = 'block';
+            document.getElementById((enigma - 1).toString()).style.display = 'none';
+        }
+        click++;
+    }
+
+
     // changes source to the result of faceswap between 2 images user selected
     function faceswap() {
         let cardImage = document.getElementById('fs');
@@ -477,7 +702,7 @@
                 speaker.value = '1';
             }
             else {
-                speaker.innerText = "Miloš Zeman";
+                speaker.innerText = "Barack Obama";
                 speaker.value = '2';
             }
 
@@ -503,7 +728,8 @@
         if (speaker.value !== 0 && sentence.value !== 0) {
             let deepfake = speaker.value.toString() + sentence.value.toString();
             let audio = document.getElementById('tts');
-            audio.src = '/static/audio/' + deepfake;
+            audio.setAttribute('src', '/static/audio/' + deepfake + '.mp3');
+            audio.parentElement.load();
         }
     }
 </script>

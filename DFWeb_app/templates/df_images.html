@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 my-auto pb-3">
-                <div class="card" style="border: 2px solid var(--main-bg-color)">
+                <div class="card" style="border: 3px solid var(--main-bg-color)">
                     <img id="image" class="card-img-top" src="https://thispersondoesnotexist.com" alt="..."
                          style="max-width: inherit;">
                     <div class="card-body">
@@ -95,20 +95,22 @@
             <h1>{% block edit %}{% endblock edit %}</h1>
         </div>
         <div class="row justify-content-center text-center">
-            <div class="col-12 col-md-4 my-auto">
+            <div class="col-12 col-md-4 my-auto my-auto">
                 <img src="{{ url_for('static', filename='images/face_swap/pp_to_jb.png') }}" alt="..."
                      style="max-width: inherit; border: 5px solid var(--card-bg-color)" onclick="showDiv('FS')"
-                     class="clickable-image">
+                     class="clickable-image img-fluid">
             </div>
-            <div class="col-12 col-md-4 py-2">
+            <div class="col-12 col-md-4 py-2 my-auto">
                 <img src="{{ url_for('static', filename='images/face_morph/elon_rock.png') }}" alt="..."
                      style="max-width: inherit; border: 5px solid var(--card-bg-color)" onclick="showDiv('FMor')"
-                     class="clickable-image">
+                     class="clickable-image img-fluid">
             </div>
-            <div class="col-12 col-md-4 py-2">
-                <button class="btn btn-primary" onclick="showDiv('FMan')">IMAGE_C</button>
+            <div class="col-12 col-md-4 py-2 my-auto">
+                <img src="{{ url_for('static', filename='images/fiala.webp') }}" alt="..."
+                     style="max-width: inherit; border: 5px solid var(--card-bg-color)" onclick="showDiv('FMan')"
+                     class="clickable-image img-fluid">
             </div>
-            <div class="col-12 py-2">
+            <div class="col-12 py-2 order-first order-md-last">
                 {% block edit2 %}{% endblock edit2 %}
             </div>
         </div>
@@ -129,14 +131,14 @@
                     <div class="row">
                         <div class="col-12 col-md-4 mx-auto my-auto pb-2">
                             <img src="{{ url_for('static', filename='images/face_swap/jb.webp') }}" alt="..."
-                                 style="max-width: inherit">
+                                 style="max-width: inherit; border: 3px solid var(--main-bg-color);">
                         </div>
                         <div class="col-12 col-md-4 text-center my-auto">
                             {% block swap %}{% endblock swap %}
                         </div>
                         <div class="col-12 col-md-4 mx-auto py-2 my-auto">
                             <img src="{{ url_for('static', filename='images/face_swap/pp.webp') }}" alt="..."
-                                 style="max-width: inherit">
+                                 style="max-width: inherit; border: 3px solid var(--main-bg-color);">
                         </div>
                     </div>
                 </div>
@@ -326,13 +328,13 @@
                                  alt="...">
                         </div>
                         <div class="row pt-2 pb-5">
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 pb-4">
                                 <h5 style="color: var(--btn-color-sec)">{% block step11 %}{% endblock step11 %} 1&nbsp;:
                                 </h5>
                                 <br>
                                 {% block swap1 %}{% endblock swap1 %}
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 pb-4">
                                 <h5 style="color: var(--btn-color-sec)">{% block step12 %}{% endblock step12 %} 2&nbsp;:
                                 </h5>
                                 <br>
@@ -381,8 +383,8 @@
                             {% block man %}{% endblock man %}
                         </div>
                         <div class="col-6 col-md-5 my-auto pb-2 pe-5">
-                            <img src="{{ url_for('static', filename='images/face_swap/jb.webp') }}" alt="..."
-                                 style="max-width: inherit">
+                            <img src="{{ url_for('static', filename='images/face_morph/fiala.jpg') }}" alt="..."
+                                 style="max-width: inherit; border: 3px solid var(--main-bg-color);">
                         </div>
                     </div>
                 </div>
@@ -573,13 +575,13 @@
                                  alt="...">
                         </div>
                         <div class="row pt-2 pb-5">
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 pb-4">
                                 <h5 style="color: var(--btn-color-sec)">{% block step21 %}{% endblock step21 %} 1&nbsp;:
                                 </h5>
                                 <br>
                                 {% block man1 %}{% endblock man1 %}
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 pb-4">
                                 <h5 style="color: var(--btn-color-sec)">{% block step22 %}{% endblock step22 %} 2&nbsp;:
                                 </h5>
                                 <br>
@@ -626,17 +628,18 @@
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-4 ps-md-5 my-auto">
                             <img src="{{ url_for('static', filename='images/face_morph/elon.webp') }}" alt="..."
-                                 style="max-width: inherit">
+                                 style="max-width: inherit; border: 3px solid var(--main-bg-color);">
                         </div>
                         <div class="col-12 col-md-4 text-center my-auto">
                             <video src="{{ url_for('static', filename='videos/elon_rock.mp4') }}"
-                                   style="max-width: inherit" autoplay loop muted>
+                                   style="max-width: inherit; border: 3px solid var(--main-bg-color);"
+                                   autoplay loop muted>
                                 Video Not Supported
                             </video>
                         </div>
                         <div class="col-12 col-md-4 ps-md-5 my-auto">
                             <img src="{{ url_for('static', filename='images/face_morph/rock.webp') }}" alt="..."
-                                 style="max-width: inherit">
+                                 style="max-width: inherit; border: 3px solid var(--main-bg-color);">
                         </div>
                     </div>
                 </div>
@@ -802,13 +805,13 @@
                             <img src="{{ url_for('static', filename='images/scenarios/face-morph.png') }}" alt="...">
                         </div>
                         <div class="row pt-2 pb-5">
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 pb-4">
                                 <h5 style="color: var(--btn-color-sec)">{% block step31 %}{% endblock step31 %} 1&nbsp;:
                                 </h5>
                                 <br>
                                 {% block mor1 %}{% endblock mor1 %}
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 pb-4">
                                 <h5 style="color: var(--btn-color-sec)">{% block step32 %}{% endblock step32 %} 2&nbsp;:
                                 </h5>
                                 <br>

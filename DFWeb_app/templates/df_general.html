@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="col-12 col-md-4 my-auto">
-            <img src="{{ url_for('static', filename='images/df_general/iva.png') }}" alt="..."/>
+            <img class="img-fluid" src="{{ url_for('static', filename='images/df_general/iva.png') }}" alt="..."/>
         </div>
     </div>
 </div>
@@ -57,24 +57,21 @@
                     <h4 style="color: var(--main-bg-color)">{% block lets %}{% endblock lets %}</h4>
                 </div>
                 <div class="row">
-                    <div class="col-4 my-auto">
+                    <div class="col-12 col-md-4 my-auto text-center">
                         <img src="{{ url_for('static', filename='images/face_swap/jib_to_rdj.png') }}" alt="..."
-                             style="border: 3px solid var(--card-bg-color); max-width: inherit">
+                             style="border: 3px solid var(--card-bg-color);" class="img-fluid">
+                        <h4 style="color: darkred">Deepfake</h4>
                     </div>
-                    <div class="col-4 my-auto">
+                    <div class="col-12 col-md-4 my-auto text-center">
                         <img src="https://thispersondoesnotexist.com" alt="..."
-                             style="border: 3px solid var(--card-bg-color); max-width: inherit">
+                             style="border: 3px solid var(--card-bg-color);" class="img-fluid">
+                        <h4 style="color: darkred">Deepfake</h4>
                     </div>
-                    <div class="col-4 my-auto">
+                    <div class="col-12 col-md-4 my-auto text-center">
                         <img src="{{ url_for('static', filename='images/face_morph/adele.webp') }}" alt="..."
-                             style="border: 3px solid var(--card-bg-color); max-width: inherit">
-                    </div>
-                </div>
-                <div class="row pt-1">
-                    <div class="col-4 text-center"><h4 style="color: darkred">Deepfake</h4></div>
-                    <div class="col-4 text-center"><h4 style="color: darkred">Deepfake</h4></div>
-                    <div class="col-4 text-center"><h4 style="color: var(--main-bg-color)">
-                        {% block no %}{% endblock no %} deepfake</h4>
+                             style="border: 3px solid var(--card-bg-color);" class="img-fluid">
+                        <h4 style="color: var(--main-bg-color)">{% block no %}{% endblock no %} deepfake</h4>
+
                     </div>
                 </div>
                 <div class="row">
@@ -143,16 +140,16 @@
             </div>
             <div class="col-12 col-md-7">
                 <img src="{{ url_for('static', filename='images/df_general/deepfakes.png') }}" alt="..."
-                     style="max-width: 95vh">
+                     class="img-fluid">
             </div>
         </div>
         <div class="row pt-4 text-center">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 pb-4">
                 <h3 style="display: inline">{% block step1 %}{% endblock step1 %} 1: </h3>
                 <h4 style="display: inline">{% block step11 %}{% endblock step11 %}</h4><br><br>
                 <p class="text">{% block prep %}{% endblock prep %}</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 pb-4">
                 <h3 style="display: inline">{% block step2 %}{% endblock step2 %} 2: </h3>
                 <h4 style="display: inline">{% block step22 %}{% endblock step22 %}</h4><br><br>
                 <p class="text">{% block creation %}{% endblock creation %}</p>
@@ -262,7 +259,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 my-auto">
-                    <img src="{{ url_for('static', filename='images/gan.png')}}" alt="...">
+                    <img src="{{ url_for('static', filename='images/gan.png')}}" alt="..." class="img-fluid">
                 </div>
             </div>
         </div>

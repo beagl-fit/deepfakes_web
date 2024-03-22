@@ -46,19 +46,6 @@ def index():
 @app.route('/dfg', methods=['GET', 'POST'])
 def general():
     session['last_page'] = 'general'
-    if request.method == 'POST':
-        # if method is post - pre-test has been completed, therefore save answers to session
-        for i in range(1, NUM_OF_ANSWERS + 1):
-            answer = 'q' + str(i) + 'a'
-            session[answer] = request.form.get(answer)
-
-    if request.method == 'GET':
-        # if method is get - pre-test has been skipped, therefore save default answers to session
-        for i in range(1, NUM_OF_ANSWERS + 1):
-            answer = 'q' + str(i) + 'a'
-            session[answer] = ''
-            if i not in MULTI_ANSWER_QUESTION:
-                session[answer] = '1'
 
     # skipped or not, pre-test has been completed
     session['pre-test_completed'] = True
@@ -138,7 +125,7 @@ def test():
 
         # if a person chooses to skip the initial survey, go to general deepfakes instead of pre-test
         if df == '0':
-            return redirect(url_for('general'))
+            return redirect(url_for('first_page'))
 
     # if method is post but pre-test_completed is in session, this means the post-test has just been submitted
     elif request.method == 'POST':
@@ -225,8 +212,21 @@ def admin():
                            pubs=publications)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def first_page():
+    if request.method == 'POST':
+        # if method is post - pre-test has been completed, therefore save answers to session
+        for i in range(1, NUM_OF_ANSWERS + 1):
+            answer = 'q' + str(i) + 'a'
+            session[answer] = request.form.get(answer)
+
+    if request.method == 'GET':
+        # if method is get - pre-test has been skipped, therefore save default answers to session
+        for i in range(1, NUM_OF_ANSWERS + 1):
+            answer = 'q' + str(i) + 'a'
+            session[answer] = ''
+            if i not in MULTI_ANSWER_QUESTION:
+                session[answer] = '1'
     return render_template('first_page.html', title='deepfakes')
 
 
