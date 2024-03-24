@@ -48,74 +48,74 @@
             </div>
 
 
-<!--            DELETE PUBLICATION  -->
-            <div class="card py-3 pe-2">
-                <div class="row px-3">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col-6 col-md-3">
-                                <label for="pub_id" class="form-control-plaintext"
-                                       style="color: var(--text-color-pri)">
-                                    Publication ID:
-                                </label>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <input id="pub_id" name="pub_id" type="number" class="form-control"
-                                       value="{{ pubs[0].id }}" min="{{ pubs[0].id }}" max="{{ pubs[-1].id }}"
-                                onchange="set_pub_values()">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end">
-                            <div class="col-12 col-md-4">
-                                <label for="pub_name" class="form-control-plaintext"
-                                       style="color: var(--text-color-pri)">
-                                    Publication Name:
-                                </label>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <input id="pub_name" type="text" class="form-control" disabled>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row px-3 py-2">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col-6">
-                                <form method="post">
-                                    <input type="hidden" name="hidden_pub_id" id="hidden_pub_id">
-                                    <button type="submit" class="btn btn-danger btn-lg my-2">Delete Publication</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end">
-                            <div class="col-12 col-md-4">
-                                <label for="pub_desc" class="form-control-plaintext"
-                                       style="color: var(--text-color-pri)">
-                                    Publication Description:
-                                </label>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <textarea id="pub_desc" class="form-control" disabled></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{#            DELETE PUBLICATION  #}
+{#            <div class="card py-3 pe-2">#}
+{#                <div class="row px-3">#}
+{#                    <div class="col">#}
+{#                        <div class="row">#}
+{#                            <div class="col-6 col-md-3">#}
+{#                                <label for="pub_id" class="form-control-plaintext"#}
+{#                                       style="color: var(&#45;&#45;text-color-pri)">#}
+{#                                    Publication ID:#}
+{#                                </label>#}
+{#                            </div>#}
+{#                            <div class="col-6 col-md-3">#}
+{#                                <input id="pub_id" name="pub_id" type="number" class="form-control"#}
+{#                                       value="{{ pubs[0].id }}" min="{{ pubs[0].id }}" max="{{ pubs[-1].id }}"#}
+{#                                onchange="set_pub_values()">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col">#}
+{#                        <div class="row justify-content-end">#}
+{#                            <div class="col-12 col-md-4">#}
+{#                                <label for="pub_name" class="form-control-plaintext"#}
+{#                                       style="color: var(&#45;&#45;text-color-pri)">#}
+{#                                    Publication Name:#}
+{#                                </label>#}
+{#                            </div>#}
+{#                            <div class="col-12 col-md-8">#}
+{#                                <input id="pub_name" type="text" class="form-control" disabled>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row px-3 py-2">#}
+{#                    <div class="col">#}
+{#                        <div class="row">#}
+{#                            <div class="col-6">#}
+{#                                <form method="post">#}
+{#                                    <input type="hidden" name="hidden_pub_id" id="hidden_pub_id">#}
+{#                                    <button type="submit" class="btn btn-danger btn-lg my-2">Delete Publication</button>#}
+{#                                </form>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col">#}
+{#                        <div class="row justify-content-end">#}
+{#                            <div class="col-12 col-md-4">#}
+{#                                <label for="pub_desc" class="form-control-plaintext"#}
+{#                                       style="color: var(&#45;&#45;text-color-pri)">#}
+{#                                    Publication Description:#}
+{#                                </label>#}
+{#                            </div>#}
+{#                            <div class="col-12 col-md-8">#}
+{#                                <textarea id="pub_desc" class="form-control" disabled></textarea>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
 
-                <div class="row justify-content-end pe-3">
-                    <div class="col-6 col-md-2">
-                        <label for="pub_link" class="form-control-plaintext" style="color: var(--text-color-pri)">
-                            Publication link:
-                        </label>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <input id="pub_link" type="url" class="form-control" disabled>
-                    </div>
-                </div>
+{#                <div class="row justify-content-end pe-3">#}
+{#                    <div class="col-6 col-md-2">#}
+{#                        <label for="pub_link" class="form-control-plaintext" style="color: var(&#45;&#45;text-color-pri)">#}
+{#                            Publication link:#}
+{#                        </label>#}
+{#                    </div>#}
+{#                    <div class="col-6 col-md-4">#}
+{#                        <input id="pub_link" type="url" class="form-control" disabled>#}
+{#                    </div>#}
+{#                </div>#}
             </div>
 
 
@@ -141,46 +141,46 @@
     </div>
 
     <script>
-        let publications = [];
-        {% for pub in pubs %}
-            var publicationData = {
-                "id": {{ pub.id }},
-                "name": "{{ pub.name }}",
-                "description": "{{ pub.description }}",
-                "link": "{{ pub.link }}"
-            };
-            publications.push(publicationData);
-        {% endfor %}
-
-        let id = document.getElementById('pub_id');
-        let hidden = document.getElementById('hidden_pub_id');
-
-        let name = document.getElementById('pub_name');
-        let desc = document.getElementById('pub_desc');
-        let link = document.getElementById('pub_link');
-
-        // sets name, description and link of selected publication to its values and changes value of hidden form input
-        function set_pub_values() {
-            let found = false;
-            for (let i = 0; i < publications.length; i++) {
-                let pub = publications[i];
-                if (pub.id === parseInt(id.value)) {
-                    name.value = pub.name;
-                    desc.value = pub.description;
-                    link.value = pub.link;
-                    hidden.value = pub.id
-                    found = true;
-                    break;
-                }
-            }
-
-            if (!found) {
-                name.value = 'deleted';
-                desc.value = 'deleted';
-                link.value = 'deleted';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', set_pub_values());
+        // let publications = [];
+        // {% for pub in pubs %}
+        //     var publicationData = {
+        //         "id": {{ pub.id }},
+        //         "name": "{{ pub.name }}",
+        //         "description": "{{ pub.description }}",
+        //         "link": "{{ pub.link }}"
+        //     };
+        //     publications.push(publicationData);
+        // {% endfor %}
+        //
+        // let id = document.getElementById('pub_id');
+        // let hidden = document.getElementById('hidden_pub_id');
+        //
+        // let name = document.getElementById('pub_name');
+        // let desc = document.getElementById('pub_desc');
+        // let link = document.getElementById('pub_link');
+        //
+        // // sets name, description and link of selected publication to its values and changes value of hidden form input
+        // function set_pub_values() {
+        //     let found = false;
+        //     for (let i = 0; i < publications.length; i++) {
+        //         let pub = publications[i];
+        //         if (pub.id === parseInt(id.value)) {
+        //             name.value = pub.name;
+        //             desc.value = pub.description;
+        //             link.value = pub.link;
+        //             hidden.value = pub.id
+        //             found = true;
+        //             break;
+        //         }
+        //     }
+        //
+        //     if (!found) {
+        //         name.value = 'deleted';
+        //         desc.value = 'deleted';
+        //         link.value = 'deleted';
+        //     }
+        // }
+        //
+        // document.addEventListener('DOMContentLoaded', set_pub_values());
     </script>
 {% endblock content %}
